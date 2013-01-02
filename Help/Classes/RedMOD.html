@@ -1,0 +1,601 @@
+<html><head><title>RedMOD</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES (extension)</div>
+<div id='categories'><a href='./../Browse.html#Red'>Red</a></div>
+<h1>RedMOD</h1>
+<div id='summary'>a .MOD file player</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Users/vagelis/Library/Application Support/SuperCollider/Extensions/RedMOD/<a href='file:///Users/vagelis/Library/Application Support/SuperCollider/Extensions/RedMOD/RedMOD.sc'>RedMOD.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/Object.html">Object</a></div>
+<div id='related'>See also: <a href="./../Classes/RedXM">RedXM</a>, <a href="./../Classes/RedPhasor">RedPhasor</a>, <a href="./../Classes/RedMODSlot.html">RedMODSlot</a>, <a href="./../Classes/RedMODPattern.html">RedMODPattern</a>, <a href="./../Classes/RedMODEmptySample.html">RedMODEmptySample</a>, <a href="./../Classes/RedMODSample.html">RedMODSample</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*read'>read</a> </li>
+<li class='toc3'><a href='#*sampleRate'>sampleRate</a> </li>
+<li class='toc3'><a href='#*period2note'>period2note</a> </li>
+<li class='toc3'><a href='#*note2period'>note2period</a> </li>
+<li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+</ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-prepareForPlay'>prepareForPlay</a> </li>
+<li class='toc3'><a href='#-play'>play</a> </li>
+<li class='toc3'><a href='#-stop'>stop</a> </li>
+<li class='toc3'><a href='#-free'>free</a> </li>
+<li class='toc3'><a href='#-save'>save</a> </li>
+<li class='toc3'><a href='#-isPrepared'>isPrepared</a> </li>
+<li class='toc3'><a href='#-server'>server</a> </li>
+<li class='toc3'><a href='#-outBusses'>outBusses</a> </li>
+<li class='toc3'><a href='#-clock'>clock</a> </li>
+<li class='toc3'><a href='#-speed'>speed</a> </li>
+<li class='toc3'><a href='#-revertSpeed'>revertSpeed</a> </li>
+<li class='toc3'><a href='#-muteTracks'>muteTracks</a> </li>
+<li class='toc3'><a href='#-index'>index</a> </li>
+<li class='toc3'><a href='#-row'>row</a> </li>
+<li class='toc3'><a href='#-tick'>tick</a> </li>
+<li class='toc3'><a href='#-patterns'>patterns</a> </li>
+<li class='toc3'><a href='#-samples'>samples</a> </li>
+<li class='toc3'><a href='#-name'>name</a> </li>
+<li class='toc3'><a href='#-order'>order</a> </li>
+<li class='toc3'><a href='#-magic'>magic</a> </li>
+<li class='toc3'><a href='#-format'>format</a> </li>
+<li class='toc3'><a href='#-numTracks'>numTracks</a> </li>
+<li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-isPaused'>isPaused</a> </li>
+<li class='toc3'><a href='#-isPlaying'>isPlaying</a> </li>
+<li class='toc3'><a href='#-pause'>pause</a> </li>
+<li class='toc3'><a href='#-read'>read</a> </li>
+<li class='toc3'><a href='#-resume'>resume</a> </li>
+<li class='toc3'><a href='#-synths'>synths</a> </li>
+</ul></ul><li class='toc1'><a href='#examples'>Examples</a></li>
+<ul class='toc'></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>RedMOD is a class for loading and playing back .MOD files. This file format that was very popular on the Amiga tracker scene back in the 90s. MOD files bundles samples and patterns and in addition to playing back the actual music, RedMOD lets you extract and convert this data into more sc-friendly formats.
+<p>As straight playback of .MOD files quickly becomes boring, the point of this class is rather to write custom play routines to replace the 'correct' built-in one. You can also overwrite the bundled samples and/or patterns importing your own data. With little effort, you can do some pretty weird remixes of these songs. It will help to know roughly how trackers work and a little about how the MOD. file format functions (ticks, effects, patterns).
+<p>So for more info see...<ul>
+<li><a href="http://en.wikipedia.org/wiki/MOD_(file_format)">http://en.wikipedia.org/wiki/MOD_(file_format)</a><li><a href="http://www.ilkertemir.com/source/diger/Modplay_Routines/FMODDOC.TXT">http://www.ilkertemir.com/source/diger/Modplay_Routines/FMODDOC.TXT</a></ul>
+
+<p>and there are heaps of MODs for testing with...<ul>
+<li><a href="http://modarchive.org/">http://modarchive.org/</a><li><a href="http://totem.fix.no/pub/mods/">http://totem.fix.no/pub/mods/</a><li><a href="http://amp.dascene.net/">http://amp.dascene.net/</a></ul>
+
+<p>Note that there are many different tracker module formats but only plain .MOD is supported here.
+<p>Thanks to Lukas Nystrand aka Mortimer Twang for supplying the demo eva.mod and quality control of this class.
+<p>And last, please acknowledge the original composers if you borrow their songs (compare software revision history). Also consider creating your own MODs from scratch using for instance <a href="http://www.milkytracker.org/">http://www.milkytracker.org/</a><div class='note'><span class='notelabel'>NOTE:</span> Required UGen: <a href="./../Classes/RedPhasor">RedPhasor</a> from the f0plugins package (<a href="http://www.fredrikolofsson.com/pages/code-sc.html#plugins)">http://www.fredrikolofsson.com/pages/code-sc.html#plugins)</a></div><h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*read' href='./../Overviews/Methods.html#read'>read</a> (<span class='argstr'>path</span>)</h3>
+<div class='method'>
+<p>Create a RedMOD by reading and parsing a .MOD file from disk.</div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*sampleRate' href='./../Overviews/Methods.html#sampleRate'>sampleRate</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*sampleRate' href='./../Overviews/Methods.html#sampleRate'>sampleRate</a> = value</h3>
+<div class='method'>
+<p>NTSC= 7159090.5 (default), PAL= 7093789.2<div class='note'><span class='notelabel'>NOTE:</span> It is possible to change sample rate while playing.</div></div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*period2note' href='./../Overviews/Methods.html#period2note'>period2note</a> (<span class='argstr'>period</span>)</h3>
+<div class='method'>
+<p>Convert from amiga period to midinote (centered around 0).</div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*note2period' href='./../Overviews/Methods.html#note2period'>note2period</a> (<span class='argstr'>note</span>)</h3>
+<div class='method'>
+<p>Convert from midinote (centered around 0) to amiga period.</div><h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prepareForPlay' href='./../Overviews/Methods.html#prepareForPlay'>prepareForPlay</a> (<span class='argstr'>group</span>, <span class='argstr'>action</span>)</h3>
+<div class='method'>
+<p>Load sample data into buffers and send synthdefs to the server.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>group<td class='argumentdesc'>
+<p>Server group to play on. Use <code class='code prettyprint lang-sc'>nil</code> for the defaultGroup.<tr><td class='argumentname'>action<td class='argumentdesc'>
+<p>Function to evaluate after all buffers finished loading.</table></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-play' href='./../Overviews/Methods.html#play'>play</a> (<span class='argstr'>out: 0</span>, <span class='argstr'>clock</span>, <span class='argstr'>quant: 0</span>)</h3>
+<div class='method'>
+<p>Start playback.<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>out<td class='argumentdesc'>
+<p>Can be an array for routing each track. Default is 0 and that means mix down all tracks to busses 0&amp;1.<tr><td class='argumentname'>clock<td class='argumentdesc'>
+<p>If no clock or quant then an internal clock is created.<tr><td class='argumentname'>quant<td class='argumentdesc'></table></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-stop' href='./../Overviews/Methods.html#stop'>stop</a> </h3>
+<div class='method'>
+<p>Stop playback and free synths.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-free' href='./../Overviews/Methods.html#free'>free</a> </h3>
+<div class='method'>
+<p>Stop and free all buffers.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-save' href='./../Overviews/Methods.html#save'>save</a> (<span class='argstr'>path</span>)</h3>
+<div class='method'>
+<p>Write the mod back to disk.<div class='note'><span class='notelabel'>NOTE:</span> Imported samples are converted to 8363.42Hz (Amiga) samplingrate.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-isPrepared' href='./../Overviews/Methods.html#isPrepared'>isPrepared</a> </h3>
+<div class='method'>
+<p>True if server booted, samples loaded and synthdefs sent.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-server' href='./../Overviews/Methods.html#server'>server</a> </h3>
+<div class='method'>
+<p>Current server in use. From group passed in with <a href="#-play">-play</a>.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-outBusses' href='./../Overviews/Methods.html#outBusses'>outBusses</a> </h3>
+<div class='method'>
+<p>Which audio busses currently in use. Set when <a href="#-play">-play</a>.
+<p>e.g. <code class='code prettyprint lang-sc'>[0, 0, 0, 0]</code> means mix all tracks to the stereopair 0&amp;1. <code class='code prettyprint lang-sc'>[0, 2, 4, 8]</code> play all tracks on separate stereopair busses.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-clock' href='./../Overviews/Methods.html#clock'>clock</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-clock' href='./../Overviews/Methods.html#clock'>clock</a> = </h3>
+<div class='method'>
+<p>A <a href="./../Classes/TempoClock.html">TempoClock</a>. May be passed in with <a href="#-play">-play</a>.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-speed' href='./../Overviews/Methods.html#speed'>speed</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-speed' href='./../Overviews/Methods.html#speed'>speed</a> = <span class='argstr'>val</span></h3>
+<div class='method'>
+<p>Current speed. Setting this will override all mod speed settings.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-revertSpeed' href='./../Overviews/Methods.html#revertSpeed'>revertSpeed</a> </h3>
+<div class='method'>
+<p>Revert back to use the mod speed settings. i.e. read speed from the file.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-muteTracks' href='./../Overviews/Methods.html#muteTracks'>muteTracks</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-muteTracks' href='./../Overviews/Methods.html#muteTracks'>muteTracks</a> = value</h3>
+<div class='method'>
+<p>An array of track indexes. e.g. <code class='code prettyprint lang-sc'>[0, 2]</code> will mute playback of tracks 0&amp;2. Non tick based effects are still played though e.g. for setting the speed.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-index' href='./../Overviews/Methods.html#index'>index</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-index' href='./../Overviews/Methods.html#index'>index</a> = value</h3>
+<div class='method'>
+<p>Force playback to jump to some position in the order (<code class='code prettyprint lang-sc'>0</code> to <code class='code prettyprint lang-sc'>order.size-1</code>).</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-row' href='./../Overviews/Methods.html#row'>row</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-row' href='./../Overviews/Methods.html#row'>row</a> = value</h3>
+<div class='method'>
+<p>Force playback to jump to some row (<code class='code prettyprint lang-sc'>0</code> to <code class='code prettyprint lang-sc'>63</code>).</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-tick' href='./../Overviews/Methods.html#tick'>tick</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-tick' href='./../Overviews/Methods.html#tick'>tick</a> = value</h3>
+<div class='method'>
+<p>Force playback to jump to some tick (<code class='code prettyprint lang-sc'>0</code> to <code class='code prettyprint lang-sc'>speed-1</code>).</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-patterns' href='./../Overviews/Methods.html#patterns'>patterns</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-patterns' href='./../Overviews/Methods.html#patterns'>patterns</a> = value</h3>
+<div class='method'>
+<p>Array of <a href="./../Classes/RedMODPattern.html">RedMODPattern</a> objects. Should be played in a certain order. See also <a href="#-order">-order</a> below.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-samples' href='./../Overviews/Methods.html#samples'>samples</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-samples' href='./../Overviews/Methods.html#samples'>samples</a> = value</h3>
+<div class='method'>
+<p>Array of 31 <a href="./../Classes/RedMODSample.html">RedMODSample</a> objects. Can be <code class='code prettyprint lang-sc'>nil</code> if sample slot is empty. For most MOD files not all slots are in use.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-name' href='./../Overviews/Methods.html#name'>name</a> </h3>
+<div class='method'>
+<p>Song name string.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-order' href='./../Overviews/Methods.html#order'>order</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-order' href='./../Overviews/Methods.html#order'>order</a> = value</h3>
+<div class='method'>
+<p>The arrangement of the song. i.e. which pattern to play in which order. <a href="#-index">-index</a> above steps through this array to find current pattern.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-magic' href='./../Overviews/Methods.html#magic'>magic</a> </h3>
+<div class='method'>
+<p>ID string.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-format' href='./../Overviews/Methods.html#format'>format</a> </h3>
+<div class='method'>
+<p>Additional information string.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-numTracks' href='./../Overviews/Methods.html#numTracks'>numTracks</a> </h3>
+<div class='method'>
+<p>Number of tracks or channels for this song. 4 is a common number.</div><h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-isPaused' href='./../Overviews/Methods.html#isPaused'>isPaused</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-isPlaying' href='./../Overviews/Methods.html#isPlaying'>isPlaying</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-pause' href='./../Overviews/Methods.html#pause'>pause</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-read' href='./../Overviews/Methods.html#read'>read</a> (<span class='argstr'>path</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-resume' href='./../Overviews/Methods.html#resume'>resume</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-synths' href='./../Overviews/Methods.html#synths'>synths</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-synths' href='./../Overviews/Methods.html#synths'>synths</a> = value</h3>
+<h2><a class='anchor' name='examples'>Examples</a></h2>
+<pre class='code prettyprint lang-sc'>//--ex.1
+a= RedMOD.read(RedMOD.filenameSymbol.asString.dirname+/+"eva.mod");        //modify this path!
+a.prepareForPlay                                    //boot server, load buffers, send synthdefs
+
+a.play                                            //start playback
+a.isPlaying
+a.isPaused
+a.pause
+a.resume
+
+a.speed                                            //current speed (max num ticks)
+a.speed= 3                                        //override mod speed settings
+a.revertSpeed                                        //use mod speed settings again
+
+a.stop
+t= TempoClock(180/60)
+a.play(clock:t, quant:1)                            //restart in sync with a clock passed in
+t.tempo_(60/60)
+t.tempo_(125/60)                                    //back to default
+
+a.free                                            //stop and free synths and buffers</pre>
+<pre class='code prettyprint lang-sc'>//--ex.2
+a= RedMOD.read(RedMOD.filenameSymbol.asString.dirname+/+"eva.mod");
+a.prepareForPlay(action:{a.play})
+
+a.name
+a.order                                            //indexes for song form
+a.magic
+a.format
+a.numTracks
+a.index                                            //current form index
+a.row                                            //current row (0 - 63)
+a.tick                                            //current tick (0 - (speed-1))
+
+a.index_(a.order.choose).row_(64.rand)                //jump somewhere random
+a.order_(a.order.scramble[0..1]).index_(0).row_(0)        //rearrange song at random -only 2 rows long
+a.order
+
+a.order_({(a.patterns.size-1).rand}.dup(8))            //rearrange song at random -8 rows long
+a.order
+
+a.play                                            //restart
+
+a.muteTracks= [0, 2]                                //do not play the tracks 0 and 2
+
+a.muteTracks= [1, 3]                                //do not play the other 2 tracks
+a.muteTracks= []
+
+RedMOD.sampleRate= 900000                            //global samplerate
+RedMOD.sampleRate= 1900000
+RedMOD.sampleRate= 90000000
+RedMOD.sampleRate= 190000000
+RedMOD.sampleRate= 7093789.2                        //PAL
+RedMOD.sampleRate= 7159090.5                        //NTSC (default)
+
+a.free</pre>
+<pre class='code prettyprint lang-sc'>//--ex.3
+a= RedMOD.read(RedMOD.filenameSymbol.asString.dirname+/+"eva.mod");
+a.prepareForPlay(action:{a.play})
+
+a.samples                                            //all sample objects
+~smp= a.samples.select{|x| x.empty.not}                //find loaded samples -ie not empty samples
+~smp[2].dump
+~smp[2].buffer.plot
+
+//swapping buffers while playing - destructive effect - modify paths
+~smp[0].importSoundFile("~/Documents/sounds/drumkits/ErnysPercussion/2Bongo Low.wav".standardizePath);
+~smp[1].importSoundFile("~/Documents/sounds/drumkits/ErnysPercussion/2Conga Slap.wav".standardizePath);
+~smp[2].importSoundFile("~/Documents/sounds/drumkits/ErnysPercussion/Agogo Hi.wav".standardizePath);
+~smp[3].importSoundFile("~/Documents/sounds/drumkits/ErnysPercussion/3Guiro Short.wav".standardizePath);
+~smp[4].importSoundFile("~/Documents/sounds/drumkits/ErnysPercussion/1Conga Hi.wav".standardizePath);
+
+//record a short sample from internal mic and import that buffer into mod sample slot
+~buf= Buffer.alloc(s, 44100*0.25, 1)
+~rec= {EnvGen.kr(Env.linen(0.01, 0.23, 0.01), doneAction:2)*RecordBuf.ar(SoundIn.ar(0), ~buf.bufnum, run:1)}
+
+~rec.play                                            //start recording for 1/4 sec
+~buf.plot
+
+a.play                                            //restart
+~smp[2].importBuffer(~buf)
+~smp[2].buffer.plot                                //now imported
+a.muteTracks= [0, 1, 3]
+a.muteTracks= []
+
+//replace all samples with this buffer
+Routine.run{~smp.do{|x| x.postln.importBuffer(~buf); 0.5.wait}}
+
+~rec.play                                            //record again
+~buf.plot
+Routine.run{~smp.do{|x| x.postln.importBuffer(~buf); 0.5.wait}}
+
+a.save("RedMODHelp_mstrpc.mod")                        //save your masterpiece in sc folder
+a.free
+~buf.free
+
+
+a= RedMOD.read("RedMODHelp_mstrpc.mod")                //read it back and play
+a.prepareForPlay
+a.play
+a.free</pre>
+<pre class='code prettyprint lang-sc'>//--ex.4
+a= RedMOD.read(RedMOD.filenameSymbol.asString.dirname+/+"eva.mod");
+a.prepareForPlay(action:{a.play})
+
+~index= a.order[2];
+~index2= a.order[4];
+a.order_(~index.dup(20))                            //only play first index in a loop
+a.patterns[~index].slots                            //the 64 slots for this index 1 pattern
+a.patterns[~index].slots[0][3].dump                    //access first slot, forth channel
+a.patterns[~index].slots[0][3].period= 227            //set slot pitch (as amiga period)
+
+//destructive
+10.do{|x| a.patterns[~index].slots[x][3].period= 227}    //set the 10 first pitches to same period
+
+//swap around tracks - non destructive
+a.patterns[~index].slots= a.patterns[~index].slots.collect{|x, i| x.rotate(i)}
+
+//transpose - non destructive
+a.patterns[~index].slots= a.patterns[~index].slots.collect{|x| x.collect{|y| y.period= y.period+10}}
+a.patterns[~index].slots= a.patterns[~index].slots.collect{|x| x.collect{|y| y.period= y.period-10}}
+
+RedMOD.note2period(13)                                //conversion
+RedMOD.period2note(202)
+
+//copy first half and paste over the second - destructive
+a.patterns[~index].slots= a.patterns[~index].slots.collect{|x, i| a.patterns[~index].slots[i%32]}
+
+//wrap around 12 slots - destructive
+a.patterns[~index].slots= a.patterns[~index].slots.collect{|x, i| a.patterns[~index].slots[i%12]}
+a.patterns[~index].slots= a.patterns[~index].slots.collect{|x, i| a.patterns[~index].slots[i%8]}
+a.patterns[~index].slots= a.patterns[~index].slots.collect{|x, i| a.patterns[~index].slots[i%4]}
+a.order_(~index2.dup(20))                            //new order and jump to index2 saved above
+
+//swap buffers around between tracks for second pattern - destructive
+~smp= a.samples.select{|x| x.empty.not}                //find loaded samples
+a.patterns[~index2].slots= a.patterns[~index2].slots.collect{|x, i| x.collect{|y| y.sample= ~smp.foldAt(i)}}
+
+a.free</pre>
+<pre class='code prettyprint lang-sc'>//--ex.5
+a= RedMOD.read(RedMOD.filenameSymbol.asString.dirname+/+"eva.mod");
+a.prepareForPlay
+
+~smp= a.samples.select{|x| x.empty.not}                //find loaded samples
+~smp[2].buffer.plot
+b= ~smp[2].ripSample
+b.plot
+b.play
+b.sampleRate                                        //converted to server samplerate
+b.write("RedMODHelp_rippedSample.aiff")                //write soundfile to sc folder
+b.free
+a.free</pre>
+<pre class='code prettyprint lang-sc'>//--ex.6
+a= RedMOD.read(RedMOD.filenameSymbol.asString.dirname+/+"eva.mod");
+a.prepareForPlay
+
+(    //custom play routine - no effects and just barebone playback - sandbox
+var clock= TempoClock(125/60);
+Routine{
+    var speed= 6, index= 0, row= 0, tick= 0;            //counters
+    var mute= [];
+    var tracks;                                    //current slots (usually 4)
+    var filter= Synth(\redMODfilter);                //amiga filer wannabe
+    var synths= {Synth(\redMODplayer)}.dup(a.numTracks);//one synth per track (usually 4)
+    var trackLoopStart= 0.dup(a.numTracks);
+    var trackLoopEnd= 0.dup(a.numTracks);
+    var trackVolume= 0.dup(a.numTracks);
+    var trackPeriod= 0.dup(a.numTracks);                //amiga periods
+    while({index&lt;a.order.size and:{a.isPrepared}}, {    //loop ticks
+        if(tick==0, {                                //slots update every 0 tick, rest sub efxs
+            tracks= a.patterns[a.order[index]].slots[row];
+            tracks.do{|slot, i|                    //for each track (usually 4)
+                var trackSynth= synths[i];            //find corresponding synth object
+                s.makeBundle(nil, {
+                    if(mute.includes(i).not, {
+                        //--update synth if sample given
+                        if(slot.sample.notNil and: {slot.sample.empty.not}, {
+                            trackSynth.set(\bufnum, slot.sample.buffer.bufnum);
+                            trackSynth.set(\sr, slot.sample.sampleRate);
+                            trackSynth.set(\loop, slot.sample.loop.binaryValue);
+                            trackLoopStart[i]= slot.sample.loopstart;
+                            trackSynth.set(\loopstart, trackLoopStart[i]);
+                            trackLoopEnd[i]= slot.sample.loopend;
+                            trackSynth.set(\loopend, slot.sample.loopend);
+                            trackVolume[i]= slot.sample.volume;
+                        });
+                        if(slot.period&gt;0, {            //update track period if note given
+                            if(slot.sample.notNil, {
+                                trackPeriod[i]= slot.tunedPeriod;
+                                trackSynth.set(\rate, slot.tunedNote.midiratio);
+                            }, {
+                                trackPeriod[i]= slot.period;
+                                trackSynth.set(\rate, slot.note.midiratio);
+                            });
+                        });
+                    });
+                    if(mute.includes(i).not, {
+                        trackSynth.set(\vol, trackVolume[i].clip(0, 64)/64);
+                        if(slot.period&gt;0, {            //trigger synth if note given
+                            trackSynth.set(\t_trig, 1);
+                        });
+                    });
+                });                                //end makeBundle
+            };
+            if(row==63, {                            //check if time to jump in order
+                index= index+1;
+            });
+            row= (row+1)%64;                        //jump to next row
+            tick= 1;
+        }, {                                        //update per tick (except tick 0)
+            tick= tick+1%speed;
+        });
+        (1/4/6).wait;
+    });
+    1.wait;                                        //wait 1 beat before freeing synths
+    synths.do{|x| x.free};
+    filter.free;
+}.play(clock);
+)
+a.free</pre>
+<pre class='code prettyprint lang-sc'>//--ex.7
+a= RedMOD.read(RedMOD.filenameSymbol.asString.dirname+/+"eva.mod");
+a.prepareForPlay
+
+(    //severely hacked play routine
+var clock= TempoClock(200/60);
+Routine{
+    var speed= 6, index= 0, row= 0, tick= 0;
+    var tracks;
+    var filter= Synth(\redMODfilter);
+    var delay= SynthDef(\redDel, {Out.ar(0, CombN.ar(InFeedback.ar(10, 2), 0.2, 0.2, 4))}).play(s);
+    var synths= {Synth(\redMODplayer)}.dup(a.numTracks);
+    var trackVolume= 0.dup(a.numTracks);
+    while({index&lt;a.order.size and:{a.isPrepared}}, {
+        //hack: 
+        if(tick==(index%2), {
+            tracks= a.patterns[a.order[index]].slots[row];
+            tracks.do{|slot, i|
+                var trackSynth= synths[i];
+                s.makeBundle(nil, {
+                    if(slot.sample.notNil and:{slot.sample.empty.not}, {
+                        //hack: add delay effect to all sample index 5
+                        if(a.samples.indexOf(slot.sample)==5, {
+                            trackSynth.set(\out, 10);
+                        });
+                        trackSynth.set(\bufnum, slot.sample.buffer.bufnum);
+                        trackSynth.set(\sr, slot.sample.sampleRate);
+                        trackSynth.set(\loop, slot.sample.loop.binaryValue);
+                        trackSynth.set(\loopstart, slot.sample.loopstart);
+                        trackSynth.set(\loopend, slot.sample.loopend);
+                        trackVolume[i]= slot.sample.volume;
+                    });
+                    if(slot.period&gt;0, {
+                        if(slot.sample.notNil, {
+                            //hack: index controls how much filter
+                            filter.set(\mix, index/a.order.size);
+                            trackSynth.set(\rate, slot.tunedNote.midiratio);
+                        }, {
+                            trackSynth.set(\rate, slot.note.midiratio);
+                        });
+                    });
+                    trackSynth.set(\vol, trackVolume[i].clip(0, 64)/64);
+                    //hack: always trigger everything
+                    trackSynth.set(\t_trig, 1);
+                });
+            };
+            //hack: sometimes jump
+            if(row==63 or:{row==(63-index)}, {
+                index= index+1;
+            });
+            row= (row+1)%64;
+            tick= 1;
+        }, {
+            tick= tick+1%speed;
+        });
+        (1/4/6).wait;
+    });
+    1.wait;
+    synths.do{|x| x.free};
+    filter.free;
+}.play(clock);
+)
+a.free</pre>
+<pre class='code prettyprint lang-sc'>//--ex.8
+a= RedMOD.read(RedMOD.filenameSymbol.asString.dirname+/+"eva.mod");
+a.prepareForPlay
+a.play
+
+//reverse all sample data while playing
+~smp= a.samples.select{|x| x.empty.not}                //find loaded samples
+~smp.do{|x| x.data= x.data.reverse; x.load(s)};
+
+//shift all sample data 50% while playing (rotate buffers9
+~smp.do{|x| x.data= x.data.rotate(x.data.size.div(2)); x.load(s)};
+
+//distort
+~smp.do{|x| x.data= (x.data*6).softclip; x.load(s)};
+
+//zero out after 500samples
+~smp.do{|x| x.data= x.data.collect{|y, j| y*(j&lt;500).binaryValue}; x.load(s)};
+
+//fill with 100 random values
+~smp.do{|x| x.data= {1.0.rand2}.dup(100); x.load(s)};
+
+a.free</pre>
+<pre class='code prettyprint lang-sc'>//--ex.9
+a= RedMOD.read(RedMOD.filenameSymbol.asString.dirname+/+"eva.mod");
+a.prepareForPlay
+a.play
+
+//shift data around between samples
+~smp= a.samples.select{|x| x.empty.not}                //find loaded samples
+~smp.do{|x, i| x.data= ~smp.wrapAt(i+1).data.copy; x.load(s)}
+
+//copy data randomly between samples
+~smp.do{|x| x.data= ~smp.choose.data.copy; x.load(s)}
+
+//fill with wave
+~smp.do{|x| x.data= Signal.sineFill(x.data.size).chebyFill(#[1, 0.2, 3]); x.load(s)}
+~smp[0].buffer.plot
+
+a.free</pre>
+<pre class='code prettyprint lang-sc'>//--ex.10
+a= RedMOD.read(RedMOD.filenameSymbol.asString.dirname+/+"eva.mod");
+a.prepareForPlay
+a.play
+
+//shift data independently around between samples with an offset in samples
+(
+var offset= 500;
+var smp= a.samples.select{|x| x.empty.not};            //find loaded samples
+var alldata= smp.collect{|x| x.data}.flat;
+var allpositions= [0]++smp.collect{|x| x.data.size}.integrate;
+smp.do{|x, i| x.data= alldata.copyRange(allpositions[i]+offset, allpositions[i+1]-1+offset); x.load(s)}
+)
+
+a.free</pre>
+<pre class='code prettyprint lang-sc'>//--ex.11
+a= RedMOD.read(RedMOD.filenameSymbol.asString.dirname+/+"eva.mod");
+a.prepareForPlay
+
+//create 2 stereo effects
+(
+SynthDef(\ring, {|out= 0, in= 10, freq= 400|
+    var i= InFeedback.ar(in, 2);
+    var z= i*SinOsc.ar(freq, 0, 1);
+    Out.ar(out, z);
+}).send(s);
+SynthDef(\dist, {|out= 0, in= 12, dist= 10|
+    var i= InFeedback.ar(in, 2);
+    var z= Clip.ar(i*dist, -1, 1);
+    Out.ar(out, z);
+}).send(s);
+)
+
+//start the effects on busses 10 and 12
+b= Synth(\ring, #[\out, 0, \in, 10, \freq, 1600]);
+c= Synth(\dist, #[\out, 0, \in, 12, \dist, 10]);
+
+//start playing the mod with ringmodulation on channel 1
+a.play([10, 0, 0, 0])
+b.set(\freq, 2600)
+a.stop
+
+//distort channel 2 and 4
+a.play([0, 12, 0, 12])
+a.stop
+
+//effects on all channels
+a.play([12, 10, 10, 12])
+a.stop
+
+a.free
+b.free
+c.free</pre>
+<pre class='code prettyprint lang-sc'>//--ex.12 (replacing the standard sample player synthdef with a custom synthdef)
+a= RedMOD.read(RedMOD.filenameSymbol.asString.dirname+/+"eva.mod");    //modify this path!
+a.prepareForPlay
+//overwrite the standard synthdef after .prepareForPlay but before .play
+(
+SynthDef(\redMODplayer, {|out= 0, bufnum, t_trig= 0, loop= 0, loopstart= 0, loopend= 0, rate= 0, vol= 1, pan= 0, interp= 2, sr= 8363.42|
+    var env= EnvGen.ar(Env.perc(0.01, 0.2), t_trig, vol);
+    var freq= rate.linexp(0, 2, 400, 1000);
+    var src= [
+        SinOsc.ar(freq),
+        Saw.ar(freq),
+        Phasor.ar(0, freq),
+        BPF.ar(WhiteNoise.ar, freq, 0.1, 5)
+    ];
+    src= Select.ar(bufnum%src.size, src);
+    Out.ar(out, Pan2.ar(src, pan, env));
+}).add;
+)
+a.play    //now play with the new hacked synthdef
+a.free</pre>
+<pre class='code prettyprint lang-sc'>//--ex.13 (using custom synthdefs)
+(
+s.waitForBoot{
+    SynthDef(\myModPing, {|out= 0, bufnum, t_trig= 0, loop= 0, loopstart= 0, loopend= 0, rate= 0, vol= 1, pan= 0, interp= 2, sr= 8363.42|
+        var env= EnvGen.ar(Env.perc(0.005, 0.4, 1, -4), t_trig, vol);
+        var freq= (rate.ratiomidi+60).midicps;
+        var src= SinOsc.ar(freq, SinOsc.ar(env*4)*2pi);
+        Out.ar(out, Pan2.ar(src, pan, env));
+    }).add;
+    SynthDef(\myModPong, {|out= 0, bufnum, t_trig= 0, loop= 0, loopstart= 0, loopend= 0, rate= 0, vol= 1, pan= 0, interp= 2, sr= 8363.42|
+        var env= EnvGen.ar(Env.perc(0.01, 0.1, 1, 4), t_trig, vol);
+        var freq= (rate.ratiomidi+60).midicps;
+        var src= LPF.ar(LFSaw.ar(freq), 2-env*1000);
+        Out.ar(out, Pan2.ar(src, pan, env));
+    }).add;
+    SynthDef(\myModPang, {|out= 0, bufnum, t_trig= 0, loop= 0, loopstart= 0, loopend= 0, rate= 0, vol= 1, pan= 0, interp= 2, sr= 8363.42|
+        var env= EnvGen.ar(Env.perc(0.001, 0.1, 1, 2), t_trig, vol);
+        var freq= (rate.ratiomidi+60).midicps;
+        var src= HPF.ar(GrayNoise.ar(env), freq*8);
+        Out.ar(out, Pan2.ar(src, pan, env));
+    }).add;
+};
+)
+//test the sounds
+c= Synth(\myModPing, [\t_trig, 1, \rate, 1]);
+c.free;
+c= Synth(\myModPong, [\t_trig, 1, \rate, 1]);
+c.free;
+c= Synth(\myModPang, [\t_trig, 1, \rate, 1]);
+c.free;
+
+//start a redmod
+a= RedMOD.read(RedMOD.filenameSymbol.asString.dirname+/+"eva.mod");
+a.prepareForPlay(action:{a.play});    //prepare and start once to init
+
+a.synths.put(0, Synth.replace(a.synths[0], \myModPing, [\out, 0]))
+a.synths.put(1, Synth.replace(a.synths[1], \myModPong, [\out, 0]))
+a.synths.put(2, Synth.replace(a.synths[2], \myModPing, [\out, 0]))
+a.synths.put(3, Synth.replace(a.synths[3], \myModPang, [\out, 0]))
+
+a.synths        //should now contain an array with your custom synths
+a.stop
+a.free</pre>
+
+<p><div class='doclink'>source: <a href='file:///Users/vagelis/Library/Application Support/SuperCollider/Extensions/RedMOD/HelpSource/Classes/RedMOD.schelp'>/Users/vagelis/Library/Application Support/SuperCollider/Extensions/RedMOD/HelpSource/Classes/RedMOD.schelp</a><br>link::Classes/RedMOD::<br>sc version: 3.5.3</div></div></body></html>

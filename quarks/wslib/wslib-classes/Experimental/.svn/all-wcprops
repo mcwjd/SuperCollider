@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svnroot/quarks/!svn/ver/2221/wslib/wslib-classes/Experimental
+END
+DeferredView.sc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/quarks/!svn/ver/1081/wslib/wslib-classes/Experimental/DeferredView.sc
+END
+extScore-recordNRTs.sc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/quarks/!svn/ver/2212/wslib/wslib-classes/Experimental/extScore-recordNRTs.sc
+END
+MultiServer.sc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/1768/wslib/wslib-classes/Experimental/MultiServer.sc
+END
+MServer.sc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Experimental/MServer.sc
+END
+TransportWindow.sc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/quarks/!svn/ver/1821/wslib/wslib-classes/Experimental/TransportWindow.sc
+END
+SSHServer.sc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/quarks/!svn/ver/1298/wslib/wslib-classes/Experimental/SSHServer.sc
+END
+OptionsView.sc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/2221/wslib/wslib-classes/Experimental/OptionsView.sc
+END
+extTempoClock-setBeats.sc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Experimental/extTempoClock-setBeats.sc
+END
+extPowerOfTwoAllocator-freelists.sc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Experimental/extPowerOfTwoAllocator-freelists.sc
+END
+WSPopUpMenu.sc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/1784/wslib/wslib-classes/Experimental/WSPopUpMenu.sc
+END
+extSystemClock-tempo.sc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Experimental/extSystemClock-tempo.sc
+END
+Formatter.sc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/930/wslib/wslib-classes/Experimental/Formatter.sc
+END
+ReceiveTrig.sc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/1768/wslib/wslib-classes/Experimental/ReceiveTrig.sc
+END
+CombFormlet.sc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Experimental/CombFormlet.sc
+END
+DeferredView.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/quarks/!svn/ver/1081/wslib/wslib-classes/Experimental/DeferredView.html
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/quarks/!svn/ver/929/wslib/wslib-classes/Lang/Improvements
+END
+extVarious-range.sc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/quarks/!svn/ver/929/wslib/wslib-classes/Lang/Improvements/extVarious-range.sc
+END
+extSymbol-isSymbol.sc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Lang/Improvements/extSymbol-isSymbol.sc
+END
+extUgen-isUGen.sc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Lang/Improvements/extUgen-isUGen.sc
+END
+extObject-inRange.sc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Lang/Improvements/extObject-inRange.sc
+END
+extString-collect.sc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Lang/Improvements/extString-collect.sc
+END

@@ -1,0 +1,2 @@
+( 'listenerY': 200, 'multiPaneListenerHeight': 300, 'menuHeight': 22, 'multiPaneAreaWidth': 1920.0, 
+  'multiPaneHeight': 1178.0, 'defaultArrangementMethod': 'arrangeMultiPanes', 'tryoutName': "tryout.scd", 'listenerXdelta': 20 )

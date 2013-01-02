@@ -1,0 +1,328 @@
+<html><head><title>KeyboardWindow</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES (extension)</div>
+<div id='categories'><a href='./../Browse.html#Undocumented classes'>Undocumented classes</a></div>
+<h1>KeyboardWindow</h1>
+<div id='summary'>(Undocumented class)</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/Full windows/<a href='file:///Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/Full windows/MIDIKeyboardWindow.sc'>MIDIKeyboardWindow.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/Object.html">Object</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*allWindows'>allWindows</a> </li>
+<li class='toc3'><a href='#*blackKeysStructure'>blackKeysStructure</a> </li>
+<li class='toc3'><a href='#*initClass'>initClass</a> </li>
+<li class='toc3'><a href='#*new'>new</a> </li>
+<li class='toc3'><a href='#*pressNote'>pressNote</a> </li>
+<li class='toc3'><a href='#*scale'>scale</a> </li>
+<li class='toc3'><a href='#*unPressAll'>unPressAll</a> </li>
+<li class='toc3'><a href='#*unPressNote'>unPressNote</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-activeKeys'>activeKeys</a> </li>
+<li class='toc3'><a href='#-activeNotes'>activeNotes</a> </li>
+<li class='toc3'><a href='#-bounds'>bounds</a> </li>
+<li class='toc3'><a href='#-channel'>channel</a> </li>
+<li class='toc3'><a href='#-downAction'>downAction</a> </li>
+<li class='toc3'><a href='#-hold'>hold</a> </li>
+<li class='toc3'><a href='#-lastVelo'>lastVelo</a> </li>
+<li class='toc3'><a href='#-newWindow'>newWindow</a> </li>
+<li class='toc3'><a href='#-nKeys'>nKeys</a> </li>
+<li class='toc3'><a href='#-notesDict'>notesDict</a> </li>
+<li class='toc3'><a href='#-pressKey'>pressKey</a> </li>
+<li class='toc3'><a href='#-pressNote'>pressNote</a> </li>
+<li class='toc3'><a href='#-startOctave'>startOctave</a> </li>
+<li class='toc3'><a href='#-storeArgs'>storeArgs</a> </li>
+<li class='toc3'><a href='#-unPressAll'>unPressAll</a> </li>
+<li class='toc3'><a href='#-unPressKey'>unPressKey</a> </li>
+<li class='toc3'><a href='#-unPressNote'>unPressNote</a> </li>
+<li class='toc3'><a href='#-upAction'>upAction</a> </li>
+<li class='toc3'><a href='#-userView'>userView</a> </li>
+<li class='toc3'><a href='#-window'>window</a> </li>
+</ul></ul><li class='toc1'><a href='#Help template'>Help template</a></li>
+<ul class='toc'></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>This class is missing documentation.<h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*allWindows' href='./../Overviews/Methods.html#allWindows'>allWindows</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*blackKeysStructure' href='./../Overviews/Methods.html#blackKeysStructure'>blackKeysStructure</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*initClass' href='./../Overviews/Methods.html#initClass'>initClass</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*new' href='./../Overviews/Methods.html#new'>new</a> (<span class='argstr'>nKeys: 36</span>, <span class='argstr'>startOctave: 1</span>, <span class='argstr'>channel: 0</span>, <span class='argstr'>bounds</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*pressNote' href='./../Overviews/Methods.html#pressNote'>pressNote</a> (<span class='argstr'>noteNumber: 64</span>, <span class='argstr'>velo: 64</span>, <span class='argstr'>channel: 0</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*scale' href='./../Overviews/Methods.html#scale'>scale</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*unPressAll' href='./../Overviews/Methods.html#unPressAll'>unPressAll</a> (<span class='argstr'>velo: 64</span>, <span class='argstr'>channel</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*unPressNote' href='./../Overviews/Methods.html#unPressNote'>unPressNote</a> (<span class='argstr'>noteNumber: 64</span>, <span class='argstr'>velo: 64</span>, <span class='argstr'>channel: 0</span>)</h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-activeKeys' href='./../Overviews/Methods.html#activeKeys'>activeKeys</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-activeNotes' href='./../Overviews/Methods.html#activeNotes'>activeNotes</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-bounds' href='./../Overviews/Methods.html#bounds'>bounds</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-channel' href='./../Overviews/Methods.html#channel'>channel</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-channel' href='./../Overviews/Methods.html#channel'>channel</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-downAction' href='./../Overviews/Methods.html#downAction'>downAction</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-downAction' href='./../Overviews/Methods.html#downAction'>downAction</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-hold' href='./../Overviews/Methods.html#hold'>hold</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-hold' href='./../Overviews/Methods.html#hold'>hold</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-lastVelo' href='./../Overviews/Methods.html#lastVelo'>lastVelo</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-newWindow' href='./../Overviews/Methods.html#newWindow'>newWindow</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-nKeys' href='./../Overviews/Methods.html#nKeys'>nKeys</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-notesDict' href='./../Overviews/Methods.html#notesDict'>notesDict</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-pressKey' href='./../Overviews/Methods.html#pressKey'>pressKey</a> (<span class='argstr'>key</span>, <span class='argstr'>velo</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-pressNote' href='./../Overviews/Methods.html#pressNote'>pressNote</a> (<span class='argstr'>noteNumber: 64</span>, <span class='argstr'>velo: 64</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-startOctave' href='./../Overviews/Methods.html#startOctave'>startOctave</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-storeArgs' href='./../Overviews/Methods.html#storeArgs'>storeArgs</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-unPressAll' href='./../Overviews/Methods.html#unPressAll'>unPressAll</a> (<span class='argstr'>velo: 64</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-unPressKey' href='./../Overviews/Methods.html#unPressKey'>unPressKey</a> (<span class='argstr'>key</span>, <span class='argstr'>velo</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-unPressNote' href='./../Overviews/Methods.html#unPressNote'>unPressNote</a> (<span class='argstr'>noteNumber: 64</span>, <span class='argstr'>velo: 64</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-upAction' href='./../Overviews/Methods.html#upAction'>upAction</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-upAction' href='./../Overviews/Methods.html#upAction'>upAction</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-userView' href='./../Overviews/Methods.html#userView'>userView</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-window' href='./../Overviews/Methods.html#window'>window</a> </h3>
+<h2><a class='anchor' name='Help template'>Help template</a></h2>
+
+<p>Copy and paste the text below and save to HelpSource/Classes/KeyboardWindow.schelp<pre class='code prettyprint lang-sc'>TITLE:: KeyboardWindow
+summary:: (put short description here)
+categories:: Undocumented classes
+related:: Classes/SomeRelatedClass, Reference/SomeRelatedStuff, etc.
+
+DESCRIPTION::
+(put long description here)
+
+
+CLASSMETHODS::
+
+METHOD:: allWindows
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: scale
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: pressNote
+(describe method here)
+
+ARGUMENT:: noteNumber
+(describe argument here)
+
+ARGUMENT:: velo
+(describe argument here)
+
+ARGUMENT:: channel
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: initClass
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: unPressNote
+(describe method here)
+
+ARGUMENT:: noteNumber
+(describe argument here)
+
+ARGUMENT:: velo
+(describe argument here)
+
+ARGUMENT:: channel
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: blackKeysStructure
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: new
+(describe method here)
+
+ARGUMENT:: nKeys
+(describe argument here)
+
+ARGUMENT:: startOctave
+(describe argument here)
+
+ARGUMENT:: channel
+(describe argument here)
+
+ARGUMENT:: bounds
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: unPressAll
+(describe method here)
+
+ARGUMENT:: velo
+(describe argument here)
+
+ARGUMENT:: channel
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+
+INSTANCEMETHODS::
+
+METHOD:: upAction
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: startOctave
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: notesDict
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: activeNotes
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: activeKeys
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: bounds
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: nKeys
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: channel
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: unPressNote
+(describe method here)
+
+ARGUMENT:: noteNumber
+(describe argument here)
+
+ARGUMENT:: velo
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: newWindow
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: hold
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: lastVelo
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: userView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: downAction
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: pressNote
+(describe method here)
+
+ARGUMENT:: noteNumber
+(describe argument here)
+
+ARGUMENT:: velo
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: unPressKey
+(describe method here)
+
+ARGUMENT:: key
+(describe argument here)
+
+ARGUMENT:: velo
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: storeArgs
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: pressKey
+(describe method here)
+
+ARGUMENT:: key
+(describe argument here)
+
+ARGUMENT:: velo
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: window
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: unPressAll
+(describe method here)
+
+ARGUMENT:: velo
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+
+EXAMPLES::
+
+code::
+(some example code)
+::
+</pre>
+<div class='doclink'>link::Classes/KeyboardWindow::<br>sc version: 3.5.3</div></div></body></html>

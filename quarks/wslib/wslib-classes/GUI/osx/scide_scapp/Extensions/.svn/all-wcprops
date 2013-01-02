@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/quarks/!svn/ver/2336/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions
+END
+SCWindow-asCode_Cocoa.sc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/quarks/!svn/ver/2038/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/SCWindow-asCode_Cocoa.sc
+END
+extSCWindow-setFont.sc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svnroot/quarks/!svn/ver/1140/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/extSCWindow-setFont.sc
+END
+extSCImage-drawBackground.sc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/quarks/!svn/ver/2336/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/extSCImage-drawBackground.sc
+END
+SCView-multiNew_Cocoa.sc
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svnroot/quarks/!svn/ver/1140/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/SCView-multiNew_Cocoa.sc
+END

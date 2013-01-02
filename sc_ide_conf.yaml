@@ -1,0 +1,12 @@
+IDE:
+  mainWindow:
+    detached: !QVariantMap
+      documents-dock: ""
+      help-dock: ""
+      post-dock: ""
+    geometry: AdnQywABAAAAAAH/AAAAugAACX4AAAVPAAAB/wAAANAAAAV+AAAD7wAAAAACAA==
+    state: AAAA/wAAAAD9AAAAAgAAAAAAAAAAAAAAAPwCAAAAAfsAAAAcAGQAbwBjAHUAbQBlAG4AdABzAC0AZABvAGMAawAAAAAA/////wAAAGYA////AAAAAQAAAmsAAARo/AIAAAAC+wAAABIAaABlAGwAcAAtAGQAbwBjAGsBAAAAAAAAAwsAAABMAP////sAAAASAHAAbwBzAHQALQBkAG8AYwBrAQAAAwwAAAFcAAAATAD///8AAAUUAAAEaAAAAAEAAAACAAAAAQAAAAL8AAAAAA==
+  postWindow:
+    lineWrap: false
+  recentDocuments: !QVariantList
+    []

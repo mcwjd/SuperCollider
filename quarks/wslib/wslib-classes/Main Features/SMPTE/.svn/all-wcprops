@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/quarks/!svn/ver/1411/wslib/wslib-classes/Main%20Features/SMPTE
+END
+SMPTEView.sc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/quarks/!svn/ver/1411/wslib/wslib-classes/Main%20Features/SMPTE/SMPTEView.sc
+END
+extVarious-asSMPTE.sc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/SMPTE/extVarious-asSMPTE.sc
+END
+SMPTE.sc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/quarks/!svn/ver/747/wslib/wslib-classes/Main%20Features/SMPTE/SMPTE.sc
+END
+extDate-fromSMPTE.sc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/SMPTE/extDate-fromSMPTE.sc
+END
+extNumber-asSMPTEString.sc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/SMPTE/extNumber-asSMPTEString.sc
+END

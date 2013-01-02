@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/quarks/!svn/ver/2492/wslib/wslib-classes/GUI/Drawing
+END
+PolyLine.sc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/GUI/Drawing/PolyLine.sc
+END
+extPen-arrow.sc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/GUI/Drawing/extPen-arrow.sc
+END
+AxialGradient.sc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/quarks/!svn/ver/1190/wslib/wslib-classes/GUI/Drawing/AxialGradient.sc
+END
+extPen-transformToRect.sc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/quarks/!svn/ver/1704/wslib/wslib-classes/GUI/Drawing/extPen-transformToRect.sc
+END
+RoundedRect.sc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/1107/wslib/wslib-classes/GUI/Drawing/RoundedRect.sc
+END
+extPen-addCurve.sc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/quarks/!svn/ver/716/wslib/wslib-classes/GUI/Drawing/extPen-addCurve.sc
+END
+extPen-roundedRect.sc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/quarks/!svn/ver/1772/wslib/wslib-classes/GUI/Drawing/extPen-roundedRect.sc
+END
+extColor-jset.sc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/GUI/Drawing/extColor-jset.sc
+END
+extRect-transformations.sc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/GUI/Drawing/extRect-transformations.sc
+END
+DrawIcon.sc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/quarks/!svn/ver/2492/wslib/wslib-classes/GUI/Drawing/DrawIcon.sc
+END
+extEnv-asPolyLine.sc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/GUI/Drawing/extEnv-asPolyLine.sc
+END
+extDrawIcon.sc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/GUI/Drawing/extDrawIcon.sc
+END
+extRect-rotate.sc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/quarks/!svn/ver/1107/wslib/wslib-classes/GUI/Drawing/extRect-rotate.sc
+END

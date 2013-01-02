@@ -1,0 +1,196 @@
+<html><head><title>Nil</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#Core'>Core</a></div>
+<h1>Nil</h1>
+<div id='summary'>Represents uninitialized data</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Core/<a href='file:///Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Core/Nil.sc'>Nil.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/Object.html">Object</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*new'>new</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-isNil'>isNil</a> </li>
+<li class='toc3'><a href='#-notNil'>notNil</a> </li>
+<li class='toc3'><a href='#-?'>?</a> </li>
+<li class='toc3'><a href='#-??'>??</a> </li>
+<li class='toc3'><a href='#-add'>add</a> </li>
+<li class='toc3'><a href='#-addAll'>addAll</a> </li>
+<li class='toc3'><a href='#-remove'>remove</a> </li>
+<li class='toc3'><a href='#-++'>++</a> </li>
+<li class='toc3'><a href='#-booleanValue'>booleanValue</a> </li>
+<li class='toc3'><a href='#-rate'>rate</a> </li>
+<li class='toc3'><a href='#-numChannels'>numChannels</a> </li>
+<li class='toc3'><a href='#-isPlaying'>isPlaying</a> </li>
+<li class='toc3'><a href='#-dependants'>dependants</a> </li>
+<li class='toc3'><a href='#-transformEvent'>transformEvent</a> </li>
+<li class='toc3'><a href='#-awake'>awake</a> </li>
+<li class='toc3'><a href='#-nextTimeOnGrid'>nextTimeOnGrid</a> </li>
+<li class='toc3'><a href='#-asQuant'>asQuant</a> </li>
+<li class='toc3'><a href='#-matchItem'>matchItem</a> </li>
+<li class='toc3'><a href='#-add'>add</a> </li>
+<li class='toc3'><a href='#-addAll'>addAll</a> </li>
+<li class='toc3'><a href='#-++'>++</a> </li>
+<li class='toc3'><a href='#-asCollection'>asCollection</a> </li>
+<li class='toc3'><a href='#-get'>get</a> </li>
+<li class='toc3'><a href='#-addFunc'>addFunc</a> </li>
+<li class='toc3'><a href='#-removeFunc'>removeFunc</a> </li>
+<li class='toc3'><a href='#-asSpec'>asSpec</a> </li>
+<li class='toc3'><a href='#-handleError'>handleError</a> </li>
+<li class='toc3'><a href='#-push'>push</a> </li>
+<li class='toc3'><a href='#-appendStream'>appendStream</a> </li>
+<li class='toc2'><a href='#Dependancy'>Dependancy</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Other Methods'>Other Methods</a></li>
+<ul class='toc'></ul><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-asArray'>asArray</a> </li>
+<li class='toc3'><a href='#-asBoolean'>asBoolean</a> </li>
+<li class='toc3'><a href='#-asBus'>asBus</a> </li>
+<li class='toc3'><a href='#-ascii'>ascii</a> </li>
+<li class='toc3'><a href='#-asEvent'>asEvent</a> </li>
+<li class='toc3'><a href='#-asFlowView'>asFlowView</a> </li>
+<li class='toc3'><a href='#-asGrid'>asGrid</a> </li>
+<li class='toc3'><a href='#-asGroup'>asGroup</a> </li>
+<li class='toc3'><a href='#-asMIDIInPortUID'>asMIDIInPortUID</a> </li>
+<li class='toc3'><a href='#-asNodeID'>asNodeID</a> </li>
+<li class='toc3'><a href='#-asOSCArgArray'>asOSCArgArray</a> </li>
+<li class='toc3'><a href='#-asPageLayout'>asPageLayout</a> </li>
+<li class='toc3'><a href='#-asRect'>asRect</a> </li>
+<li class='toc3'><a href='#-asTarget'>asTarget</a> </li>
+<li class='toc3'><a href='#-asView'>asView</a> </li>
+<li class='toc3'><a href='#-fontID'>fontID</a> </li>
+<li class='toc3'><a href='#-guiClass'>guiClass</a> </li>
+<li class='toc3'><a href='#-isAlphaNum'>isAlphaNum</a> </li>
+<li class='toc3'><a href='#-replaceFunc'>replaceFunc</a> </li>
+<li class='toc3'><a href='#-schedBundle'>schedBundle</a> </li>
+<li class='toc3'><a href='#-seconds'>seconds</a> </li>
+</ul></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>Nil has a single instance named nil and is used to represent uninitialized data, bad values, or terminal values such as end-of-stream.<h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*new' href='./../Overviews/Methods.html#new'>new</a> </h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-isNil' href='./../Overviews/Methods.html#isNil'>isNil</a> </h3>
+<div class='method'>
+<p>Answers true because this is nil. In class Object this message is defined to answer false.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-notNil' href='./../Overviews/Methods.html#notNil'>notNil</a> </h3>
+<div class='method'>
+<p>Answer false. In class Object this message answers true.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-?' href='./../Overviews/Methods.html#?'>?</a> (<span class='argstr'>obj</span>)</h3>
+<div class='method'>
+<p>return first non-nil argument. Since this IS nil then return anObject. In class <a href="./../Classes/Object.html">Object</a>, ? is defined to answer the receiver.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-??' href='./../Overviews/Methods.html#??'>??</a> (<span class='argstr'>obj</span>)</h3>
+<div class='method'>
+<p>If the receiver is nil, value the function and return the result. Since this IS nil, then value the function and return the result. In class Object, ?? is defined to answer the receiver.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-add' href='./../Overviews/Methods.html#add'>add</a> (<span class='argstr'>value</span>)</h3>
+<div class='method'>
+<p>Returns an array with the value. This makes it unecessary to initialize when adding to a variable.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-addAll' href='./../Overviews/Methods.html#addAll'>addAll</a> (<span class='argstr'>array</span>)</h3>
+<div class='method'>
+<p>Returns an array with all the values. This makes it unecessary to initialize when adding to a variable.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-remove' href='./../Overviews/Methods.html#remove'>remove</a> </h3>
+<div class='method'>
+<p>Returns nil. This makes it unecessary to initialize when adding to a variable.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-++' href='./../Overviews/Methods.html#++'>++</a> (<span class='argstr'>array</span>)</h3>
+<div class='method'>
+<p>Returns an array with all the values. This makes it unecessary to initialize when adding to a variable.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-booleanValue' href='./../Overviews/Methods.html#booleanValue'>booleanValue</a> </h3>
+<div class='method'>
+<p>Returns false.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-rate' href='./../Overviews/Methods.html#rate'>rate</a> </h3>
+<div class='method'>
+<p>Returns nil.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-numChannels' href='./../Overviews/Methods.html#numChannels'>numChannels</a> </h3>
+<div class='method'>
+<p>Returns nil.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-isPlaying' href='./../Overviews/Methods.html#isPlaying'>isPlaying</a> </h3>
+<div class='method'>
+<p>Returns false.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-dependants' href='./../Overviews/Methods.html#dependants'>dependants</a> </h3>
+<div class='method'>
+<p>Returns an empty IdentitySet.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-transformEvent' href='./../Overviews/Methods.html#transformEvent'>transformEvent</a> (<span class='argstr'>event</span>)</h3>
+<div class='method'>
+<p>Return the argument.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-awake' href='./../Overviews/Methods.html#awake'>awake</a> (<span class='argstr'>inBeats</span>, <span class='argstr'>inSeconds</span>, <span class='argstr'>inClock</span>)</h3>
+<div class='method'>
+<p>Returns nil.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-nextTimeOnGrid' href='./../Overviews/Methods.html#nextTimeOnGrid'>nextTimeOnGrid</a> (<span class='argstr'>clock</span>)</h3>
+<div class='method'>
+<p>Returns clock.nextTimeOnGrid.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-asQuant' href='./../Overviews/Methods.html#asQuant'>asQuant</a> </h3>
+<div class='method'>
+<p>Returns Quant.default.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-matchItem' href='./../Overviews/Methods.html#matchItem'>matchItem</a> </h3>
+<div class='method'>
+<p>Returns true.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-add' href='./../Overviews/Methods.html#add'>add</a> (<span class='argstr'>value</span>)</h3>
+<div class='method'>
+<p>Returns an array with item.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-addAll' href='./../Overviews/Methods.html#addAll'>addAll</a> (<span class='argstr'>array</span>)</h3>
+<div class='method'>
+<p>Returns array.asArray.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-++' href='./../Overviews/Methods.html#++'>++</a> (<span class='argstr'>array</span>)</h3>
+<div class='method'>
+<p>Returns array.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-asCollection' href='./../Overviews/Methods.html#asCollection'>asCollection</a> </h3>
+<div class='method'>
+<p>Returns empty array.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-get' href='./../Overviews/Methods.html#get'>get</a> (<span class='argstr'>prevVal</span>)</h3>
+<div class='method'>
+<p>Returns prevVal.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-addFunc' href='./../Overviews/Methods.html#addFunc'>addFunc</a> ( <span class='argstr'>... functions</span>)</h3>
+<div class='method'>
+<p>Returns the function or a FunctionList.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-removeFunc' href='./../Overviews/Methods.html#removeFunc'>removeFunc</a> </h3>
+<div class='method'>
+<p>Returns Nil.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-asSpec' href='./../Overviews/Methods.html#asSpec'>asSpec</a> </h3>
+<div class='method'>
+<p>Returns the default ControlSpec</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-handleError' href='./../Overviews/Methods.html#handleError'>handleError</a> (<span class='argstr'>error</span>)</h3>
+<div class='method'>
+<p>Either report error or inspect error and halt execution.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-push' href='./../Overviews/Methods.html#push'>push</a> (<span class='argstr'>function</span>)</h3>
+<div class='method'>
+<p>Executes function.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-appendStream' href='./../Overviews/Methods.html#appendStream'>appendStream</a> (<span class='argstr'>stream</span>)</h3>
+<div class='method'>
+<p>Retuns stream.</div><h3><a class='anchor' name='Dependancy'>Dependancy</a></h3>
+
+<p>All the messages for the Dependancy protocol (See class <a href="./../Classes/Object.html">Object</a>) are defined in class Nil to do nothing. This eliminates the need to check for nil when sending dependancy messages.<h3><a class='anchor' name='Other Methods'>Other Methods</a></h3>
+
+<p>Many other messages are defined in class Nil to do nothing. This eliminates the need to check for nil.<h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asArray' href='./../Overviews/Methods.html#asArray'>asArray</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/PlusGUI/Core/NilPlusGUI.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/PlusGUI/Core/NilPlusGUI.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asBoolean' href='./../Overviews/Methods.html#asBoolean'>asBoolean</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asBus' href='./../Overviews/Methods.html#asBus'>asBus</a> (<span class='argstr'>rate</span>, <span class='argstr'>numChannels: 1</span>, <span class='argstr'>server</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Control/asBus.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Control/asBus.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-ascii' href='./../Overviews/Methods.html#ascii'>ascii</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Platform/osx/AutoComplete/AutocompleteExtensions.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Platform/osx/AutoComplete/AutocompleteExtensions.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asEvent' href='./../Overviews/Methods.html#asEvent'>asEvent</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Streams/Rest.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Streams/Rest.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asFlowView' href='./../Overviews/Methods.html#asFlowView'>asFlowView</a> (<span class='argstr'>bounds</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/guicrucial/gui.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/guicrucial/gui.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asGrid' href='./../Overviews/Methods.html#asGrid'>asGrid</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/Grid.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/Grid.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asGroup' href='./../Overviews/Methods.html#asGroup'>asGroup</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Control/asGroup.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Control/asGroup.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asMIDIInPortUID' href='./../Overviews/Methods.html#asMIDIInPortUID'>asMIDIInPortUID</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Control/asMIDIPort.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Control/asMIDIPort.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asNodeID' href='./../Overviews/Methods.html#asNodeID'>asNodeID</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Control/asTarget.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Control/asTarget.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asOSCArgArray' href='./../Overviews/Methods.html#asOSCArgArray'>asOSCArgArray</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/backwards_compatibility/extMethods.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/backwards_compatibility/extMethods.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asPageLayout' href='./../Overviews/Methods.html#asPageLayout'>asPageLayout</a> (<span class='argstr'>name</span>, <span class='argstr'>bounds</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/guicrucial/gui.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/guicrucial/gui.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asRect' href='./../Overviews/Methods.html#asRect'>asRect</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/PlusGUI/Core/NilPlusGUI.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/PlusGUI/Core/NilPlusGUI.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asTarget' href='./../Overviews/Methods.html#asTarget'>asTarget</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Control/asTarget.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Control/asTarget.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asView' href='./../Overviews/Methods.html#asView'>asView</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/PlusGUI/Core/NilPlusGUI.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/PlusGUI/Core/NilPlusGUI.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-fontID' href='./../Overviews/Methods.html#fontID'>fontID</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/deprecated/deprecated-3.5.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/deprecated/deprecated-3.5.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-guiClass' href='./../Overviews/Methods.html#guiClass'>guiClass</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/guicrucial/gui.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/guicrucial/gui.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-isAlphaNum' href='./../Overviews/Methods.html#isAlphaNum'>isAlphaNum</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Platform/osx/AutoComplete/AutocompleteExtensions.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Platform/osx/AutoComplete/AutocompleteExtensions.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-replaceFunc' href='./../Overviews/Methods.html#replaceFunc'>replaceFunc</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-schedBundle' href='./../Overviews/Methods.html#schedBundle'>schedBundle</a> (<span class='argstr'>bundle</span>, <span class='argstr'>server</span>, <span class='argstr'>timeOfRequest</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Control/schedBundle.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Control/schedBundle.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-seconds' href='./../Overviews/Methods.html#seconds'>seconds</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-seconds' href='./../Overviews/Methods.html#seconds'>seconds</a> = </h3>
+<div class='doclink'>source: <a href='file:///Applications/SuperCollider/SuperCollider.app/Contents/Resources/HelpSource/Classes/Nil.schelp'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/HelpSource/Classes/Nil.schelp</a><br>link::Classes/Nil::<br>sc version: 3.5.3</div></div></body></html>

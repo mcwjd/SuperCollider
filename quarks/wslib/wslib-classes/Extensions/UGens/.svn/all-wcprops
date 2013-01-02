@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/quarks/!svn/ver/2387/wslib/wslib-classes/Extensions/UGens
+END
+LagSelectX.sc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/quarks/!svn/ver/2382/wslib/wslib-classes/Extensions/UGens/LagSelectX.sc
+END
+PlayBufCF.sc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/quarks/!svn/ver/2382/wslib/wslib-classes/Extensions/UGens/PlayBufCF.sc
+END
+SoftKneeCompressor.sc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/quarks/!svn/ver/1859/wslib/wslib-classes/Extensions/UGens/SoftKneeCompressor.sc
+END
+Unwrap.sc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/1847/wslib/wslib-classes/Extensions/UGens/Unwrap.sc
+END
+extArray-Rotation.sc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/quarks/!svn/ver/1847/wslib/wslib-classes/Extensions/UGens/extArray-Rotation.sc
+END
+Rotation.sc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/quarks/!svn/ver/2292/wslib/wslib-classes/Extensions/UGens/Rotation.sc
+END
+Siren.sc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/quarks/!svn/ver/1847/wslib/wslib-classes/Extensions/UGens/Siren.sc
+END
+MaxItem.sc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/1847/wslib/wslib-classes/Extensions/UGens/MaxItem.sc
+END
+RemoveBadValues.sc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/quarks/!svn/ver/2387/wslib/wslib-classes/Extensions/UGens/RemoveBadValues.sc
+END
+SortedRand.sc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/quarks/!svn/ver/2381/wslib/wslib-classes/Extensions/UGens/SortedRand.sc
+END
+PulseTrain.sc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/quarks/!svn/ver/1847/wslib/wslib-classes/Extensions/UGens/PulseTrain.sc
+END
+XFadeDelay.sc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/quarks/!svn/ver/1847/wslib/wslib-classes/Extensions/UGens/XFadeDelay.sc
+END
+Atan2Osc.sc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/quarks/!svn/ver/1847/wslib/wslib-classes/Extensions/UGens/Atan2Osc.sc
+END

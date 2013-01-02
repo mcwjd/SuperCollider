@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/quarks/!svn/ver/1992/wslib/wslib-classes/Extensions/String
+END
+extString-couldBeNumber.sc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Extensions/String/extString-couldBeNumber.sc
+END
+digit2roman.sc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/quarks/!svn/ver/1081/wslib/wslib-classes/Extensions/String/digit2roman.sc
+END
+extString-collection.sc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/quarks/!svn/ver/929/wslib/wslib-classes/Extensions/String/extString-collection.sc
+END
+extString-findReplace.sc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Extensions/String/extString-findReplace.sc
+END
+asStringWithFrac.sc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/quarks/!svn/ver/1298/wslib/wslib-classes/Extensions/String/asStringWithFrac.sc
+END
+ParsedString.sc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/quarks/!svn/ver/1847/wslib/wslib-classes/Extensions/String/ParsedString.sc
+END
+extString-boundsM9.sc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/quarks/!svn/ver/1411/wslib/wslib-classes/Extensions/String/extString-boundsM9.sc
+END
+extString-curl.sc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/quarks/!svn/ver/1992/wslib/wslib-classes/Extensions/String/extString-curl.sc
+END

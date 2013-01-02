@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/quarks/!svn/ver/1896/wslib/wslib-classes/Main%20Features/File%20management
+END
+extString-nameconversion.sc
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/File%20management/extString-nameconversion.sc
+END
+extString-appleScript.sc
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/quarks/!svn/ver/930/wslib/wslib-classes/Main%20Features/File%20management/extString-appleScript.sc
+END
+extString-getPathsInDirectory.sc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/File%20management/extString-getPathsInDirectory.sc
+END
+extString-revealInFinder.sc
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/quarks/!svn/ver/930/wslib/wslib-classes/Main%20Features/File%20management/extString-revealInFinder.sc
+END
+extString-deStandardizePath.sc
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/File%20management/extString-deStandardizePath.sc
+END
+extFile-WesleyanCheck.sc
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/File%20management/extFile-WesleyanCheck.sc
+END
+FileSystem.sc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/File%20management/FileSystem.sc
+END
+extFile-tgzSC.sc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/File%20management/extFile-tgzSC.sc
+END
+extString-imagefiles.sc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/File%20management/extString-imagefiles.sc
+END
+extString-asSSHCmd.sc
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/quarks/!svn/ver/930/wslib/wslib-classes/Main%20Features/File%20management/extString-asSSHCmd.sc
+END
+extFile-checkDo.sc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/File%20management/extFile-checkDo.sc
+END
+extString-asciiCorrect.sc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/quarks/!svn/ver/1896/wslib/wslib-classes/Main%20Features/File%20management/extString-asciiCorrect.sc
+END
+extPathName-realNextName.sc
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/File%20management/extPathName-realNextName.sc
+END
+FolderLibrary.sc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/File%20management/FolderLibrary.sc
+END
+extString-fileManagement.sc
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/File%20management/extString-fileManagement.sc
+END

@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svnroot/quarks/!svn/ver/2486/wslib/wslib-classes/GUI/Views
+END
+extObject-decorate.sc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/quarks/!svn/ver/1591/wslib/wslib-classes/GUI/Views/extObject-decorate.sc
+END
+EZSmoothSlider.sc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/1783/wslib/wslib-classes/GUI/Views/EZSmoothSlider.sc
+END
+SmoothSlider.sc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/quarks/!svn/ver/2327/wslib/wslib-classes/GUI/Views/SmoothSlider.sc
+END
+RoundView.sc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/quarks/!svn/ver/2327/wslib/wslib-classes/GUI/Views/RoundView.sc
+END
+LineView.sc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/quarks/!svn/ver/2486/wslib/wslib-classes/GUI/Views/LineView.sc
+END
+SmoothScrollView.sc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/quarks/!svn/ver/2372/wslib/wslib-classes/GUI/Views/SmoothScrollView.sc
+END
+RoundButton.sc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2327/wslib/wslib-classes/GUI/Views/RoundButton.sc
+END
+SmoothRangeSlider.sc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/quarks/!svn/ver/2012/wslib/wslib-classes/GUI/Views/SmoothRangeSlider.sc
+END
+ViewHolder2.sc
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/1506/wslib/wslib-classes/GUI/Views/ViewHolder2.sc
+END
+XYView.sc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/quarks/!svn/ver/1845/wslib/wslib-classes/GUI/Views/XYView.sc
+END
+WaitView.sc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/quarks/!svn/ver/1692/wslib/wslib-classes/GUI/Views/WaitView.sc
+END
+SMPTEBox.sc
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/quarks/!svn/ver/1996/wslib/wslib-classes/GUI/Views/SMPTEBox.sc
+END
+UserViewHolder.sc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/2327/wslib/wslib-classes/GUI/Views/UserViewHolder.sc
+END
+EZSmoothRanger.sc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/1992/wslib/wslib-classes/GUI/Views/EZSmoothRanger.sc
+END
+RoundNumberBox.sc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/2327/wslib/wslib-classes/GUI/Views/RoundNumberBox.sc
+END
+ExpandView.sc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/quarks/!svn/ver/2164/wslib/wslib-classes/GUI/Views/ExpandView.sc
+END

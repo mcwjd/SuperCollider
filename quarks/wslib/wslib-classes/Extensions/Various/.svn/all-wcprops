@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/quarks/!svn/ver/2310/wslib/wslib-classes/Extensions/Various
+END
+extSoundFile-splitChannels.sc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Extensions/Various/extSoundFile-splitChannels.sc
+END
+Main-monitorOSC.sc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/quarks/!svn/ver/2057/wslib/wslib-classes/Extensions/Various/Main-monitorOSC.sc
+END
+extSynthdef-record.sc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Extensions/Various/extSynthdef-record.sc
+END
+extPoint-variousOps.sc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/quarks/!svn/ver/2310/wslib/wslib-classes/Extensions/Various/extPoint-variousOps.sc
+END
+OneShotController.sc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/quarks/!svn/ver/1544/wslib/wslib-classes/Extensions/Various/OneShotController.sc
+END
+ActionFunc.sc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/quarks/!svn/ver/1866/wslib/wslib-classes/Extensions/Various/ActionFunc.sc
+END
+extTempoClock-bigNew.sc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Extensions/Various/extTempoClock-bigNew.sc
+END
+extBoolean-asUGenInput.sc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/quarks/!svn/ver/2221/wslib/wslib-classes/Extensions/Various/extBoolean-asUGenInput.sc
+END
+extUgen-blend.sc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/quarks/!svn/ver/1692/wslib/wslib-classes/Extensions/Various/extUgen-blend.sc
+END
+extUgen-fadein.sc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/quarks/!svn/ver/1994/wslib/wslib-classes/Extensions/Various/extUgen-fadein.sc
+END
+extNumber-!-.sc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/quarks/!svn/ver/1298/wslib/wslib-classes/Extensions/Various/extNumber-!-.sc
+END
+MasterSplay.sc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/quarks/!svn/ver/1847/wslib/wslib-classes/Extensions/Various/MasterSplay.sc
+END
+extNumber-speedOfSound.sc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/quarks/!svn/ver/1190/wslib/wslib-classes/Extensions/Various/extNumber-speedOfSound.sc
+END
+extScore-playAsTask.sc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Extensions/Various/extScore-playAsTask.sc
+END
+extObject-onChange.sc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/quarks/!svn/ver/1850/wslib/wslib-classes/Extensions/Various/extObject-onChange.sc
+END
+extBuffer-checkFree.sc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/quarks/!svn/ver/930/wslib/wslib-classes/Extensions/Various/extBuffer-checkFree.sc
+END
+SegWarp.sc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/quarks/!svn/ver/1968/wslib/wslib-classes/Extensions/Various/SegWarp.sc
+END
+extSynth-sched.sc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/quarks/!svn/ver/1896/wslib/wslib-classes/Extensions/Various/extSynth-sched.sc
+END

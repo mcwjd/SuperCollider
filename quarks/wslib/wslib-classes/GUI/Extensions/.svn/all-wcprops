@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/quarks/!svn/ver/2486/wslib/wslib-classes/GUI/Extensions
+END
+Color-test.sc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/930/wslib/wslib-classes/GUI/Extensions/Color-test.sc
+END
+extServer-makeView.sc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/quarks/!svn/ver/2486/wslib/wslib-classes/GUI/Extensions/extServer-makeView.sc
+END
+extGradient-fill.sc
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/quarks/!svn/ver/2335/wslib/wslib-classes/GUI/Extensions/extGradient-fill.sc
+END
+extSCView-multiNew.sc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/quarks/!svn/ver/768/wslib/wslib-classes/GUI/Extensions/extSCView-multiNew.sc
+END
+extSynthdef-fastgui.sc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/GUI/Extensions/extSynthdef-fastgui.sc
+END
+extSCUserView-drawBounds.sc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/quarks/!svn/ver/2306/wslib/wslib-classes/GUI/Extensions/extSCUserView-drawBounds.sc
+END
+extColor-web.sc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/quarks/!svn/ver/929/wslib/wslib-classes/GUI/Extensions/extColor-web.sc
+END
+extSCWindow-asCode.sc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/quarks/!svn/ver/768/wslib/wslib-classes/GUI/Extensions/extSCWindow-asCode.sc
+END

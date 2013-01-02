@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/quarks/!svn/ver/1506/wslib/wslib-classes/Extensions/Collection
+END
+extCollection-detectAll.sc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Extensions/Collection/extCollection-detectAll.sc
+END
+extCollection-asPerformDict.sc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Extensions/Collection/extCollection-asPerformDict.sc
+END
+extCollection-normalize2.sc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Extensions/Collection/extCollection-normalize2.sc
+END
+extNumber-breakUp.sc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Extensions/Collection/extNumber-breakUp.sc
+END
+extCollection-histDo.sc
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Extensions/Collection/extCollection-histDo.sc
+END
+extCollection-unwrap.sc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/quarks/!svn/ver/1506/wslib/wslib-classes/Extensions/Collection/extCollection-unwrap.sc
+END
+extCollection-firstIfSizeIsOne.sc
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Extensions/Collection/extCollection-firstIfSizeIsOne.sc
+END

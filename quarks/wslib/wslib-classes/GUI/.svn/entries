@@ -1,0 +1,123 @@
+10
+
+dir
+2497
+https://quarks.svn.sourceforge.net/svnroot/quarks/wslib/wslib-classes/GUI
+https://quarks.svn.sourceforge.net/svnroot/quarks
+
+
+
+2012-11-13T10:12:18.191638Z
+2492
+wsnoei
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fa718440-f913-0410-aee0-f13028b3a0f0
+
+Extensions
+dir
+
+ColPen
+dir
+
+Plotting
+dir
+
+MIDI
+dir
+
+ScaledUserView
+dir
+
+AbsLayout.sc
+file
+
+
+
+
+2012-11-23T01:16:06.000000Z
+ad6695428a2727c5d9fc03150ddaa020
+2010-06-15T13:09:23.009160Z
+1544
+wsnoei
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1059
+
+osx
+dir
+
+Drawing
+dir
+
+ModKey.sc
+file
+
+
+
+
+2012-11-23T01:16:06.000000Z
+0f3c31ed92d4351363936fef999b6502
+2009-06-25T11:37:43.559458Z
+1081
+wsnoei
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4999
+
+Full windows
+dir
+
+Views
+dir
+

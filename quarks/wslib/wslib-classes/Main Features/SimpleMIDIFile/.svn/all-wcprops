@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/quarks/!svn/ver/2222/wslib/wslib-classes/Main%20Features/SimpleMIDIFile
+END
+extSimpleMIDIFile-patterns.sc
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/quarks/!svn/ver/1799/wslib/wslib-classes/Main%20Features/SimpleMIDIFile/extSimpleMIDIFile-patterns.sc
+END
+SimpleMIDIFile.sc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/quarks/!svn/ver/2222/wslib/wslib-classes/Main%20Features/SimpleMIDIFile/SimpleMIDIFile.sc
+END
+extSimpleMIDIFile-asEvents.sc
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/SimpleMIDIFile/extSimpleMIDIFile-asEvents.sc
+END
+extSimpleMIDIFile-checkWrite.sc
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/SimpleMIDIFile/extSimpleMIDIFile-checkWrite.sc
+END
+extSimpleMIDIFile-plot.sc
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/quarks/!svn/ver/1081/wslib/wslib-classes/Main%20Features/SimpleMIDIFile/extSimpleMIDIFile-plot.sc
+END
+MIDIEventRecorder.sc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Main%20Features/SimpleMIDIFile/MIDIEventRecorder.sc
+END

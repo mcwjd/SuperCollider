@@ -1,0 +1,1257 @@
+2
+[[UGens]]
+	19
+	[[Envelopes]]
+		6
+		Line
+		
+		EnvGen
+		
+		DemandEnvGen
+		
+		XLine
+		
+		IEnvGen
+		
+		Linen
+		
+	[[Filters]]
+		3
+		[[Pitch]]
+			3
+			PitchShift
+			
+			FreqShift
+			
+			Vibrato
+			
+		[[Nonlinear]]
+			10
+			Ball
+			
+			FreqShift
+			
+			HilbertFIR
+			
+			MantissaMask
+			
+			TBall
+			
+			Hasher
+			
+			Median
+			
+			Slew
+			
+			Hilbert
+			
+			Spring
+			
+		[[Linear]]
+			50
+			LPF
+			
+			SOS
+			
+			LeakDC
+			
+			BLowShelf
+			
+			MidEQ
+			
+			VarLag
+			
+			Lag3
+			
+			BAllPass
+			
+			BBandPass
+			
+			BBandStop
+			
+			OnePole
+			
+			Lag2
+			
+			HPF
+			
+			APF
+			
+			Decay2
+			
+			BRF
+			
+			Formlet
+			
+			BPZ2
+			
+			RHPF
+			
+			TwoPole
+			
+			BLowPass
+			
+			RLPF
+			
+			BRZ2
+			
+			TwoZero
+			
+			Changed
+			
+			Integrator
+			
+			Ramp
+			
+			MoogFF
+			
+			Decay
+			
+			Ringz
+			
+			Lag2UD
+			
+			BPeakEQ
+			
+			OneZero
+			
+			BEQSuite
+			
+			Lag
+			
+			Resonz
+			
+			Klank
+			
+			HPZ1
+			
+			LPZ1
+			
+			BPF
+			
+			Slope
+			
+			FOS
+			
+			DynKlank
+			
+			Klang
+			
+			HPZ2
+			
+			BHiPass
+			
+			BHiShelf
+			
+			LagUD
+			
+			Lag3UD
+			
+			LPZ2
+			
+	[[Demand]]
+		26
+		Diwhite
+		
+		DUGen
+		
+		Dser
+		
+		Dreset
+		
+		Dstutter
+		
+		Drand
+		
+		Demand
+		
+		DemandEnvGen
+		
+		Dwhite
+		
+		Dbrown
+		
+		Duty
+		
+		Dswitch1
+		
+		TDuty
+		
+		Dshuf
+		
+		Donce
+		
+		Dswitch
+		
+		ListDUGen
+		
+		Dibrown
+		
+		Dwrand
+		
+		Dpoll
+		
+		Dxrand
+		
+		Dbufwr
+		
+		Dseries
+		
+		Dgeom
+		
+		Dbufrd
+		
+		Dseq
+		
+	[[Synth control]]
+		12
+		PauseSelfWhenDone
+		
+		FreeSelf
+		
+		Done
+		
+		Control
+		
+		TrigControl
+		
+		Free
+		
+		FreeSelfWhenDone
+		
+		Pause
+		
+		DetectSilence
+		
+		AudioControl
+		
+		PauseSelf
+		
+		LagControl
+		
+	[[Maths]]
+		15
+		InRange
+		
+		Fold
+		
+		LinLin
+		
+		Schmidt
+		
+		LeastChange
+		
+		RunningMax
+		
+		Integrator
+		
+		RunningMin
+		
+		InRect
+		
+		RunningSum
+		
+		Slope
+		
+		LinExp
+		
+		Clip
+		
+		MostChange
+		
+		Wrap
+		
+	[[Generators]]
+		5
+		[[Chaotic]]
+			23
+			FBSineL
+			
+			LatoocarfianC
+			
+			HenonC
+			
+			FBSineC
+			
+			CuspN
+			
+			LinCongL
+			
+			HenonN
+			
+			CuspL
+			
+			LatoocarfianL
+			
+			QuadL
+			
+			HenonL
+			
+			Logistic
+			
+			LinCongN
+			
+			GbmanN
+			
+			LatoocarfianN
+			
+			LinCongC
+			
+			LorenzL
+			
+			FBSineN
+			
+			GbmanL
+			
+			QuadC
+			
+			StandardL
+			
+			QuadN
+			
+			StandardN
+			
+		[[Single-value]]
+			7
+			IRand
+			
+			Silent
+			
+			NRand
+			
+			Rand
+			
+			ExpRand
+			
+			LinRand
+			
+			DC
+			
+		[[Deterministic]]
+			28
+			Formant
+			
+			Impulse
+			
+			LFTri
+			
+			IndexL
+			
+			Pulse
+			
+			PSinGrain
+			
+			Blip
+			
+			FSinOsc
+			
+			DynKlang
+			
+			SinOsc
+			
+			PMOsc
+			
+			VOsc3
+			
+			VarSaw
+			
+			LFSaw
+			
+			SinOscFB
+			
+			Klank
+			
+			Osc
+			
+			DynKlank
+			
+			Pluck
+			
+			Klang
+			
+			COsc
+			
+			LFPar
+			
+			VOsc
+			
+			LFPulse
+			
+			LFCub
+			
+			Saw
+			
+			OscN
+			
+			SyncSaw
+			
+		[[Granular]]
+			6
+			Warp1
+			
+			GrainIn
+			
+			GrainBuf
+			
+			GrainSin
+			
+			TGrains
+			
+			GrainFM
+			
+		[[Stochastic]]
+			32
+			Dust
+			
+			IRand
+			
+			BrownNoise
+			
+			LFClipNoise
+			
+			PinkNoise
+			
+			LFDNoise1
+			
+			LFDClipNoise
+			
+			TWindex
+			
+			RandSeed
+			
+			RandID
+			
+			ClipNoise
+			
+			GrayNoise
+			
+			Dust2
+			
+			TExpRand
+			
+			Gendy2
+			
+			CoinGate
+			
+			Gendy1
+			
+			TRand
+			
+			WhiteNoise
+			
+			LFDNoise3
+			
+			LFDNoise0
+			
+			LFNoise2
+			
+			ExpRand
+			
+			LinRand
+			
+			TIRand
+			
+			LFGauss
+			
+			NRand
+			
+			Rand
+			
+			Gendy3
+			
+			Crackle
+			
+			LFNoise0
+			
+			LFNoise1
+			
+	[[Info]]
+		14
+		NumBuffers
+		
+		ControlRate
+		
+		ControlDur
+		
+		NumInputBuses
+		
+		SampleDur
+		
+		NumRunningSynths
+		
+		Poll
+		
+		NumAudioBuses
+		
+		RadiansPerSample
+		
+		NumOutputBuses
+		
+		SubsampleOffset
+		
+		NumControlBuses
+		
+		CheckBadValues
+		
+		SampleRate
+		
+	[[InOut]]
+		16
+		SharedOut
+		
+		InTrig
+		
+		ReplaceOut
+		
+		VDiskIn
+		
+		OffsetOut
+		
+		DiskIn
+		
+		LocalIn
+		
+		LocalOut
+		
+		LagIn
+		
+		Out
+		
+		AudioIn
+		
+		XOut
+		
+		In
+		
+		InFeedback
+		
+		DiskOut
+		
+		SharedIn
+		
+	[[Delays]]
+		21
+		DelayC
+		
+		BufDelayN
+		
+		BufCombN
+		
+		CombL
+		
+		AllpassC
+		
+		BufAllpassC
+		
+		BufDelayL
+		
+		BufCombC
+		
+		BufAllpassN
+		
+		BufAllpassL
+		
+		TDelay
+		
+		Delay1
+		
+		Delay2
+		
+		AllpassL
+		
+		BufCombL
+		
+		CombC
+		
+		CombN
+		
+		AllpassN
+		
+		BufDelayC
+		
+		DelayL
+		
+		DelayN
+		
+	[[Unclassified]]
+		13
+		PanAz
+		
+		XFade2
+		
+		LinPan2
+		
+		Pan4
+		
+		WidthFirstUGen
+		
+		DelTapRd
+		
+		Pan2
+		
+		LinXFade2
+		
+		Dunique
+		
+		ScopeOut2
+		
+		DelTapWr
+		
+		Balance2
+		
+		SendPeakRMS
+		
+	[[Analysis]]
+		9
+		[[Pitch]]
+			3
+			KeyTrack
+			
+			Pitch
+			
+			ZeroCrossing
+			
+		BeatTrack2
+		
+		[[Amplitude]]
+			11
+			AmpComp
+			
+			PeakFollower
+			
+			AmpCompA
+			
+			Limiter
+			
+			Loudness
+			
+			Compander
+			
+			Amplitude
+			
+			DetectSilence
+			
+			Normalizer
+			
+			CompanderD
+			
+			Peak
+			
+		SpecFlatness
+		
+		BeatTrack
+		
+		MFCC
+		
+		SpecPcile
+		
+		Onsets
+		
+		SpecCentroid
+		
+	[[User interaction]]
+		4
+		MouseButton
+		
+		KeyState
+		
+		MouseY
+		
+		MouseX
+		
+	[[Multichannel]]
+		3
+		[[Select]]
+			6
+			LinSelectX
+			
+			Select
+			
+			SelectX
+			
+			XFade
+			
+			SelectXFocus
+			
+			TWChoose
+			
+		[[Panners]]
+			2
+			Panner
+			
+			Rotate2
+			
+		[[Ambisonics]]
+			5
+			DecodeB2
+			
+			PanB2
+			
+			PanB
+			
+			BiPanB2
+			
+			Rotate2
+			
+	[[Reverbs]]
+		3
+		FreeVerb2
+		
+		FreeVerb
+		
+		GVerb
+		
+	[[MachineListening]]
+		1
+		Pitch
+		
+	[[FFT]]
+		52
+		IFFT
+		
+		PV_MagFreeze
+		
+		PV_MagNoise
+		
+		PV_Add
+		
+		PV_CopyPhase
+		
+		PV_Div
+		
+		PV_Conj
+		
+		PV_MagShift
+		
+		PV_JensenAndersen
+		
+		PV_RandWipe
+		
+		FFTTrigger
+		
+		PackFFT
+		
+		PV_MagSquared
+		
+		PV_ChainUGen
+		
+		PV_Diffuser
+		
+		PV_MagBelow
+		
+		BeatTrack
+		
+		PV_BrickWall
+		
+		PV_PhaseShift
+		
+		PV_RectComb2
+		
+		PV_RandComb
+		
+		Unpack1FFT
+		
+		PV_Max
+		
+		PV_BinWipe
+		
+		PV_ConformalMap
+		
+		PV_MagSmear
+		
+		PV_PhaseShift90
+		
+		Convolution3
+		
+		Convolution
+		
+		PV_Copy
+		
+		SpecPcile
+		
+		BeatTrack2
+		
+		PV_BinScramble
+		
+		PV_BinShift
+		
+		Convolution2
+		
+		PV_LocalMax
+		
+		PV_HainsworthFoote
+		
+		StereoConvolution2L
+		
+		PV_RectComb
+		
+		PV_PhaseShift270
+		
+		FFT
+		
+		PV_MagAbove
+		
+		Convolution2L
+		
+		PartConv
+		
+		SpecFlatness
+		
+		PV_Mul
+		
+		PV_MagMul
+		
+		PV_MagDiv
+		
+		PV_MagClip
+		
+		PV_Min
+		
+		SpecCentroid
+		
+		UnpackFFT
+		
+	[[Conversion]]
+		5
+		A2K
+		
+		K2A
+		
+		T2A
+		
+		T2K
+		
+		DegreeToKey
+		
+	[[Buffer]]
+		22
+		SetBuf
+		
+		Phasor
+		
+		LocalBuf
+		
+		WrapIndex
+		
+		[[Info]]
+			7
+			BufSampleRate
+			
+			BufDur
+			
+			BufRateScale
+			
+			BufChannels
+			
+			BufSamples
+			
+			MaxLocalBufs
+			
+			BufFrames
+			
+		IndexInBetween
+		
+		Shaper
+		
+		ClearBuf
+		
+		BufRd
+		
+		VDiskIn
+		
+		RecordBuf
+		
+		Index
+		
+		DiskIn
+		
+		TGrains
+		
+		DetectIndex
+		
+		Warp1
+		
+		Tap
+		
+		ScopeOut
+		
+		GrainBuf
+		
+		BufWr
+		
+		DiskOut
+		
+		PlayBuf
+		
+	[[Triggers]]
+		16
+		Phasor
+		
+		Stepper
+		
+		LastValue
+		
+		PulseCount
+		
+		SendReply
+		
+		TDelay
+		
+		Latch
+		
+		Gate
+		
+		Trig1
+		
+		Sweep
+		
+		SetResetFF
+		
+		ToggleFF
+		
+		PulseDivider
+		
+		Timer
+		
+		Trig
+		
+		SendTrig
+		
+[[Streams-Patterns-Events]]
+	1
+	[[Patterns]]
+		19
+		[[Composition]]
+			2
+			Pchain
+			
+			Pbindf
+			
+		[[Event]]
+			4
+			PmonoArtic
+			
+			Pbind
+			
+			Pevent
+			
+			Pmono
+			
+		[[Time]]
+			8
+			Pseg
+			
+			Ptime
+			
+			Pstep
+			
+			Pstep2add
+			
+			Pstep3add
+			
+			PstepNfunc
+			
+			PstepNadd
+			
+			Pflow
+			
+		[[Server Control]]
+			5
+			Pfx
+			
+			Pbus
+			
+			Pgroup
+			
+			Pproto
+			
+			Pfxb
+			
+		[[Lookup]]
+			14
+			Psym
+			
+			Pnsym
+			
+			PbindProxy
+			
+			TaskProxy
+			
+			Tdef
+			
+			Pdef
+			
+			Pnsym1
+			
+			Ptsym
+			
+			Psym1
+			
+			PatternProxy
+			
+			Pbindef
+			
+			Pdict
+			
+			Pdefn
+			
+			EventPatternProxy
+			
+		[[Function]]
+			7
+			PlazyEnvir
+			
+			Plazy
+			
+			PlazyEnvirN
+			
+			Proutine
+			
+			Prout
+			
+			Pfunc
+			
+			Pfuncn
+			
+		[[Math]]
+			10
+			Prorate
+			
+			Paddpre
+			
+			Pavaroh
+			
+			Pbinop
+			
+			Padd
+			
+			Paddp
+			
+			Punop
+			
+			Pnaryop
+			
+			Pdiff
+			
+			PdegreeToKey
+			
+		[[List]]
+			16
+			Place
+			
+			Pxrand
+			
+			Pfpar
+			
+			Pwrand
+			
+			Pser
+			
+			Pwalk
+			
+			[[Indexing]]
+				5
+				Pindex
+				
+				Pdfsm
+				
+				Pfsm
+				
+				Pswitch
+				
+				Pswitch1
+				
+			Pseries
+			
+			Ptuple
+			
+			Ppatlace
+			
+			Pshuf
+			
+			Pgeom
+			
+			Pseq
+			
+			Prand
+			
+			ListPattern
+			
+			Pslide
+			
+		[[Language Control]]
+			5
+			Pwhile
+			
+			Pif
+			
+			Pprotect
+			
+			Ptrace
+			
+			Pseed
+			
+		[[Repetition]]
+			10
+			Pclutch
+			
+			Pconst
+			
+			Pgate
+			
+			Pfin
+			
+			Pn
+			
+			Pstutter
+			
+			Psync
+			
+			Pfindur
+			
+			Pfinval
+			
+			PdurStutter
+			
+		Peventmod
+		
+		Pattern
+		
+		[[Filter]]
+			26
+			Pplayer
+			
+			Pselect
+			
+			Pstretchp
+			
+			Prewrite
+			
+			FilterPattern
+			
+			Ppatmod
+			
+			Pwrap
+			
+			FuncFilterPattern
+			
+			Pcollect
+			
+			PfinQuant
+			
+			Plag
+			
+			Pflatten
+			
+			Pmulpre
+			
+			PparGroup
+			
+			Pmul
+			
+			PAbstractGroup
+			
+			Preject
+			
+			Psetpre
+			
+			Psetp
+			
+			Pmulp
+			
+			Pclump
+			
+			Pset
+			
+			Pdrop
+			
+			PfadeIn
+			
+			PfadeOut
+			
+			Pstretch
+			
+		[[Data Sharing]]
+			4
+			Penvir
+			
+			Pkey
+			
+			Plambda
+			
+			Pfset
+			
+		[[Parallel]]
+			7
+			Pgpar
+			
+			Ppar
+			
+			Pgtpar
+			
+			Ptpar
+			
+			Pspawn
+			
+			Spawner
+			
+			Pspawner
+			
+		Pget
+		
+		[[Random]]
+			12
+			Pbeta
+			
+			Pprob
+			
+			Pmeanrand
+			
+			Ppoisson
+			
+			Pcauchy
+			
+			Pwhite
+			
+			Pgauss
+			
+			Pexprand
+			
+			Plprand
+			
+			Phprand
+			
+			Pgbrown
+			
+			Pbrown
+			
+		[[User Input]]
+			3
+			PhidKey
+			
+			PhidSlot
+			
+			Phid
+			
+		Plet
+		
+var o, p;
+o = [
+	IdentityDictionary.prNew,  Array.prNew(32)
+];
+p = [
+	// IdentityDictionary
+	0, [ array: o[1],  size: 0,  
+		proto: nil,  parent: nil,  
+		know: false ],  
+	// Array
+	1, [ nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil,  
+		nil,  nil,  nil,  nil ]
+];
+prUnarchive(o,p);

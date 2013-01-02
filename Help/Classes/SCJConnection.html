@@ -1,0 +1,264 @@
+<html><head><title>SCJConnection</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES (extension)</div>
+<div id='categories'><a href='./../Browse.html#Undocumented classes'>Undocumented classes</a></div>
+<h1>SCJConnection</h1>
+<div id='summary'>(Undocumented class)</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/LinuxExternal/JACK/<a href='file:///Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/LinuxExternal/JACK/SCJConnection.sc'>SCJConnection.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/Object.html">Object</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*allports'>allports</a> </li>
+<li class='toc3'><a href='#*alsadef'>alsadef</a> </li>
+<li class='toc3'><a href='#*connect'>connect</a> </li>
+<li class='toc3'><a href='#*connections'>connections</a> </li>
+<li class='toc3'><a href='#*disconnect'>disconnect</a> </li>
+<li class='toc3'><a href='#*getallports'>getallports</a> </li>
+<li class='toc3'><a href='#*getconnections'>getconnections</a> </li>
+<li class='toc3'><a href='#*getproperties'>getproperties</a> </li>
+<li class='toc3'><a href='#*initClass'>initClass</a> </li>
+<li class='toc3'><a href='#*new'>new</a> </li>
+<li class='toc3'><a href='#*prepend'>prepend</a> </li>
+<li class='toc3'><a href='#*properties'>properties</a> </li>
+<li class='toc3'><a href='#*scdef'>scdef</a> </li>
+<li class='toc3'><a href='#*verbose'>verbose</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-connect'>connect</a> </li>
+<li class='toc3'><a href='#-deschan'>deschan</a> </li>
+<li class='toc3'><a href='#-destination'>destination</a> </li>
+<li class='toc3'><a href='#-disconnect'>disconnect</a> </li>
+<li class='toc3'><a href='#-init'>init</a> </li>
+<li class='toc3'><a href='#-source'>source</a> </li>
+<li class='toc3'><a href='#-srcchan'>srcchan</a> </li>
+</ul></ul><li class='toc1'><a href='#Help template'>Help template</a></li>
+<ul class='toc'></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>This class is missing documentation.<h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*allports' href='./../Overviews/Methods.html#allports'>allports</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*alsadef' href='./../Overviews/Methods.html#alsadef'>alsadef</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*alsadef' href='./../Overviews/Methods.html#alsadef'>alsadef</a> = value</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*connect' href='./../Overviews/Methods.html#connect'>connect</a> (<span class='argstr'>srcch</span>, <span class='argstr'>desch</span>, <span class='argstr'>src</span>, <span class='argstr'>des</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*connections' href='./../Overviews/Methods.html#connections'>connections</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*disconnect' href='./../Overviews/Methods.html#disconnect'>disconnect</a> (<span class='argstr'>srcch</span>, <span class='argstr'>desch</span>, <span class='argstr'>src</span>, <span class='argstr'>des</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*getallports' href='./../Overviews/Methods.html#getallports'>getallports</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*getconnections' href='./../Overviews/Methods.html#getconnections'>getconnections</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*getproperties' href='./../Overviews/Methods.html#getproperties'>getproperties</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*initClass' href='./../Overviews/Methods.html#initClass'>initClass</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*new' href='./../Overviews/Methods.html#new'>new</a> (<span class='argstr'>srcch</span>, <span class='argstr'>desch</span>, <span class='argstr'>src</span>, <span class='argstr'>des</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*prepend' href='./../Overviews/Methods.html#prepend'>prepend</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*prepend' href='./../Overviews/Methods.html#prepend'>prepend</a> = value</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*properties' href='./../Overviews/Methods.html#properties'>properties</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*scdef' href='./../Overviews/Methods.html#scdef'>scdef</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*scdef' href='./../Overviews/Methods.html#scdef'>scdef</a> = value</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*verbose' href='./../Overviews/Methods.html#verbose'>verbose</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*verbose' href='./../Overviews/Methods.html#verbose'>verbose</a> = value</h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-connect' href='./../Overviews/Methods.html#connect'>connect</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-deschan' href='./../Overviews/Methods.html#deschan'>deschan</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-destination' href='./../Overviews/Methods.html#destination'>destination</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-disconnect' href='./../Overviews/Methods.html#disconnect'>disconnect</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-init' href='./../Overviews/Methods.html#init'>init</a> (<span class='argstr'>srcch</span>, <span class='argstr'>desch</span>, <span class='argstr'>src</span>, <span class='argstr'>des</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-source' href='./../Overviews/Methods.html#source'>source</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-srcchan' href='./../Overviews/Methods.html#srcchan'>srcchan</a> </h3>
+<h2><a class='anchor' name='Help template'>Help template</a></h2>
+
+<p>Copy and paste the text below and save to HelpSource/Classes/SCJConnection.schelp<pre class='code prettyprint lang-sc'>TITLE:: SCJConnection
+summary:: (put short description here)
+categories:: Undocumented classes
+related:: Classes/SomeRelatedClass, Reference/SomeRelatedStuff, etc.
+
+DESCRIPTION::
+(put long description here)
+
+
+CLASSMETHODS::
+
+METHOD:: initClass
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: getconnections
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: verbose
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: new
+(describe method here)
+
+ARGUMENT:: srcch
+(describe argument here)
+
+ARGUMENT:: desch
+(describe argument here)
+
+ARGUMENT:: src
+(describe argument here)
+
+ARGUMENT:: des
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: scdef
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: allports
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: alsadef
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: disconnect
+(describe method here)
+
+ARGUMENT:: srcch
+(describe argument here)
+
+ARGUMENT:: desch
+(describe argument here)
+
+ARGUMENT:: src
+(describe argument here)
+
+ARGUMENT:: des
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: properties
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: getallports
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prepend
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: connections
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: connect
+(describe method here)
+
+ARGUMENT:: srcch
+(describe argument here)
+
+ARGUMENT:: desch
+(describe argument here)
+
+ARGUMENT:: src
+(describe argument here)
+
+ARGUMENT:: des
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: getproperties
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+
+INSTANCEMETHODS::
+
+METHOD:: deschan
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: srcchan
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: connect
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: source
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: disconnect
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: destination
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: init
+(describe method here)
+
+ARGUMENT:: srcch
+(describe argument here)
+
+ARGUMENT:: desch
+(describe argument here)
+
+ARGUMENT:: src
+(describe argument here)
+
+ARGUMENT:: des
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+
+EXAMPLES::
+
+code::
+(some example code)
+::
+</pre>
+<div class='doclink'>link::Classes/SCJConnection::<br>sc version: 3.5.3</div></div></body></html>

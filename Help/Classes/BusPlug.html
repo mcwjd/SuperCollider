@@ -1,0 +1,231 @@
+<html><head><title>BusPlug</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#Libraries>JITLib>NodeProxy'>Libraries>JITLib>NodeProxy</a></div>
+<h1>BusPlug</h1>
+<div id='summary'>a listener on a bus</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/JITLib/ProxySpace/<a href='file:///Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/JITLib/ProxySpace/BusPlug.sc'>BusPlug.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/AbstractFunction.html">AbstractFunction</a> : <a href="../Classes/Object.html">Object</a></div>
+<div id='subclasses'>Subclasses: <a href="../Classes/NodeProxy.html">NodeProxy</a></div>
+<div id='related'>See also: <a href="./../Classes/Bus.html">Bus</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*new'>new</a> </li>
+<li class='toc3'><a href='#*audio'>audio</a> </li>
+<li class='toc3'><a href='#*control'>control</a> </li>
+<li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*defaultNumAudio'>defaultNumAudio</a> </li>
+<li class='toc3'><a href='#*defaultNumControl'>defaultNumControl</a> </li>
+<li class='toc3'><a href='#*for'>for</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-clear'>clear</a> </li>
+<li class='toc3'><a href='#-ar'>ar</a>  <a href='#-kr'>kr</a> </li>
+<li class='toc3'><a href='#-play'>play</a> </li>
+<li class='toc3'><a href='#-playN'>playN</a> </li>
+<li class='toc3'><a href='#-monitor'>monitor</a> </li>
+<li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-asBus'>asBus</a> </li>
+<li class='toc3'><a href='#-asControlInput'>asControlInput</a> </li>
+<li class='toc3'><a href='#-asNodeArg'>asNodeArg</a> </li>
+<li class='toc3'><a href='#-asUGenInput'>asUGenInput</a> </li>
+<li class='toc3'><a href='#-bus'>bus</a> </li>
+<li class='toc3'><a href='#-busArg'>busArg</a> </li>
+<li class='toc3'><a href='#-clock'>clock</a> </li>
+<li class='toc3'><a href='#-composeBinaryOp'>composeBinaryOp</a> </li>
+<li class='toc3'><a href='#-composeNAryOp'>composeNAryOp</a> </li>
+<li class='toc3'><a href='#-composeUnaryOp'>composeUnaryOp</a> </li>
+<li class='toc3'><a href='#-defineBus'>defineBus</a> </li>
+<li class='toc3'><a href='#-embedInStream'>embedInStream</a> </li>
+<li class='toc3'><a href='#-fadeTime'>fadeTime</a> </li>
+<li class='toc3'><a href='#-freeBus'>freeBus</a> </li>
+<li class='toc3'><a href='#-homeServer'>homeServer</a> </li>
+<li class='toc3'><a href='#-index'>index</a> </li>
+<li class='toc3'><a href='#-initBus'>initBus</a> </li>
+<li class='toc3'><a href='#-initMonitor'>initMonitor</a> </li>
+<li class='toc3'><a href='#-isMonitoring'>isMonitoring</a> </li>
+<li class='toc3'><a href='#-isNeutral'>isNeutral</a> </li>
+<li class='toc3'><a href='#-isPlaying'>isPlaying</a> </li>
+<li class='toc3'><a href='#-makeBusArg'>makeBusArg</a> </li>
+<li class='toc3'><a href='#-monitorGroup'>monitorGroup</a> </li>
+<li class='toc3'><a href='#-monitorIndex'>monitorIndex</a> </li>
+<li class='toc3'><a href='#-newMonitorToBundle'>newMonitorToBundle</a> </li>
+<li class='toc3'><a href='#-numChannels'>numChannels</a> </li>
+<li class='toc3'><a href='#-parentGroup'>parentGroup</a> </li>
+<li class='toc3'><a href='#-playNToBundle'>playNToBundle</a> </li>
+<li class='toc3'><a href='#-playToBundle'>playToBundle</a> </li>
+<li class='toc3'><a href='#-prepareForProxySynthDef'>prepareForProxySynthDef</a> </li>
+<li class='toc3'><a href='#-prepareOutput'>prepareOutput</a> </li>
+<li class='toc3'><a href='#-quant'>quant</a> </li>
+<li class='toc3'><a href='#-rate'>rate</a> </li>
+<li class='toc3'><a href='#-record'>record</a> </li>
+<li class='toc3'><a href='#-reverseComposeBinaryOp'>reverseComposeBinaryOp</a> </li>
+<li class='toc3'><a href='#-scope'>scope</a> </li>
+<li class='toc3'><a href='#-server'>server</a> </li>
+<li class='toc3'><a href='#-shared'>shared</a> </li>
+<li class='toc3'><a href='#-stop'>stop</a> </li>
+<li class='toc3'><a href='#-value'>value</a> </li>
+<li class='toc3'><a href='#-vol'>vol</a> </li>
+<li class='toc3'><a href='#-wakeUp'>wakeUp</a> </li>
+<li class='toc3'><a href='#-wakeUpToBundle'>wakeUpToBundle</a> </li>
+</ul></ul><li class='toc1'><a href='#examples'>Examples</a></li>
+<ul class='toc'></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>BusPlug is mainly in use as a basic superclass of NodeProxy, but it can be applied for other things as well. Most methods are documented in the <a href="./../Classes/NodeProxy.html">NodeProxy</a> helpfile.<h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*new' href='./../Overviews/Methods.html#new'>new</a> (<span class='argstr'>server</span>)</h3>
+<div class='method'>
+<p>Create a new (neutral) instance on the given server</div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*audio' href='./../Overviews/Methods.html#audio'>audio</a> (<span class='argstr'>server</span>, <span class='argstr'>numChannels</span>)</h3>
+<div class='method'>
+<p>Create a new audio rate instance on the given server</div><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*control' href='./../Overviews/Methods.html#control'>control</a> (<span class='argstr'>server</span>, <span class='argstr'>numChannels</span>)</h3>
+<div class='method'>
+<p>Create a new audio rate instance on the given server</div><h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*defaultNumAudio' href='./../Overviews/Methods.html#defaultNumAudio'>defaultNumAudio</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*defaultNumAudio' href='./../Overviews/Methods.html#defaultNumAudio'>defaultNumAudio</a> = value</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*defaultNumControl' href='./../Overviews/Methods.html#defaultNumControl'>defaultNumControl</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*defaultNumControl' href='./../Overviews/Methods.html#defaultNumControl'>defaultNumControl</a> = value</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*for' href='./../Overviews/Methods.html#for'>for</a> (<span class='argstr'>bus</span>)</h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-clear' href='./../Overviews/Methods.html#clear'>clear</a> </h3>
+<div class='method'>
+<p>Free the bus, end the monitor</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-ar' href='./../Overviews/Methods.html#ar'>ar</a> (<span class='argstr'>numChannels</span>, <span class='argstr'>offset: 0</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-kr' href='./../Overviews/Methods.html#kr'>kr</a> (<span class='argstr'>numChannels</span>, <span class='argstr'>offset: 0</span>)</h3>
+<div class='method'>
+<p>Return a link to my output, which is limited by <strong>numChannels</strong>. If uninitialized, creates a matching bus. Normally, <strong>ar defaults to stereo, kr to mono</strong>. This can be set in the classvars: <a href="#*defaultNumAudio">*defaultNumAudio</a>, <a href="#*defaultNumControl">*defaultNumControl</a></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-play' href='./../Overviews/Methods.html#play'>play</a> (<span class='argstr'>out</span>, <span class='argstr'>numChannels</span>, <span class='argstr'>group</span>, <span class='argstr'>multi: false</span>, <span class='argstr'>vol</span>, <span class='argstr'>fadeTime</span>, <span class='argstr'>addAction</span>)</h3>
+<div class='method'>
+<p>Plays from a bus index ( <strong>out</strong> ) with a number of channels to another index with a number of channels, within a <strong>group</strong> (ie a target group or server).<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>out<td class='argumentdesc'>
+<p>bus index<tr><td class='argumentname'>numChannels<td class='argumentdesc'>
+<p>an <a href="./../Classes/Integer.html">Integer</a><tr><td class='argumentname'>group<td class='argumentdesc'>
+<p>target <a href="./../Classes/Group.html">Group</a> or <a href="./../Classes/Server.html">Server</a><tr><td class='argumentname'>multi<td class='argumentdesc'>
+<p>keep old links and add new one<tr><td class='argumentname'>vol<td class='argumentdesc'>
+<p>volume at which to monitor<tr><td class='argumentname'>fadeTime<td class='argumentdesc'>
+<p>fade in fade out time<tr><td class='argumentname'>addAction<td class='argumentdesc'></table></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-playN' href='./../Overviews/Methods.html#playN'>playN</a> (<span class='argstr'>outs</span>, <span class='argstr'>amps</span>, <span class='argstr'>ins</span>, <span class='argstr'>vol</span>, <span class='argstr'>fadeTime</span>, <span class='argstr'>group</span>, <span class='argstr'>addAction</span>)</h3>
+<div class='method'>
+<p><h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>outs<td class='argumentdesc'>
+<p>array of destination channels<tr><td class='argumentname'>amps<td class='argumentdesc'>
+<p>array of amplitudes for each channel<tr><td class='argumentname'>ins<td class='argumentdesc'>
+<p>array of source channels<tr><td class='argumentname'>vol<td class='argumentdesc'><tr><td class='argumentname'>fadetime<td class='argumentdesc'><tr><td class='argumentname'>group<td class='argumentdesc'><tr><td class='argumentname'>addAction<td class='argumentdesc'></table></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-monitor' href='./../Overviews/Methods.html#monitor'>monitor</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-monitor' href='./../Overviews/Methods.html#monitor'>monitor</a> = value</h3>
+<div class='method'>
+<p>returns the current monitor (see <a href="./../Classes/Monitor.html">Monitor</a>)</div><h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asBus' href='./../Overviews/Methods.html#asBus'>asBus</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asControlInput' href='./../Overviews/Methods.html#asControlInput'>asControlInput</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asNodeArg' href='./../Overviews/Methods.html#asNodeArg'>asNodeArg</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asUGenInput' href='./../Overviews/Methods.html#asUGenInput'>asUGenInput</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-bus' href='./../Overviews/Methods.html#bus'>bus</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-bus' href='./../Overviews/Methods.html#bus'>bus</a> = <span class='argstr'>inBus</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-busArg' href='./../Overviews/Methods.html#busArg'>busArg</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-clock' href='./../Overviews/Methods.html#clock'>clock</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-clock' href='./../Overviews/Methods.html#clock'>clock</a> = </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-composeBinaryOp' href='./../Overviews/Methods.html#composeBinaryOp'>composeBinaryOp</a> (<span class='argstr'>aSelector</span>, <span class='argstr'>something</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-composeNAryOp' href='./../Overviews/Methods.html#composeNAryOp'>composeNAryOp</a> (<span class='argstr'>aSelector</span>, <span class='argstr'>anArgList</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-composeUnaryOp' href='./../Overviews/Methods.html#composeUnaryOp'>composeUnaryOp</a> (<span class='argstr'>aSelector</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-defineBus' href='./../Overviews/Methods.html#defineBus'>defineBus</a> (<span class='argstr'>rate: 'audio'</span>, <span class='argstr'>numChannels</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-embedInStream' href='./../Overviews/Methods.html#embedInStream'>embedInStream</a> (<span class='argstr'>inval</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-fadeTime' href='./../Overviews/Methods.html#fadeTime'>fadeTime</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-freeBus' href='./../Overviews/Methods.html#freeBus'>freeBus</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-homeServer' href='./../Overviews/Methods.html#homeServer'>homeServer</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-index' href='./../Overviews/Methods.html#index'>index</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-initBus' href='./../Overviews/Methods.html#initBus'>initBus</a> (<span class='argstr'>rate</span>, <span class='argstr'>numChannels</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-initMonitor' href='./../Overviews/Methods.html#initMonitor'>initMonitor</a> (<span class='argstr'>vol</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-isMonitoring' href='./../Overviews/Methods.html#isMonitoring'>isMonitoring</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-isNeutral' href='./../Overviews/Methods.html#isNeutral'>isNeutral</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-isPlaying' href='./../Overviews/Methods.html#isPlaying'>isPlaying</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-makeBusArg' href='./../Overviews/Methods.html#makeBusArg'>makeBusArg</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-monitorGroup' href='./../Overviews/Methods.html#monitorGroup'>monitorGroup</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-monitorIndex' href='./../Overviews/Methods.html#monitorIndex'>monitorIndex</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-newMonitorToBundle' href='./../Overviews/Methods.html#newMonitorToBundle'>newMonitorToBundle</a> (<span class='argstr'>bundle</span>, <span class='argstr'>numChannels</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-numChannels' href='./../Overviews/Methods.html#numChannels'>numChannels</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-parentGroup' href='./../Overviews/Methods.html#parentGroup'>parentGroup</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-parentGroup' href='./../Overviews/Methods.html#parentGroup'>parentGroup</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-playNToBundle' href='./../Overviews/Methods.html#playNToBundle'>playNToBundle</a> (<span class='argstr'>bundle</span>, <span class='argstr'>outs</span>, <span class='argstr'>amps</span>, <span class='argstr'>ins</span>, <span class='argstr'>vol</span>, <span class='argstr'>fadeTime</span>, <span class='argstr'>group</span>, <span class='argstr'>addAction</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-playToBundle' href='./../Overviews/Methods.html#playToBundle'>playToBundle</a> (<span class='argstr'>bundle</span>, <span class='argstr'>out</span>, <span class='argstr'>numChannels</span>, <span class='argstr'>group</span>, <span class='argstr'>multi: false</span>, <span class='argstr'>vol</span>, <span class='argstr'>fadeTime</span>, <span class='argstr'>addAction</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prepareForProxySynthDef' href='./../Overviews/Methods.html#prepareForProxySynthDef'>prepareForProxySynthDef</a> (<span class='argstr'>proxy</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/JITLib/ProxySpace/wrapForNodeProxy.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/JITLib/ProxySpace/wrapForNodeProxy.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prepareOutput' href='./../Overviews/Methods.html#prepareOutput'>prepareOutput</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-quant' href='./../Overviews/Methods.html#quant'>quant</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-rate' href='./../Overviews/Methods.html#rate'>rate</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-record' href='./../Overviews/Methods.html#record'>record</a> (<span class='argstr'>path</span>, <span class='argstr'>headerFormat: "aiff"</span>, <span class='argstr'>sampleFormat: "int16"</span>, <span class='argstr'>numChannels</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Users/vagelis/Library/Application Support/SuperCollider/Extensions/RecNodeProxy.sc'>/Users/vagelis/Library/Application Support/SuperCollider/Extensions/RecNodeProxy.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-reverseComposeBinaryOp' href='./../Overviews/Methods.html#reverseComposeBinaryOp'>reverseComposeBinaryOp</a> (<span class='argstr'>aSelector</span>, <span class='argstr'>something</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-scope' href='./../Overviews/Methods.html#scope'>scope</a> (<span class='argstr'>bufsize: 4096</span>, <span class='argstr'>zoom</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-server' href='./../Overviews/Methods.html#server'>server</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-shared' href='./../Overviews/Methods.html#shared'>shared</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-stop' href='./../Overviews/Methods.html#stop'>stop</a> (<span class='argstr'>fadeTime: 0.1</span>, <span class='argstr'>reset: false</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-value' href='./../Overviews/Methods.html#value'>value</a> (<span class='argstr'>something</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-vol' href='./../Overviews/Methods.html#vol'>vol</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-vol' href='./../Overviews/Methods.html#vol'>vol</a> = <span class='argstr'>val</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-wakeUp' href='./../Overviews/Methods.html#wakeUp'>wakeUp</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-wakeUpToBundle' href='./../Overviews/Methods.html#wakeUpToBundle'>wakeUpToBundle</a> </h3>
+<h2><a class='anchor' name='examples'>Examples</a></h2>
+<pre class='code prettyprint lang-sc'>// using as a control bus listener
+
+s.boot;
+z = Bus.control(s, 16);
+a = BusPlug.for(z);
+
+m = { Mix(SinOsc.ar(a.kr(16), 0, 0.1)) }.play;
+
+z.setn(Array.rand(16, 300, 320).put(16.rand, rrand(500, 1000)));
+z.setn(Array.rand(16, 300, 320).put(16.rand, rrand(500, 1000)));
+z.setn(Array.rand(16, 300, 320).put(16.rand, rrand(500, 1000)));
+
+m.free;
+
+
+m = { SinOsc.ar(a.kr(2, MouseX.kr(0, 19)), 0, 0.1) }.play; // modulate channel offset
+
+z.setn(Array.rand(16, 300, 1320).put(16.rand, rrand(500, 1000)));
+
+
+m.free; z.free;
+
+// using as a audio monitor
+
+p = BusPlug.audio(s,2);
+d = { Out.ar(p.index, PinkNoise.ar([0.1, 0.1])) }.play;
+
+
+p.play; // monitor whatever plays in p (the execution order does not matter)
+
+
+
+d.free;
+d = { Out.ar(p.index, PinkNoise.ar([0.1, 0.1])) }.play;
+
+p.stop;
+p.play;
+
+// also p can play to another bus:
+
+p.stop;
+p.play(12);
+
+// listen to that bus for a test:
+x = { InFeedback.ar(12,2) }.play;
+x.free;</pre>
+
+<p><div class='doclink'>source: <a href='file:///Applications/SuperCollider/SuperCollider.app/Contents/Resources/HelpSource/Classes/BusPlug.schelp'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/HelpSource/Classes/BusPlug.schelp</a><br>link::Classes/BusPlug::<br>sc version: 3.5.3</div></div></body></html>

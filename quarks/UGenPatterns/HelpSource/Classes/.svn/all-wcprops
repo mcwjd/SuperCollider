@@ -1,0 +1,323 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/quarks/!svn/ver/2210/UGenPatterns/HelpSource/Classes
+END
+PTDelay.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PTDelay.schelp
+END
+PInRange.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PInRange.schelp
+END
+PHPZ2.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PHPZ2.schelp
+END
+PInRect.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/2176/UGenPatterns/HelpSource/Classes/PInRect.schelp
+END
+PFold.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PFold.schelp
+END
+PRand.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2171/UGenPatterns/HelpSource/Classes/PRand.schelp
+END
+PLinLin.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PLinLin.schelp
+END
+PDC.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/quarks/!svn/ver/2170/UGenPatterns/HelpSource/Classes/PDC.schelp
+END
+PLPZ2.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PLPZ2.schelp
+END
+PPulse.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PPulse.schelp
+END
+PSaw.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PSaw.schelp
+END
+PLatch.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PLatch.schelp
+END
+PSilent.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/2170/UGenPatterns/HelpSource/Classes/PSilent.schelp
+END
+PSinOsc.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PSinOsc.schelp
+END
+PExpRand.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/2171/UGenPatterns/HelpSource/Classes/PExpRand.schelp
+END
+POnePole.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/POnePole.schelp
+END
+PFSinOsc.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PFSinOsc.schelp
+END
+PTrig.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PTrig.schelp
+END
+PLFPulse.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PLFPulse.schelp
+END
+PLFSaw.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PLFSaw.schelp
+END
+PDelayN.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PDelayN.schelp
+END
+PIntegrator.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PIntegrator.schelp
+END
+PWhiteNoise.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PWhiteNoise.schelp
+END
+PDelay1.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PDelay1.schelp
+END
+PGate.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PGate.schelp
+END
+PPeak.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PPeak.schelp
+END
+PMouseY.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/2181/UGenPatterns/HelpSource/Classes/PMouseY.schelp
+END
+POneZero.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/POneZero.schelp
+END
+PHPZ1.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PHPZ1.schelp
+END
+PMouseButton.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/quarks/!svn/ver/2181/UGenPatterns/HelpSource/Classes/PMouseButton.schelp
+END
+PRunningMin.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PRunningMin.schelp
+END
+PClipNoise.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PClipNoise.schelp
+END
+PLPZ1.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PLPZ1.schelp
+END
+PRunningMax.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PRunningMax.schelp
+END
+PTrig1.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PTrig1.schelp
+END
+PLine.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PLine.schelp
+END
+PClip.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PClip.schelp
+END
+PChanged.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/2161/UGenPatterns/HelpSource/Classes/PChanged.schelp
+END
+PSchmidt.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/2210/UGenPatterns/HelpSource/Classes/PSchmidt.schelp
+END
+PIRand.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/quarks/!svn/ver/2171/UGenPatterns/HelpSource/Classes/PIRand.schelp
+END
+PToggleFF.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PToggleFF.schelp
+END
+PCombN.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PCombN.schelp
+END
+PLinExp.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PLinExp.schelp
+END
+PLastValue.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PLastValue.schelp
+END
+PPulseCount.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PPulseCount.schelp
+END
+PWrap.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PWrap.schelp
+END
+PBPZ2.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PBPZ2.schelp
+END
+PImpulse.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PImpulse.schelp
+END
+PBRZ2.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PBRZ2.schelp
+END
+PXLine.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PXLine.schelp
+END
+PLFTri.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PLFTri.schelp
+END
+PDelay2.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/2032/UGenPatterns/HelpSource/Classes/PDelay2.schelp
+END
+PMouseX.schelp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/2181/UGenPatterns/HelpSource/Classes/PMouseX.schelp
+END

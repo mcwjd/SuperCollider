@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/quarks/!svn/ver/2408/wslib/wslib-classes/Lang/Shortcuts
+END
+extArray-fft.sc
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Lang/Shortcuts/extArray-fft.sc
+END
+extObject-help.sc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Lang/Shortcuts/extObject-help.sc
+END
+Synth_ID.sc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/quarks/!svn/ver/1896/wslib/wslib-classes/Lang/Shortcuts/Synth_ID.sc
+END
+extFunction-render.sc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/quarks/!svn/ver/2408/wslib/wslib-classes/Lang/Shortcuts/extFunction-render.sc
+END
+extString-spth.sc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Lang/Shortcuts/extString-spth.sc
+END
+PlayBufFree.sc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/quarks/!svn/ver/929/wslib/wslib-classes/Lang/Shortcuts/PlayBufFree.sc
+END
+extFunction-valueControls.sc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Lang/Shortcuts/extFunction-valueControls.sc
+END
+extMix-panSpread.sc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Lang/Shortcuts/extMix-panSpread.sc
+END
+SCButton_DF.sc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/quarks/!svn/ver/505/wslib/wslib-classes/Lang/Shortcuts/SCButton_DF.sc
+END
