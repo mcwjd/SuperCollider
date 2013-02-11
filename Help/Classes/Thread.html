@@ -1,0 +1,142 @@
+<html><head><title>Thread</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#Core>Kernel'>Core>Kernel</a></div>
+<h1>Thread</h1>
+<div id='summary'>represents an individual operating system thread</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Core/<a href='file:///Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/Core/Thread.sc'>Thread.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/Stream.html">Stream</a> : <a href="../Classes/AbstractFunction.html">AbstractFunction</a> : <a href="../Classes/Object.html">Object</a></div>
+<div id='subclasses'>Subclasses: <a href="../Classes/Routine.html">Routine</a></div>
+<div id='related'>See also: <a href="./../Classes/Routine.html">Routine</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'><li class='toc3'><a href='#.thisThread'>thisThread</a> </li>
+</ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*new'>new</a> </li>
+<li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*primitiveError'>primitiveError</a> </li>
+<li class='toc3'><a href='#*primitiveErrorString'>primitiveErrorString</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-beats'>beats</a> </li>
+<li class='toc3'><a href='#-seconds'>seconds</a> </li>
+<li class='toc3'><a href='#-clock'>clock</a> </li>
+<li class='toc3'><a href='#-isPlaying'>isPlaying</a> </li>
+<li class='toc3'><a href='#-state'>state</a> </li>
+<li class='toc2'><a href='#Seeding the random number generator'>Seeding the random number generator</a></li>
+<ul class='toc'><li class='toc3'><a href='#-randSeed'>randSeed</a> </li>
+<li class='toc3'><a href='#-randData'>randData</a> </li>
+</ul><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-archiveAsCompileString'>archiveAsCompileString</a> </li>
+<li class='toc3'><a href='#-checkCanArchive'>checkCanArchive</a> </li>
+<li class='toc3'><a href='#-copy'>copy</a> </li>
+<li class='toc3'><a href='#-endBeat'>endBeat</a> </li>
+<li class='toc3'><a href='#-endValue'>endValue</a> </li>
+<li class='toc3'><a href='#-exceptionHandler'>exceptionHandler</a> </li>
+<li class='toc3'><a href='#-executingPath'>executingPath</a> </li>
+<li class='toc3'><a href='#-failedPrimitiveName'>failedPrimitiveName</a> </li>
+<li class='toc3'><a href='#-handleError'>handleError</a> </li>
+<li class='toc3'><a href='#-next'>next</a> </li>
+<li class='toc3'><a href='#-nextBeat'>nextBeat</a> </li>
+<li class='toc3'><a href='#-oldExecutingPath'>oldExecutingPath</a> </li>
+<li class='toc3'><a href='#-primitiveError'>primitiveError</a> </li>
+<li class='toc3'><a href='#-primitiveIndex'>primitiveIndex</a> </li>
+<li class='toc3'><a href='#-value'>value</a> </li>
+<li class='toc3'><a href='#-valueArray'>valueArray</a> </li>
+</ul></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>Normally there is no need to instantiate a Thread, but its subclass Routine is very useful.
+<p>It is wise not to fiddle with the source code for this class; see the warnings in the class file.<h3 class='imethodname'><span class='methprefix'>&nbsp;</span><a name='.thisThread' href='./../Overviews/Methods.html#thisThread'>thisThread</a> </h3>
+<div class='method'>
+<p>The global pseudo-variable <code class='code prettyprint lang-sc'>thisThread</code> always returns the enclosing thread running the given code. A Thread is aware of its own attached clock and associated beats and seconds timing, and has an individual random number seed and exception handler.<pre class='code prettyprint lang-sc'>// example
+thisThread.beats;
+thisThread.seconds;
+thisThread.clock;</pre>
+</div><h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*new' href='./../Overviews/Methods.html#new'>new</a> (<span class='argstr'>func</span>, <span class='argstr'>stackSize: 512</span>)</h3>
+<div class='method'>
+<p>Create a Thread.<div class='note'><span class='notelabel'>NOTE:</span> You will not typically do this yourself but as a result of creating Routines, for example.</div><pre class='code prettyprint lang-sc'>g = Thread({"hello".postln;});
+g.seconds; //time of creation, cannot advance without a clock</pre>
+<h4>Arguments:</h4>
+<table class='arguments'>
+<tr><td class='argumentname'>func<td class='argumentdesc'>
+<p>A function with code for the thread to run.<tr><td class='argumentname'>stackSize<td class='argumentdesc'>
+<p>defaults to 64 depth call stack.</table></div><h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*primitiveError' href='./../Overviews/Methods.html#primitiveError'>primitiveError</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*primitiveErrorString' href='./../Overviews/Methods.html#primitiveErrorString'>primitiveErrorString</a> </h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-beats' href='./../Overviews/Methods.html#beats'>beats</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-beats' href='./../Overviews/Methods.html#beats'>beats</a> = <span class='argstr'>inBeats</span></h3>
+<div class='method'>
+<p>Get or set the elapsed beats (logical time) of the thread.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-seconds' href='./../Overviews/Methods.html#seconds'>seconds</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-seconds' href='./../Overviews/Methods.html#seconds'>seconds</a> = <span class='argstr'>inSeconds</span></h3>
+<div class='method'>
+<p>Get or set the elapsed seconds (logical time) of the thread.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-clock' href='./../Overviews/Methods.html#clock'>clock</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-clock' href='./../Overviews/Methods.html#clock'>clock</a> = <span class='argstr'>inClock</span></h3>
+<div class='method'>
+<p>Get or set the thread's clock.</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-isPlaying' href='./../Overviews/Methods.html#isPlaying'>isPlaying</a> </h3>
+<div class='method'><h4>Returns:</h4>
+<div class='returnvalue'>
+<p>true if it is playing.</div></div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-state' href='./../Overviews/Methods.html#state'>state</a> </h3>
+<div class='method'>
+<p>The internal state values for a Thread instance can be polled:<table>
+<tr><td>0<td>not started<tr><td>7<td>running<tr><td>8<td>stopped</table>
+</div><h3><a class='anchor' name='Seeding the random number generator'>Seeding the random number generator</a></h3>
+
+<p>see also: <a href="./../Reference/randomSeed.html">Random Seed</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-randSeed' href='./../Overviews/Methods.html#randSeed'>randSeed</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-randSeed' href='./../Overviews/Methods.html#randSeed'>randSeed</a> = <span class='argstr'>seed</span></h3>
+<div class='method'>
+<p>Set the random number generator seed using a single integer.<h4>Discussion:</h4>
+
+<p>Example:<pre class='code prettyprint lang-sc'>g = thisThread.randSeed = 4;
+10.do{1.0.rand2.postln};</pre>
+</div><h3 class='imethodname'><span class='methprefix'>-</span><a name='-randData' href='./../Overviews/Methods.html#randData'>randData</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-randData' href='./../Overviews/Methods.html#randData'>randData</a> = <span class='argstr'>data</span></h3>
+<div class='method'>
+<p>Get or set the three integer array which defines the internal basis for the random number generator. You can use this to get back the exact same random number sequence, and it provides a mechanism for automatic replay for generative music.<h4>Discussion:</h4>
+
+<p>Example:<pre class='code prettyprint lang-sc'>g = thisThread.randData;
+10.do{1.0.rand2.postln};</pre>
+
+<p><pre class='code prettyprint lang-sc'>// each time the seed is reset, the random number generation should give the same sequence
+thisThread.randData_(Int32Array[ -662787342, 1546785953, 1661466823 ]);
+10.do{1.0.rand2.postln};</pre>
+</div><h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-archiveAsCompileString' href='./../Overviews/Methods.html#archiveAsCompileString'>archiveAsCompileString</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-checkCanArchive' href='./../Overviews/Methods.html#checkCanArchive'>checkCanArchive</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-copy' href='./../Overviews/Methods.html#copy'>copy</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-endBeat' href='./../Overviews/Methods.html#endBeat'>endBeat</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-endBeat' href='./../Overviews/Methods.html#endBeat'>endBeat</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-endValue' href='./../Overviews/Methods.html#endValue'>endValue</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-endValue' href='./../Overviews/Methods.html#endValue'>endValue</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-exceptionHandler' href='./../Overviews/Methods.html#exceptionHandler'>exceptionHandler</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-exceptionHandler' href='./../Overviews/Methods.html#exceptionHandler'>exceptionHandler</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-executingPath' href='./../Overviews/Methods.html#executingPath'>executingPath</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-failedPrimitiveName' href='./../Overviews/Methods.html#failedPrimitiveName'>failedPrimitiveName</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-handleError' href='./../Overviews/Methods.html#handleError'>handleError</a> (<span class='argstr'>error</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-next' href='./../Overviews/Methods.html#next'>next</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-nextBeat' href='./../Overviews/Methods.html#nextBeat'>nextBeat</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-oldExecutingPath' href='./../Overviews/Methods.html#oldExecutingPath'>oldExecutingPath</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-primitiveError' href='./../Overviews/Methods.html#primitiveError'>primitiveError</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-primitiveIndex' href='./../Overviews/Methods.html#primitiveIndex'>primitiveIndex</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-value' href='./../Overviews/Methods.html#value'>value</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-valueArray' href='./../Overviews/Methods.html#valueArray'>valueArray</a> </h3>
+<div class='doclink'>source: <a href='file:///Applications/SuperCollider/SuperCollider.app/Contents/Resources/HelpSource/Classes/Thread.schelp'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/HelpSource/Classes/Thread.schelp</a><br>link::Classes/Thread::<br>sc version: 3.5.3</div></div></body></html>

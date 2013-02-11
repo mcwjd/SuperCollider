@@ -1,0 +1,229 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red191\green0\blue0;\red0\green0\blue191;\red0\green115\blue0;
+\red51\green51\blue191;\red255\green102\blue0;\red0\green0\blue0;\red191\green0\blue0;\red0\green0\blue191;
+\red0\green115\blue0;\red51\green51\blue191;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\fs18 \cf2 \
+\
+//: - Sto 3\cf0 \
+\
+\cf3 Pdef\cf0 (\cf4 \\classic2_1\cf0 , \cf3 Ppar\cf0 ([\
+		\
+	\cf3 Pbind\cf0 (\
+		\cf4 \\instrument\cf0 , \cf4 \\Bota1_Meros_1\cf0 ,\
+		\cf2 //All\cf0 \
+		\cf4 \\dur\cf0 , \cf3 Pseq\cf0 ([1/3, 1/2, 1/3, 1/3, \cf3 Pseq\cf0 ([1/6], 6), 1/6], 1),\
+		\cf4 \\harm\cf0 , \cf3 Pseq\cf0 ([1], \cf5 inf\cf0 ),\
+		\cf4 \\ampB\cf0 , \cf3 Pseq\cf0 ([3, 3, 3, 3, \cf3 Pseq\cf0 ([3, 3, 3, 3, 3, 3], 1), 3]/2, \cf5 inf\cf0 ), \cf2 //def /4 \cf0 \
+		\cf4 \\freq\cf0 , \cf3 Pseq\cf0 ([\cf6 ~f_2\cf0 ], \cf5 inf\cf0 ),\
+		\cf2 //Bota Envelope\cf0 \
+		\cf4 \\at\cf0 , \cf3 Pseq\cf0 ([0.01, 0.01, 0.01, 0.01, \cf3 Pseq\cf0 ([0.01], 6), 0.01], \cf5 inf\cf0 ),\
+		\cf4 \\rel\cf0 , \cf3 Pseq\cf0 ([0.02, 0.02, 3, 3, \cf3 Pseq\cf0 ([3], 6), 3], \cf5 inf\cf0 ),\
+		\cf4 \\shape\cf0 , \cf3 Pseq\cf0 ([-4], \cf5 inf\cf0 )\
+		\
+	),\
+\
+	\cf3 Pbind\cf0 (\
+		\cf4 \\instrument\cf0 , \cf4 \\Noise_Meros_1\cf0 ,\
+		\cf2 //All\cf0 \
+		\cf4 \\dur\cf0 , \cf3 Pseq\cf0 ([1/3, 1/2, 1/3, 1/3, \cf3 Pseq\cf0 ([1/6], 6), 1/6], 1),\
+		\cf4 \\ampN\cf0 , \cf3 Pseq\cf0 ([0.1, 0.1, 0.2, 0.1, \cf3 Pseq\cf0 ([0.1, 0.1, 0.1, 0.1, 0.1, 0.1], 1), 0.1]*1.2, \cf5 inf\cf0 ), \cf2 //def xoris *1.4\cf0 \
+		\cf4 \\nMul\cf0 , \cf3 Pseq\cf0 ([1e40, 1e40, 1e40, 1e40, \cf3 Pseq\cf0 ([0.001], 6), 1e40], \cf5 inf\cf0 ),\
+		\cf4 \\nAdd\cf0 , \cf3 Pseq\cf0 ([1e40, 1e40, 1e40, 1e40, \cf3 Pseq\cf0 ([1e4], 6), 1e40], \cf5 inf\cf0 ),\
+		\cf2 //Noise Envelope\cf0 \
+		\cf4 \\at\cf0 , \cf3 Pseq\cf0 ([0.08, 0.08, 0.08, 0.08, 0.08, 0.08], \cf5 inf\cf0 ), \
+		\cf4 \\rel\cf0 , \cf3 Pseq\cf0 ([0.2, 0.2, 0.2, 0.2, 0.2, 0.2], \cf5 inf\cf0 ),\
+		\cf2 //\\shape, Pseq([-200, -200, -200, -200, -200, -200], inf)\cf0 \
+		\cf4 \\shape\cf0 , \cf3 Pseq\cf0 ([-200], \cf5 inf\cf0 )\
+	),\
+\
+	\
+	\cf3 Pbind\cf0 (\
+		\cf4 \\instrument\cf0 , \cf4 \\Drone_Glitch_Meros_1\cf0 ,\
+		\cf2 //All\cf0 \
+		\cf4 \\dur\cf0 , \cf3 Pseq\cf0 ([1/3, 1/2, 1/3, 1/3, \cf3 Pseq\cf0 ([1/6], 6), 1/6], 1), \cf2 //?\cf0 \
+		\cf4 \\ampD\cf0 , \cf3 Pseq\cf0 ([1.5, 0, 0, 0, \cf3 Pseq\cf0 ([0], 6), 1]*1.3, \cf5 inf\cf0 ),  \cf2 //def /2\cf0 \
+		\cf4 \\ampG\cf0 , \cf3 Pseq\cf0 ([0], \cf5 inf\cf0 ), \
+		\cf2 //\\harm, Pseq([0.5], inf), \cf0 \
+		\cf4 \\harm\cf0 , \cf3 Pseq\cf0 ([  0.5, 0.5, 0.5, 0.5, \cf3 Pseq\cf0 ([0.5], 6), 20], \cf5 inf\cf0 ), \
+		\cf4 \\freq\cf0 , \cf3 Pseq\cf0 ([\cf6 ~fD2\cf0 , \cf6 ~fD2\cf0 , \cf6 ~fD2\cf0 , \cf6 ~fD2\cf0 , \cf3 Pseq\cf0 ([\cf6 ~fD2\cf0 ], 6), [\cf6 ~fD7\cf0 , \cf6 ~f_8\cf0 ]], \cf5 inf\cf0 ),\
+		\cf2 //Drone Envelope\cf0 \
+		\cf4 \\at\cf0 , \cf3 Pseq\cf0 ([0.5, 0.08, 0.08, 0.08, \cf3 Pseq\cf0 ([0.08], 6), 1/3], \cf5 inf\cf0 ), \
+		\cf4 \\rel\cf0 , \cf3 Pseq\cf0 ([1, 0.2, 0.2, 0.2, \cf3 Pseq\cf0 ([0.2], 6), 1/12], \cf5 inf\cf0 ),\
+		\cf4 \\shape\cf0 , \cf3 Pseq\cf0 ([4], \cf5 inf\cf0 )\
+		\
+	)\
+	\
+	\
+	\
+	], 1)\
+);\cf7 \
+\cf2 \
+//- Sto 2\cf0 \
+\
+\cf3 Pdef\cf0 (\cf4 \\classic2_2\cf0 , \cf3 Ppar\cf0 ([\
+		\
+	\cf3 Pbind\cf0 (\
+		\cf4 \\instrument\cf0 , \cf4 \\Bota1_Meros_1\cf0 ,\
+		\cf2 //All\cf0 \
+		\cf4 \\dur\cf0 , \cf3 Pseq\cf0 ([1/3, 1/2, 1/3, 1/3, \cf3 Pseq\cf0 ([1/6], 6), 1/6], 1),\
+		\cf4 \\harm\cf0 , \cf3 Pseq\cf0 ([1], \cf5 inf\cf0 ),\
+		\cf4 \\ampB\cf0 , \cf3 Pseq\cf0 ([3, 3, 3, 3, \cf3 Pseq\cf0 ([3, 3, 0, 0, 0, 3], 1), 3]/2, \cf5 inf\cf0 ), \cf2 //def /4 \cf0 \
+		\cf4 \\freq\cf0 , \cf3 Pseq\cf0 ([\cf6 ~f_2\cf0 ], \cf5 inf\cf0 ),\
+		\cf2 //Bota Envelope\cf0 \
+		\cf4 \\at\cf0 , \cf3 Pseq\cf0 ([0.01, 0.01, 0.01, 0.01, \cf3 Pseq\cf0 ([0.01], 6), 0.01], \cf5 inf\cf0 ),\
+		\cf4 \\rel\cf0 , \cf3 Pseq\cf0 ([0.02, 0.02, 3, 3, \cf3 Pseq\cf0 ([3], 6), 3], \cf5 inf\cf0 ),\
+		\cf4 \\shape\cf0 , \cf3 Pseq\cf0 ([-4], \cf5 inf\cf0 )\
+		\
+	),\
+\
+	\cf3 Pbind\cf0 (\
+		\cf4 \\instrument\cf0 , \cf4 \\Noise_Meros_1\cf0 ,\
+		\cf2 //All\cf0 \
+		\cf4 \\dur\cf0 , \cf3 Pseq\cf0 ([1/3, 1/2, 1/3, 1/3, \cf3 Pseq\cf0 ([1/6], 6), 1/6], 1),\
+		\cf4 \\ampN\cf0 , \cf3 Pseq\cf0 ([0.1, 0.1, 0.1, 0.1, \cf3 Pseq\cf0 ([0, 0, 0.1, 0.1, 0.1, 0.1], 1), 0.1]*1.2, \cf5 inf\cf0 ), \cf2 //def xoris *1.4\cf0 \
+		\cf4 \\nMul\cf0 , \cf3 Pseq\cf0 ([1e40, 1e40, 1e40, 1e40, \cf3 Pseq\cf0 ([0.001], 6), 1e40], \cf5 inf\cf0 ),\
+		\cf4 \\nAdd\cf0 , \cf3 Pseq\cf0 ([1e40, 1e40, 1e40, 1e40, \cf3 Pseq\cf0 ([1e4], 6), 1e40], \cf5 inf\cf0 ),\
+		\cf2 //Noise Envelope\cf0 \
+		\cf4 \\at\cf0 , \cf3 Pseq\cf0 ([0.08, 0.08, 0.08, 0.08, 0.08, 0.08], \cf5 inf\cf0 ), \
+		\cf4 \\rel\cf0 , \cf3 Pseq\cf0 ([0.2, 0.2, 0.2, 0.2, 0.2, 0.2], \cf5 inf\cf0 ),\
+		\cf2 //\\shape, Pseq([-200, -200, -200, -200, -200, -200], inf)\cf0 \
+		\cf4 \\shape\cf0 , \cf3 Pseq\cf0 ([-200], \cf5 inf\cf0 )\
+	),\
+\
+	\
+	\cf3 Pbind\cf0 (\
+		\cf4 \\instrument\cf0 , \cf4 \\Drone_Glitch_Meros_1\cf0 ,\
+		\cf2 //All\cf0 \
+		\cf4 \\dur\cf0 , \cf3 Pseq\cf0 ([1/3, 1/2, 1/3, 1/3, \cf3 Pseq\cf0 ([1/6], 6), 1/6], 1), \cf2 //?\cf0 \
+		\cf4 \\ampD\cf0 , \cf3 Pseq\cf0 ([1.5, 0, 0, 0, \cf3 Pseq\cf0 ([0], 6), 1]*1.3, \cf5 inf\cf0 ),  \cf2 //def /2\cf0 \
+		\cf4 \\ampG\cf0 , \cf3 Pseq\cf0 ([0], \cf5 inf\cf0 ), \
+		\cf2 //\\harm, Pseq([0.5], inf), \cf0 \
+		\cf4 \\harm\cf0 , \cf3 Pseq\cf0 ([  0.5, 0.5, 0.5, 0.5, \cf3 Pseq\cf0 ([0.5], 6), 20], \cf5 inf\cf0 ), \
+		\cf4 \\freq\cf0 , \cf3 Pseq\cf0 ([\cf6 ~fD2\cf0 , \cf6 ~fD2\cf0 , \cf6 ~fD2\cf0 , \cf6 ~fD2\cf0 , \cf3 Pseq\cf0 ([\cf6 ~fD2\cf0 ], 6), [\cf6 ~fD7\cf0 , \cf6 ~f_8\cf0 ]], \cf5 inf\cf0 ),\
+		\cf2 //Drone Envelope\cf0 \
+		\cf4 \\at\cf0 , \cf3 Pseq\cf0 ([0.5, 0.08, 0.08, 0.08, \cf3 Pseq\cf0 ([0.08], 6), 1/3], \cf5 inf\cf0 ), \
+		\cf4 \\rel\cf0 , \cf3 Pseq\cf0 ([1, 0.2, 0.2, 0.2, \cf3 Pseq\cf0 ([0.2], 6), 1/12], \cf5 inf\cf0 ),\
+		\cf4 \\shape\cf0 , \cf3 Pseq\cf0 ([4], \cf5 inf\cf0 )\
+		\
+	)\
+	\
+	\
+	\
+	], 1)\
+);\cf2 \
+\
+\
+// - Sto 1\cf0 \
+\
+\cf3 Pdef\cf0 (\cf4 \\classic2_3\cf0 , \cf3 Ppar\cf0 ([\
+		\
+	\cf3 Pbind\cf0 (\
+		\cf4 \\instrument\cf0 , \cf4 \\Bota1_Meros_1\cf0 ,\
+		\cf2 //All\cf0 \
+		\cf4 \\dur\cf0 , \cf3 Pseq\cf0 ([1/3, 1/2, 1/3, 1/3, \cf3 Pseq\cf0 ([1/6], 6), 1/6], 1),\
+		\cf4 \\harm\cf0 , \cf3 Pseq\cf0 ([1], \cf5 inf\cf0 ),\
+		\cf4 \\ampB\cf0 , \cf3 Pseq\cf0 ([3, 3, 3, 3, \cf3 Pseq\cf0 ([3, 3, 3, 3, 3, 0], 1), 3]/2, \cf5 inf\cf0 ), \cf2 //def /4 \cf0 \
+		\cf4 \\freq\cf0 , \cf3 Pseq\cf0 ([\cf6 ~f_2\cf0 ], \cf5 inf\cf0 ),\
+		\cf2 //Bota Envelope\cf0 \
+		\cf4 \\at\cf0 , \cf3 Pseq\cf0 ([0.01, 0.01, 0.01, 0.01, \cf3 Pseq\cf0 ([0.01], 6), 0.01], \cf5 inf\cf0 ),\
+		\cf4 \\rel\cf0 , \cf3 Pseq\cf0 ([0.02, 0.02, 3, 3, \cf3 Pseq\cf0 ([3], 6), 3], \cf5 inf\cf0 ),\
+		\cf4 \\shape\cf0 , \cf3 Pseq\cf0 ([-4], \cf5 inf\cf0 )\
+		\
+	),\
+\
+	\cf3 Pbind\cf0 (\
+		\cf4 \\instrument\cf0 , \cf4 \\Noise_Meros_1\cf0 ,\
+		\cf2 //All\cf0 \
+		\cf4 \\dur\cf0 , \cf3 Pseq\cf0 ([1/3, 1/2, 1/3, 1/3, \cf3 Pseq\cf0 ([1/6], 6), 1/6], 1),\
+		\cf4 \\ampN\cf0 , \cf3 Pseq\cf0 ([0.2, 0.1, 0.2, 0.1, \cf3 Pseq\cf0 ([0, 0, 0.1, 0.1, 0, 0.1], 1), 0.1]*1.2, \cf5 inf\cf0 ), \cf2 //def xoris *1.4\cf0 \
+		\cf4 \\nMul\cf0 , \cf3 Pseq\cf0 ([0.001, 0.001, 0.001, 0.001, \cf3 Pseq\cf0 ([1e40], 6), 1e40], \cf5 inf\cf0 ),\
+		\cf4 \\nAdd\cf0 , \cf3 Pseq\cf0 ([1e4, 1e4, 1e4, 1e4, \cf3 Pseq\cf0 ([1e40], 6), 1e40], \cf5 inf\cf0 ),\
+		\cf2 //Noise Envelope\cf0 \
+		\cf4 \\at\cf0 , \cf3 Pseq\cf0 ([0.08, 0.08, 0.08, 0.08, 0.08, 0.08], \cf5 inf\cf0 ), \
+		\cf4 \\rel\cf0 , \cf3 Pseq\cf0 ([0.2, 0.2, 0.2, 0.2, 0.2, 0.2], \cf5 inf\cf0 ),\
+		\cf2 //\\shape, Pseq([-200, -200, -200, -200, -200, -200], inf)\cf0 \
+		\cf4 \\shape\cf0 , \cf3 Pseq\cf0 ([-200], \cf5 inf\cf0 )\
+	),\
+\
+	\
+	\cf3 Pbind\cf0 (\
+		\cf4 \\instrument\cf0 , \cf4 \\Drone_Glitch_Meros_1\cf0 ,\
+		\cf2 //All\cf0 \
+		\cf4 \\dur\cf0 , \cf3 Pseq\cf0 ([1/3, 1/2, 1/3, 1/3, \cf3 Pseq\cf0 ([1/6], 6), 1/6], 1), \cf2 //?\cf0 \
+		\cf4 \\ampD\cf0 , \cf3 Pseq\cf0 ([1.5, 0, 0, 0, \cf3 Pseq\cf0 ([0], 6), 1]*1.3, \cf5 inf\cf0 ),  \cf2 //def /2\cf0 \
+		\cf4 \\ampG\cf0 , \cf3 Pseq\cf0 ([0], \cf5 inf\cf0 ), \
+		\cf2 //\\harm, Pseq([0.5], inf), \cf0 \
+		\cf4 \\harm\cf0 , \cf3 Pseq\cf0 ([  0.5, 0.5, 0.5, 0.5, \cf3 Pseq\cf0 ([0.5], 6), 20], \cf5 inf\cf0 ), \
+		\cf4 \\freq\cf0 , \cf3 Pseq\cf0 ([\cf6 ~fD2\cf0 , \cf6 ~fD2\cf0 , \cf6 ~fD2\cf0 , \cf6 ~fD2\cf0 , \cf3 Pseq\cf0 ([\cf6 ~fD2\cf0 ], 6), [\cf6 ~fD7\cf0 , \cf6 ~f_8\cf0 ]], \cf5 inf\cf0 ),\
+		\cf2 //Drone Envelope\cf0 \
+		\cf4 \\at\cf0 , \cf3 Pseq\cf0 ([0.5, 0.08, 0.08, 0.08, \cf3 Pseq\cf0 ([0.08], 6), 1/3], \cf5 inf\cf0 ), \
+		\cf4 \\rel\cf0 , \cf3 Pseq\cf0 ([1, 0.2, 0.2, 0.2, \cf3 Pseq\cf0 ([0.2], 6), 1/12], \cf5 inf\cf0 ),\
+		\cf4 \\shape\cf0 , \cf3 Pseq\cf0 ([4], \cf5 inf\cf0 )\
+		\
+	)\
+	\
+	\
+	\
+	], 1)\
+);\cf8 \
+\
+\
+\cf0 \
+\cf8 // - Sto 4\cf7 \
+\
+\cf9 Pdef\cf7 (\cf10 \\classic2_4\cf7 , \cf9 Ppar\cf7 ([\
+		\
+	\cf9 Pbind\cf7 (\
+		\cf10 \\instrument\cf7 , \cf10 \\Bota1_Meros_1\cf7 ,\
+		\cf8 //All\cf7 \
+		\cf10 \\dur\cf7 , \cf9 Pseq\cf7 ([1/3, 1/2, 1/3, 1/3, \cf9 Pseq\cf7 ([1/6], 6), 1/6], 1),\
+		\cf10 \\harm\cf7 , \cf9 Pseq\cf7 ([1], \cf11 inf\cf7 ),\
+		\cf10 \\ampB\cf7 , \cf9 Pseq\cf7 ([3, 3, 3, 3, \cf9 Pseq\cf7 ([3, 0, 3, 3, 3, 0], 1), 3]/2, \cf11 inf\cf7 ), \cf8 //def /4 \cf7 \
+		\cf10 \\freq\cf7 , \cf9 Pseq\cf7 ([\cf6 ~f_2\cf7 ], \cf11 inf\cf7 ),\
+		\cf8 //Bota Envelope\cf7 \
+		\cf10 \\at\cf7 , \cf9 Pseq\cf7 ([0.01, 0.01, 0.01, 0.01, \cf9 Pseq\cf7 ([0.01], 6), 0.01], \cf11 inf\cf7 ),\
+		\cf10 \\rel\cf7 , \cf9 Pseq\cf7 ([0.02, 0.02, 3, 3, \cf9 Pseq\cf7 ([3], 6), 3], \cf11 inf\cf7 ),\
+		\cf10 \\shape\cf7 , \cf9 Pseq\cf7 ([-4], \cf11 inf\cf7 )\
+		\
+	),\
+\
+	\cf9 Pbind\cf7 (\
+		\cf10 \\instrument\cf7 , \cf10 \\Noise_Meros_1\cf7 ,\
+		\cf8 //All\cf7 \
+		\cf10 \\dur\cf7 , \cf9 Pseq\cf7 ([1/3, 1/2, 1/3, 1/3, \cf9 Pseq\cf7 ([1/6], 6), 1/6], 1),\
+		\cf10 \\ampN\cf7 , \cf9 Pseq\cf7 ([0.1, 0.1, 0.1, 0.2, \cf9 Pseq\cf7 ([0.1, \cf0 0, 0.1, 0, 0.1, 0\cf7 ], 1), 1]*1.2, \cf11 inf\cf7 ), \cf8 //def xoris *1.4\cf7 \
+		\cf10 \\nMul\cf7 , \cf9 Pseq\cf7 ([1e40, 1e4, 1e40, 1e4, \cf9 Pseq\cf7 ([0.001], 6), 1e40], \cf11 inf\cf7 ),\
+		\cf10 \\nAdd\cf7 , \cf9 Pseq\cf7 ([1e4, 1e40, 1e40, 1e4, \cf9 Pseq\cf7 ([1e4], 6), 1e40], \cf11 inf\cf7 ),\
+		\cf8 //Noise Envelope\cf7 \
+		\cf10 \\at\cf7 , \cf9 Pseq\cf7 ([0.08, 0.08, 0.08, 0.08, 0.08, 0.08], \cf11 inf\cf7 ), \
+		\cf10 \\rel\cf7 , \cf9 Pseq\cf7 ([0.2, 0.2, 0.2, 0.2, 0.2, 0.2], \cf11 inf\cf7 ),\
+		\cf8 //\\shape, Pseq([-200, -200, -200, -200, -200, -200], inf)\cf7 \
+		\cf10 \\shape\cf7 , \cf9 Pseq\cf7 ([-200], \cf11 inf\cf7 )\
+	),\
+\
+	\
+	\cf9 Pbind\cf7 (\
+		\cf10 \\instrument\cf7 , \cf10 \\Drone_Glitch_Meros_1\cf7 ,\
+		\cf8 //All\cf7 \
+		\cf10 \\dur\cf7 , \cf9 Pseq\cf7 ([1/3, 1/2, 1/3, 1/3, \cf9 Pseq\cf7 ([1/6], 6), 1/6], 1), \cf8 //?\cf7 \
+		\cf10 \\ampD\cf7 , \cf9 Pseq\cf7 ([1.5, 0, 0, 0, \cf9 Pseq\cf7 ([0], 6), 1]*1.3, \cf11 inf\cf7 ),  \cf8 //def /2\cf7 \
+		\cf10 \\ampG\cf7 , \cf9 Pseq\cf7 ([0], \cf11 inf\cf7 ), \
+		\cf8 //\\harm, Pseq([0.5], inf), \cf7 \
+		\cf10 \\harm\cf7 , \cf9 Pseq\cf7 ([  0.5, 0.5, 0.5, 0.5, \cf9 Pseq\cf7 ([0.5], 6), 20], \cf11 inf\cf7 ), \
+		\cf10 \\freq\cf7 , \cf9 Pseq\cf7 ([\cf6 ~fD2\cf7 , \cf6 ~fD2\cf7 , \cf6 ~fD2\cf7 , \cf6 ~fD2\cf7 , \cf9 Pseq\cf7 ([\cf6 ~fD2\cf7 ], 6), [\cf6 ~fD7\cf7 , \cf6 ~f_8\cf7 ]*2], \cf11 inf\cf7 ),\
+		\cf8 //Drone Envelope\cf7 \
+		\cf10 \\at\cf7 , \cf9 Pseq\cf7 ([0.5, 0.08, 0.08, 0.08, \cf9 Pseq\cf7 ([0.08], 6), 1/3], \cf11 inf\cf7 ), \
+		\cf10 \\rel\cf7 , \cf9 Pseq\cf7 ([1, 0.2, 0.2, 0.2, \cf9 Pseq\cf7 ([0.2], 6), 1/12], \cf11 inf\cf7 ),\
+		\cf10 \\shape\cf7 , \cf9 Pseq\cf7 ([4], \cf11 inf\cf7 )\
+		\
+	)\
+	\
+	\
+	\
+	], 1)\
+);\
+\
+\cf8 //:}

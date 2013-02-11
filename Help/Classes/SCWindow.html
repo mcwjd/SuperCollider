@@ -1,0 +1,831 @@
+<html><head><title>SCWindow</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#Undocumented classes'>Undocumented classes</a></div>
+<h1>SCWindow</h1>
+<div id='summary'>(Undocumented class)</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/Base/<a href='file:///Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/Base/GUIScreen.sc'>GUIScreen.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/Object.html">Object</a></div>
+<div id='subclasses'>Subclasses: <a href="../Classes/SCAbstractModalWindow.html">SCAbstractModalWindow</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*allWindows'>allWindows</a> </li>
+<li class='toc3'><a href='#*closeAll'>closeAll</a> </li>
+<li class='toc3'><a href='#*currentFullScreen'>currentFullScreen</a> </li>
+<li class='toc3'><a href='#*initAction'>initAction</a> </li>
+<li class='toc3'><a href='#*initClass'>initClass</a> </li>
+<li class='toc3'><a href='#*new'>new</a> </li>
+<li class='toc3'><a href='#*prGetScreenBounds'>prGetScreenBounds</a> </li>
+<li class='toc3'><a href='#*screenBounds'>screenBounds</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-@'>@</a> </li>
+<li class='toc3'><a href='#-acceptsClickThrough'>acceptsClickThrough</a> </li>
+<li class='toc3'><a href='#-acceptsMouseOver'>acceptsMouseOver</a> </li>
+<li class='toc3'><a href='#-add'>add</a> </li>
+<li class='toc3'><a href='#-addFlowLayout'>addFlowLayout</a> </li>
+<li class='toc3'><a href='#-addToOnClose'>addToOnClose</a> </li>
+<li class='toc3'><a href='#-alpha'>alpha</a> </li>
+<li class='toc3'><a href='#-alwaysOnTop'>alwaysOnTop</a> </li>
+<li class='toc3'><a href='#-asCode'>asCode</a> </li>
+<li class='toc3'><a href='#-asFlowView'>asFlowView</a> </li>
+<li class='toc3'><a href='#-asFullCode'>asFullCode</a> </li>
+<li class='toc3'><a href='#-asNSObject'>asNSObject</a> </li>
+<li class='toc3'><a href='#-asNSWindow'>asNSWindow</a> </li>
+<li class='toc3'><a href='#-asPageLayout'>asPageLayout</a> </li>
+<li class='toc3'><a href='#-asSCIBCompileString'>asSCIBCompileString</a> </li>
+<li class='toc3'><a href='#-asView'>asView</a> </li>
+<li class='toc3'><a href='#-at'>at</a> </li>
+<li class='toc3'><a href='#-background'>background</a> </li>
+<li class='toc3'><a href='#-bounds'>bounds</a> </li>
+<li class='toc3'><a href='#-callDrawFunc'>callDrawFunc</a> </li>
+<li class='toc3'><a href='#-close'>close</a> </li>
+<li class='toc3'><a href='#-closed'>closed</a> </li>
+<li class='toc3'><a href='#-comp'>comp</a> </li>
+<li class='toc3'><a href='#-constructionView'>constructionView</a> </li>
+<li class='toc3'><a href='#-currentSheet'>currentSheet</a> </li>
+<li class='toc3'><a href='#-dataptr'>dataptr</a> </li>
+<li class='toc3'><a href='#-decorate'>decorate</a> </li>
+<li class='toc3'><a href='#-didBecomeKey'>didBecomeKey</a> </li>
+<li class='toc3'><a href='#-didResignKey'>didResignKey</a> </li>
+<li class='toc3'><a href='#-drawFunc'>drawFunc</a> </li>
+<li class='toc3'><a href='#-drawHook'>drawHook</a> </li>
+<li class='toc3'><a href='#-editable'>editable</a> </li>
+<li class='toc3'><a href='#-endFrontAction'>endFrontAction</a> </li>
+<li class='toc3'><a href='#-endFullScreen'>endFullScreen</a> </li>
+<li class='toc3'><a href='#-findByID'>findByID</a> </li>
+<li class='toc3'><a href='#-flow'>flow</a> </li>
+<li class='toc3'><a href='#-front'>front</a> </li>
+<li class='toc3'><a href='#-fullScreen'>fullScreen</a> </li>
+<li class='toc3'><a href='#-initSCWindow'>initSCWindow</a> </li>
+<li class='toc3'><a href='#-isClosed'>isClosed</a> </li>
+<li class='toc3'><a href='#-minimize'>minimize</a> </li>
+<li class='toc3'><a href='#-name'>name</a> </li>
+<li class='toc3'><a href='#-onClose'>onClose</a> </li>
+<li class='toc3'><a href='#-play'>play</a> </li>
+<li class='toc3'><a href='#-prClose'>prClose</a> </li>
+<li class='toc3'><a href='#-prEndFullScreen'>prEndFullScreen</a> </li>
+<li class='toc3'><a href='#-prFullScreen'>prFullScreen</a> </li>
+<li class='toc3'><a href='#-prGetBounds'>prGetBounds</a> </li>
+<li class='toc3'><a href='#-prInit'>prInit</a> </li>
+<li class='toc3'><a href='#-prSetAcceptMouseOver'>prSetAcceptMouseOver</a> </li>
+<li class='toc3'><a href='#-prSetAcceptsClickThrough'>prSetAcceptsClickThrough</a> </li>
+<li class='toc3'><a href='#-prSetAlwaysOnTop'>prSetAlwaysOnTop</a> </li>
+<li class='toc3'><a href='#-prSetBounds'>prSetBounds</a> </li>
+<li class='toc3'><a href='#-prSetName'>prSetName</a> </li>
+<li class='toc3'><a href='#-refresh'>refresh</a> </li>
+<li class='toc3'><a href='#-removeFromOnClose'>removeFromOnClose</a> </li>
+<li class='toc3'><a href='#-setCurrentSheet'>setCurrentSheet</a> </li>
+<li class='toc3'><a href='#-setFont'>setFont</a> </li>
+<li class='toc3'><a href='#-setInnerExtent'>setInnerExtent</a> </li>
+<li class='toc3'><a href='#-setTopLeftBounds'>setTopLeftBounds</a> </li>
+<li class='toc3'><a href='#-storeArgs'>storeArgs</a> </li>
+<li class='toc3'><a href='#-storeModifiersOn'>storeModifiersOn</a> </li>
+<li class='toc3'><a href='#-toFrontAction'>toFrontAction</a> </li>
+<li class='toc3'><a href='#-toggleEditMode'>toggleEditMode</a> </li>
+<li class='toc3'><a href='#-unminimize'>unminimize</a> </li>
+<li class='toc3'><a href='#-userCanClose'>userCanClose</a> </li>
+<li class='toc3'><a href='#-view'>view</a> </li>
+<li class='toc3'><a href='#-views'>views</a> </li>
+<li class='toc3'><a href='#-visible'>visible</a> </li>
+</ul></ul><li class='toc1'><a href='#Help template'>Help template</a></li>
+<ul class='toc'></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>This class is missing documentation.<h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*allWindows' href='./../Overviews/Methods.html#allWindows'>allWindows</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*allWindows' href='./../Overviews/Methods.html#allWindows'>allWindows</a> = value</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*closeAll' href='./../Overviews/Methods.html#closeAll'>closeAll</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*currentFullScreen' href='./../Overviews/Methods.html#currentFullScreen'>currentFullScreen</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*initAction' href='./../Overviews/Methods.html#initAction'>initAction</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*initAction' href='./../Overviews/Methods.html#initAction'>initAction</a> = value</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*initClass' href='./../Overviews/Methods.html#initClass'>initClass</a> </h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*new' href='./../Overviews/Methods.html#new'>new</a> (<span class='argstr'>name: "panel"</span>, <span class='argstr'>bounds</span>, <span class='argstr'>resizable: true</span>, <span class='argstr'>border: true</span>, <span class='argstr'>server</span>, <span class='argstr'>scroll: false</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*prGetScreenBounds' href='./../Overviews/Methods.html#prGetScreenBounds'>prGetScreenBounds</a> (<span class='argstr'>argBounds</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*screenBounds' href='./../Overviews/Methods.html#screenBounds'>screenBounds</a> </h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-@' href='./../Overviews/Methods.html#@'>@</a> (<span class='argstr'>index</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/SCWindow-asCode_Cocoa.sc'>/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/SCWindow-asCode_Cocoa.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-acceptsClickThrough' href='./../Overviews/Methods.html#acceptsClickThrough'>acceptsClickThrough</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-acceptsClickThrough' href='./../Overviews/Methods.html#acceptsClickThrough'>acceptsClickThrough</a> = <span class='argstr'>boolean: true</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-acceptsMouseOver' href='./../Overviews/Methods.html#acceptsMouseOver'>acceptsMouseOver</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-acceptsMouseOver' href='./../Overviews/Methods.html#acceptsMouseOver'>acceptsMouseOver</a> = <span class='argstr'>bool</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-add' href='./../Overviews/Methods.html#add'>add</a> (<span class='argstr'>aView</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-addFlowLayout' href='./../Overviews/Methods.html#addFlowLayout'>addFlowLayout</a> (<span class='argstr'>margin</span>, <span class='argstr'>gap</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-addToOnClose' href='./../Overviews/Methods.html#addToOnClose'>addToOnClose</a> (<span class='argstr'>function</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-alpha' href='./../Overviews/Methods.html#alpha'>alpha</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-alpha' href='./../Overviews/Methods.html#alpha'>alpha</a> = <span class='argstr'>alpha</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-alwaysOnTop' href='./../Overviews/Methods.html#alwaysOnTop'>alwaysOnTop</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-alwaysOnTop' href='./../Overviews/Methods.html#alwaysOnTop'>alwaysOnTop</a> = <span class='argstr'>bool: true</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asCode' href='./../Overviews/Methods.html#asCode'>asCode</a> (<span class='argstr'>varName: "w"</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/SCWindow-asCode_Cocoa.sc'>/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/SCWindow-asCode_Cocoa.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asFlowView' href='./../Overviews/Methods.html#asFlowView'>asFlowView</a> (<span class='argstr'>bounds</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/flowViewSupportCocoa.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/flowViewSupportCocoa.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asFullCode' href='./../Overviews/Methods.html#asFullCode'>asFullCode</a> (<span class='argstr'>varName: "w"</span>, <span class='argstr'>additionalVarNames</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/SCWindow-asCode_Cocoa.sc'>/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/SCWindow-asCode_Cocoa.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asNSObject' href='./../Overviews/Methods.html#asNSObject'>asNSObject</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/osx/objC/scide_scapp/SCWindowPlusCocoa.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/osx/objC/scide_scapp/SCWindowPlusCocoa.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asNSWindow' href='./../Overviews/Methods.html#asNSWindow'>asNSWindow</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/osx/objC/scide_scapp/SCWindowPlusCocoa.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/osx/objC/scide_scapp/SCWindowPlusCocoa.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asPageLayout' href='./../Overviews/Methods.html#asPageLayout'>asPageLayout</a> (<span class='argstr'>title</span>, <span class='argstr'>bounds</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/flowViewSupportCocoa.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/flowViewSupportCocoa.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asSCIBCompileString' href='./../Overviews/Methods.html#asSCIBCompileString'>asSCIBCompileString</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/SCInterfaceBuilder/asSCIBCompileString.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/SCInterfaceBuilder/asSCIBCompileString.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-asView' href='./../Overviews/Methods.html#asView'>asView</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-at' href='./../Overviews/Methods.html#at'>at</a> (<span class='argstr'>index</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/SCWindow-asCode_Cocoa.sc'>/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/SCWindow-asCode_Cocoa.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-background' href='./../Overviews/Methods.html#background'>background</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-background' href='./../Overviews/Methods.html#background'>background</a> = <span class='argstr'>color</span></h3>
+<div class='extmethod'>From extension in <a href='/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/Experimental/osx/scide_scapp/extWindow-background.sc'>/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/Experimental/osx/scide_scapp/extWindow-background.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-bounds' href='./../Overviews/Methods.html#bounds'>bounds</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-bounds' href='./../Overviews/Methods.html#bounds'>bounds</a> = <span class='argstr'>argBounds</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-callDrawFunc' href='./../Overviews/Methods.html#callDrawFunc'>callDrawFunc</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-close' href='./../Overviews/Methods.html#close'>close</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-closed' href='./../Overviews/Methods.html#closed'>closed</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-comp' href='./../Overviews/Methods.html#comp'>comp</a> (<span class='argstr'>func</span>, <span class='argstr'>bounds</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/viewExtensionsOSX.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/viewExtensionsOSX.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-constructionView' href='./../Overviews/Methods.html#constructionView'>constructionView</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-constructionView' href='./../Overviews/Methods.html#constructionView'>constructionView</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-currentSheet' href='./../Overviews/Methods.html#currentSheet'>currentSheet</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-dataptr' href='./../Overviews/Methods.html#dataptr'>dataptr</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/osx/objC/scide_scapp/SCWindowPlusCocoa.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/osx/objC/scide_scapp/SCWindowPlusCocoa.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-decorate' href='./../Overviews/Methods.html#decorate'>decorate</a> (<span class='argstr'>margin</span>, <span class='argstr'>gap</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/Lang/osx/scide_scapp/extSCWindow-decorate.sc'>/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/Lang/osx/scide_scapp/extSCWindow-decorate.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-didBecomeKey' href='./../Overviews/Methods.html#didBecomeKey'>didBecomeKey</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-didResignKey' href='./../Overviews/Methods.html#didResignKey'>didResignKey</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-drawFunc' href='./../Overviews/Methods.html#drawFunc'>drawFunc</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-drawFunc' href='./../Overviews/Methods.html#drawFunc'>drawFunc</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-drawHook' href='./../Overviews/Methods.html#drawHook'>drawHook</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-drawHook' href='./../Overviews/Methods.html#drawHook'>drawHook</a> = <span class='argstr'>aFunction</span></h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/deprecated-3.5.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/deprecated-3.5.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-editable' href='./../Overviews/Methods.html#editable'>editable</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-endFrontAction' href='./../Overviews/Methods.html#endFrontAction'>endFrontAction</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-endFrontAction' href='./../Overviews/Methods.html#endFrontAction'>endFrontAction</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-endFullScreen' href='./../Overviews/Methods.html#endFullScreen'>endFullScreen</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-findByID' href='./../Overviews/Methods.html#findByID'>findByID</a> (<span class='argstr'>id</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-flow' href='./../Overviews/Methods.html#flow'>flow</a> (<span class='argstr'>func</span>, <span class='argstr'>bounds</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/viewExtensionsOSX.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/GUI/osx/scide_scapp/viewExtensionsOSX.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-front' href='./../Overviews/Methods.html#front'>front</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-fullScreen' href='./../Overviews/Methods.html#fullScreen'>fullScreen</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-initSCWindow' href='./../Overviews/Methods.html#initSCWindow'>initSCWindow</a> (<span class='argstr'>argName</span>, <span class='argstr'>argBounds</span>, <span class='argstr'>resizable</span>, <span class='argstr'>border</span>, <span class='argstr'>scroll</span>, <span class='argstr'>appmodal: false</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-isClosed' href='./../Overviews/Methods.html#isClosed'>isClosed</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-minimize' href='./../Overviews/Methods.html#minimize'>minimize</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-name' href='./../Overviews/Methods.html#name'>name</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-name' href='./../Overviews/Methods.html#name'>name</a> = <span class='argstr'>argName</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-onClose' href='./../Overviews/Methods.html#onClose'>onClose</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-onClose' href='./../Overviews/Methods.html#onClose'>onClose</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-play' href='./../Overviews/Methods.html#play'>play</a> (<span class='argstr'>function</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prClose' href='./../Overviews/Methods.html#prClose'>prClose</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prEndFullScreen' href='./../Overviews/Methods.html#prEndFullScreen'>prEndFullScreen</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prFullScreen' href='./../Overviews/Methods.html#prFullScreen'>prFullScreen</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prGetBounds' href='./../Overviews/Methods.html#prGetBounds'>prGetBounds</a> (<span class='argstr'>argBounds</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prInit' href='./../Overviews/Methods.html#prInit'>prInit</a> (<span class='argstr'>argName</span>, <span class='argstr'>argBounds</span>, <span class='argstr'>resizable</span>, <span class='argstr'>border</span>, <span class='argstr'>scroll</span>, <span class='argstr'>view</span>, <span class='argstr'>appmodal: false</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prSetAcceptMouseOver' href='./../Overviews/Methods.html#prSetAcceptMouseOver'>prSetAcceptMouseOver</a> (<span class='argstr'>bool</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prSetAcceptsClickThrough' href='./../Overviews/Methods.html#prSetAcceptsClickThrough'>prSetAcceptsClickThrough</a> (<span class='argstr'>boolean: true</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prSetAlwaysOnTop' href='./../Overviews/Methods.html#prSetAlwaysOnTop'>prSetAlwaysOnTop</a> (<span class='argstr'>boolean: true</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prSetBounds' href='./../Overviews/Methods.html#prSetBounds'>prSetBounds</a> (<span class='argstr'>argBounds</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prSetName' href='./../Overviews/Methods.html#prSetName'>prSetName</a> (<span class='argstr'>argName</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-refresh' href='./../Overviews/Methods.html#refresh'>refresh</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-removeFromOnClose' href='./../Overviews/Methods.html#removeFromOnClose'>removeFromOnClose</a> (<span class='argstr'>function</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setCurrentSheet' href='./../Overviews/Methods.html#setCurrentSheet'>setCurrentSheet</a> (<span class='argstr'>sheet</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setFont' href='./../Overviews/Methods.html#setFont'>setFont</a> (<span class='argstr'>font</span>)</h3>
+<div class='extmethod'>From extension in <a href='/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/extSCWindow-setFont.sc'>/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/extSCWindow-setFont.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setInnerExtent' href='./../Overviews/Methods.html#setInnerExtent'>setInnerExtent</a> (<span class='argstr'>w</span>, <span class='argstr'>h</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setTopLeftBounds' href='./../Overviews/Methods.html#setTopLeftBounds'>setTopLeftBounds</a> (<span class='argstr'>rect</span>, <span class='argstr'>menuSpacer: 45</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-storeArgs' href='./../Overviews/Methods.html#storeArgs'>storeArgs</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-storeModifiersOn' href='./../Overviews/Methods.html#storeModifiersOn'>storeModifiersOn</a> (<span class='argstr'>stream</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-toFrontAction' href='./../Overviews/Methods.html#toFrontAction'>toFrontAction</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-toFrontAction' href='./../Overviews/Methods.html#toFrontAction'>toFrontAction</a> = value</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-toggleEditMode' href='./../Overviews/Methods.html#toggleEditMode'>toggleEditMode</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-unminimize' href='./../Overviews/Methods.html#unminimize'>unminimize</a> </h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/osx/objC/scide_scapp/SCWindowPlusCocoa.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/osx/objC/scide_scapp/SCWindowPlusCocoa.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-userCanClose' href='./../Overviews/Methods.html#userCanClose'>userCanClose</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-userCanClose' href='./../Overviews/Methods.html#userCanClose'>userCanClose</a> = <span class='argstr'>boo</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-view' href='./../Overviews/Methods.html#view'>view</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-views' href='./../Overviews/Methods.html#views'>views</a> </h3>
+<div class='extmethod'>From extension in <a href='/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/SCWindow-asCode_Cocoa.sc'>/Users/vagelis/Library/Application Support/SuperCollider/Extensions/quarks/wslib/wslib-classes/GUI/osx/scide_scapp/Extensions/SCWindow-asCode_Cocoa.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-visible' href='./../Overviews/Methods.html#visible'>visible</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-visible' href='./../Overviews/Methods.html#visible'>visible</a> = <span class='argstr'>yorn</span></h3>
+<div class='extmethod'>From extension in <a href='/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/osx/objC/scide_scapp/SCWindowPlusCocoa.sc'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Common/osx/objC/scide_scapp/SCWindowPlusCocoa.sc</a></div>
+<h2><a class='anchor' name='Help template'>Help template</a></h2>
+
+<p>Copy and paste the text below and save to HelpSource/Classes/SCWindow.schelp<pre class='code prettyprint lang-sc'>TITLE:: SCWindow
+summary:: (put short description here)
+categories:: Undocumented classes
+related:: Classes/SomeRelatedClass, Reference/SomeRelatedStuff, etc.
+
+DESCRIPTION::
+(put long description here)
+
+
+CLASSMETHODS::
+
+METHOD:: new
+(describe method here)
+
+ARGUMENT:: name
+(describe argument here)
+
+ARGUMENT:: bounds
+(describe argument here)
+
+ARGUMENT:: resizable
+(describe argument here)
+
+ARGUMENT:: border
+(describe argument here)
+
+ARGUMENT:: server
+(describe argument here)
+
+ARGUMENT:: scroll
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: closeAll
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: screenBounds
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: currentFullScreen
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prGetScreenBounds
+(describe method here)
+
+ARGUMENT:: argBounds
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: allWindows
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: initAction
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: initClass
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+
+INSTANCEMETHODS::
+
+METHOD:: views
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: refresh
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: drawHook
+(describe method here)
+
+ARGUMENT:: aFunction
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: setFont
+(describe method here)
+
+ARGUMENT:: font
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: addFlowLayout
+(describe method here)
+
+ARGUMENT:: margin
+(describe argument here)
+
+ARGUMENT:: gap
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: setTopLeftBounds
+(describe method here)
+
+ARGUMENT:: rect
+(describe argument here)
+
+ARGUMENT:: menuSpacer
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: onClose
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: dataptr
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: acceptsMouseOver
+(describe method here)
+
+ARGUMENT:: bool
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: isClosed
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: currentSheet
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: background
+(describe method here)
+
+ARGUMENT:: color
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: asFullCode
+(describe method here)
+
+ARGUMENT:: varName
+(describe argument here)
+
+ARGUMENT:: additionalVarNames
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: fullScreen
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: @
+(describe method here)
+
+ARGUMENT:: index
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: flow
+(describe method here)
+
+ARGUMENT:: func
+(describe argument here)
+
+ARGUMENT:: bounds
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prSetBounds
+(describe method here)
+
+ARGUMENT:: argBounds
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: comp
+(describe method here)
+
+ARGUMENT:: func
+(describe argument here)
+
+ARGUMENT:: bounds
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: toggleEditMode
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: storeModifiersOn
+(describe method here)
+
+ARGUMENT:: stream
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: findByID
+(describe method here)
+
+ARGUMENT:: id
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: alpha
+(describe method here)
+
+ARGUMENT:: alpha
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: initSCWindow
+(describe method here)
+
+ARGUMENT:: argName
+(describe argument here)
+
+ARGUMENT:: argBounds
+(describe argument here)
+
+ARGUMENT:: resizable
+(describe argument here)
+
+ARGUMENT:: border
+(describe argument here)
+
+ARGUMENT:: scroll
+(describe argument here)
+
+ARGUMENT:: appmodal
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: endFullScreen
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prFullScreen
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: removeFromOnClose
+(describe method here)
+
+ARGUMENT:: function
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prClose
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: asFlowView
+(describe method here)
+
+ARGUMENT:: bounds
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: addToOnClose
+(describe method here)
+
+ARGUMENT:: function
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: didBecomeKey
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: toFrontAction
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: constructionView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: play
+(describe method here)
+
+ARGUMENT:: function
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: alwaysOnTop
+(describe method here)
+
+ARGUMENT:: bool
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: acceptsClickThrough
+(describe method here)
+
+ARGUMENT:: boolean
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prSetAlwaysOnTop
+(describe method here)
+
+ARGUMENT:: boolean
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prSetAcceptMouseOver
+(describe method here)
+
+ARGUMENT:: bool
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: storeArgs
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: userCanClose
+(describe method here)
+
+ARGUMENT:: boo
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: decorate
+(describe method here)
+
+ARGUMENT:: margin
+(describe argument here)
+
+ARGUMENT:: gap
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: bounds
+(describe method here)
+
+ARGUMENT:: argBounds
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: callDrawFunc
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prInit
+(describe method here)
+
+ARGUMENT:: argName
+(describe argument here)
+
+ARGUMENT:: argBounds
+(describe argument here)
+
+ARGUMENT:: resizable
+(describe argument here)
+
+ARGUMENT:: border
+(describe argument here)
+
+ARGUMENT:: scroll
+(describe argument here)
+
+ARGUMENT:: view
+(describe argument here)
+
+ARGUMENT:: appmodal
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: minimize
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: drawFunc
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prEndFullScreen
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: at
+(describe method here)
+
+ARGUMENT:: index
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: asPageLayout
+(describe method here)
+
+ARGUMENT:: title
+(describe argument here)
+
+ARGUMENT:: bounds
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: asView
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: asNSWindow
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: view
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: name
+(describe method here)
+
+ARGUMENT:: argName
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: asNSObject
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: setInnerExtent
+(describe method here)
+
+ARGUMENT:: w
+(describe argument here)
+
+ARGUMENT:: h
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: endFrontAction
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: close
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: setCurrentSheet
+(describe method here)
+
+ARGUMENT:: sheet
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: editable
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: closed
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: front
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: asSCIBCompileString
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: visible
+(describe method here)
+
+ARGUMENT:: yorn
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: add
+(describe method here)
+
+ARGUMENT:: aView
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prSetAcceptsClickThrough
+(describe method here)
+
+ARGUMENT:: boolean
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: didResignKey
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: unminimize
+(describe method here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prSetName
+(describe method here)
+
+ARGUMENT:: argName
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: asCode
+(describe method here)
+
+ARGUMENT:: varName
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+METHOD:: prGetBounds
+(describe method here)
+
+ARGUMENT:: argBounds
+(describe argument here)
+
+returns:: (describe returnvalue here)
+
+
+EXAMPLES::
+
+code::
+(some example code)
+::
+</pre>
+<div class='doclink'>link::Classes/SCWindow::<br>sc version: 3.5.3</div></div></body></html>
