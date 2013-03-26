@@ -28,6 +28,9 @@ Document.postColor_(Color.white);
 Document.listener.background = Color(0.14, 0.14, 0.14, 0.97);
 
 
+//Change Fonts Size
+
+CocoaDocument.defaultFont_(Font("Monaco", 11));
 
 
 

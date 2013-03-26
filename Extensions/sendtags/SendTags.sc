@@ -1,54 +1,44 @@
 
-Dests { classvar <>mineAddr, <>pappousAddr, <>axilleasAddr;
+Dests { 
+	classvar <>mitsosAddr, <>myAddr, <>comInAddr;
 
 	*initClass {
-	
 		StartUp.add{
-				
-			mineAddr = NetAddr.localAddr;
-			pappousAddr = NetAddr("169.254.47.198", 57120);
-			axilleasAddr = NetAddr("169.254.45.129", 57120);
-						//mitsosAddr = NetAddr("10.1.60.1", 57121);
-		
-		
+			mitsosAddr = NetAddr("10.1.60.2", 57120);
+			myAddr = NetAddr.localAddr;
+			comInAddr = NetAddr("10.1.60.91", 10001);
 		}
-	
 	}
-	
-	
-	
 }
 
 SendTags {
 	
 	var <>num=0, <>tags, <>step=0.25, <>title, <>steppattern, <>tagPat, task, verbose = true;
-	var  <>dests, <>tag, <>tagg, <>stp, <>stp2, <>x, <>times = inf;
+	var  <>dests, <>tag, <>tagg, <>stp, <>x;
 	var tag2;
-	
+
+
+
 	immediate {
 		verbose = true;
-	}
-	atEnd {
-		verbose = false;
+
 	}
 	
-	loop { 
+	atEnd {
+		verbose = false;
 
+	}
+	
+
+	loop { 
 		tagPat = PatternProxy(Pseq([nil], inf));
-		steppattern = PatternProxy(Pseq([nil], inf));//def 0.2 --nil
-		~tagSync = PatternProxy(Pseq([nil], inf));//def 0.2 --nil
+		steppattern = PatternProxy(Pseq([0.2], inf));
 		tagg = tagPat.asStream;
 		stp = steppattern.asStream;
-		//stp2 = ~tagSync.asStream;
-		
 		task = Task({ 
-			times.do{
-				
+			inf.do{		
 				tagPat.source = Pseq(tags, inf);
 				steppattern.source = Pseq(step, inf);
-				~tagSync.source = Pseq(step, inf).asStream;
-				
-				
 				verbose.switch(
 					true, {				
 						num = tags.numChannels;
@@ -56,29 +46,25 @@ SendTags {
 							x = tagg.next;
 							dests do: _.sendMsg(title.asString, x);
 							stp.next.wait;
-							//1/2 * (stp2.next + stp.next).wait; 
 							//tag = tag+1;
 						}
-					},   
+					}, 
 					false, {
 						steppattern.source = Pseq([step], inf);
-						~tagSync.source = Pseq([step], inf).asStream;
-						num.do{ 					
-							
-							x = tagg.next;
+						num.do{ 											x = tagg.next;
 							stp = steppattern.asStream;
-							stp = ~tagSync.asStream;
 							dests do: _.sendMsg(title.asString, x);
 							stp.next.wait;
-							//1/2 * (stp2.next + stp.next).wait; 
 							//tag = tag+1;
 						}
 					}
 				)
 			}
 		});
-		task.start;
+	
+	task.start;
 	}
+	
 	pause {
 		task.pause;
 	}
@@ -91,82 +77,132 @@ SendTags {
 	stop {
 		task.stop;		
 	}
-	
 }
 
 
-RespTags { var <>title, <>tag, <>action, <>responder;
-	// <> Gia na dilonontai apo exo san sendTags.scd me .title ktl
-		var addResp;
+RespTags {
+	var <>title, <>tag, <>action, <>responder;
+	var addResp;
 	
 	*do { |title, tag, action, responder|
-		
 		^super.newCopyArgs(title, tag, action, responder).addResp;
-	
 	}
 	
-
-	addResp { 
-		
+	addResp { 	
 		responder = OSCresponderNode(nil, title.asString, {arg time, resp, msg; /*msg[1].postln;*/
 			msg[1].switch( tag, 
 				action
 			 );
-		
 		}).add;
-	
 	}
 	
-
 	removeResp {
 		responder.remove;
 	}
 	
-
-}
-
-
-
-RespClockTags { var <>title, <>tags, <>actions, <>numTags1, <>numTags2, num = 0;
-	
-	addResp { 
-		numTags1 = tags.size;
-		fork{			
-			numTags1.do{ 
-				OSCresponderNode(nil, title.asString, {arg time, resp, msg; /*msg[1].postln;*/
-					msg[1].switch( tags[num], 
-					actions[num]
-						 );
-					}).add;
-				num.postln;
-				num = num + 1;
-				//numTags = numTags;
-			}
-		};
-		fork{
-			inf.do{
-				var count;
-				numTags2 = tags.size;
-				if((numTags2 != numTags1) && (numTags2 > numTags1), 
-					{ count = numTags2 - numTags1;
-						count.do{
-							OSCresponderNode(nil, title.asString, {arg time, resp, msg;
-								msg[1].switch( tags[num], 
-								actions[num]
-									 );
-								}).add;
-							num.postln;
-							num = num + 1;
-							  };
-					},
-					{  }
-					
-				);
-				0.001.wait;
-			}
-		};
-				
-		
+	removeWhenDone {
+		responder.removeWhenDone;
 	}
-
 }
+
+CountRespTags {
+	var counter, times, counterTimes, <>numCounter, <>resps, sendTagsSize, <>sendTags, respNames, <>counter2, <>counterResps, c,
+		numCountResps, numCountResps2;
+		
+	prepare {
+		~counterAll = 0;
+		if(sendTags == nil, {"no SendTags Instance".error}, {
+			times = 1;
+			counterTimes = 1;
+			sendTagsSize = sendTags.tags.size;
+			resps = IdentityDictionary.new;
+			counterResps = IdentityDictionary.new;
+			numCounter.do({
+				sendTagsSize.do({ arg i;
+					resps[("countResp" ++ times.asString ++ "_" ++ (i+1).asString).asSymbol] = RespTags.do(sendTags.title, i+1, nil);
+					i = i+1; 
+				});
+				times = times + 1;
+			});
+			counterTimes = 1;
+			counter2  = 0;
+			c = 1;
+			numCountResps = Pseq((1..numCounter), inf).asStream;
+			numCountResps2 = Pseq((1..numCounter), inf, 1).asStream;
+		});
+	}
+	
+	load {
+		numCounter.do({
+			var d, h;
+			d =	numCountResps.next;
+			h = numCountResps2.next;
+			h.postln;
+			d.postln;
+			~counterAll = 0;
+			counterResps[("counter" ++ d.asString).asSymbol] = RespTags.do(sendTags.title, sendTagsSize, {
+				~counterAll = ~counterAll + 1;
+				~counterAll.switch(
+					1, {
+						resps.collect {|resp| resp.removeResp};
+						sendTagsSize.do({ arg i;
+							 resps[("countResp" ++ h.asString ++ "_" ++ (i+1).asString).asSymbol].addResp;
+							i = i + 1;
+						});
+						~counterAll = 0;
+						counterResps.collect {|resps| resps.removeResp};
+						counterResps[("counter" ++ h.asString).asSymbol].addResp;
+					},
+					~counterAll
+				)
+			});
+
+		});
+
+	}
+}
+
+
+//RespClockTags { var <>title, <>tags, <>actions, <>numTags1, <>numTags2, num = 0;
+//	
+//	addResp { 
+//		numTags1 = tags.size;
+//		fork{			
+//			numTags1.do{ 
+//				OSCresponderNode(nil, title.asString, {arg time, resp, msg; /*msg[1].postln;*/
+//					msg[1].switch( tags[num], 
+//					actions[num]
+//						 );
+//					}).add;
+//				num.postln;
+//				num = num + 1;
+//				//numTags = numTags;
+//			}
+//		};
+//		fork{
+//			inf.do{
+//				var count;
+//				numTags2 = tags.size;
+//				if((numTags2 != numTags1) && (numTags2 > numTags1), 
+//					{ count = numTags2 - numTags1;
+//						count.do{
+//							OSCresponderNode(nil, title.asString, {arg time, resp, msg;
+//								msg[1].switch( tags[num], 
+//								actions[num]
+//									 );
+//								}).add;
+//							num.postln;
+//							num = num + 1;
+//							  };
+//					},
+//					{  }
+//					
+//				);
+//				0.001.wait;
+//			}
+//		};
+//				
+//		
+//	}
+//
+//}

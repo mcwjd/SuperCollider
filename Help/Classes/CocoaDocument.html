@@ -1,0 +1,112 @@
+<html><head><title>CocoaDocument</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider CLASSES</div>
+<div id='categories'><a href='./../Browse.html#Platform>OSX'>Platform>OSX</a></div>
+<h1>CocoaDocument</h1>
+<div id='summary'>implements Document functionality</div>
+</div>
+<div class='subheader'>
+<div id='filename'>Source: /Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Platform/osx/scide_scapp/<a href='file:///Applications/SuperCollider/SuperCollider.app/Contents/Resources/SCClassLibrary/Platform/osx/scide_scapp/CocoaDocument.sc'>CocoaDocument.sc</a></div><div id='superclasses'>Inherits from: <a href="../Classes/Document.html">Document</a> : <a href="../Classes/Object.html">Object</a></div>
+<div id='related'>See also: <a href="./../Classes/Document.html">Document</a></div>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#description'>Description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#classmethods'>Class methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited class methods'>Inherited class methods</a></li>
+<li class='toc2'><a href='#Undocumented class methods'>Undocumented class methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#*defaultFont'>defaultFont</a> </li>
+<li class='toc3'><a href='#*new'>new</a> </li>
+<li class='toc3'><a href='#*postColor'>postColor</a> </li>
+<li class='toc3'><a href='#*prDefaultUsesAutoInOutdent'>prDefaultUsesAutoInOutdent</a> </li>
+<li class='toc3'><a href='#*startup'>startup</a> </li>
+</ul></ul><li class='toc1'><a href='#instancemethods'>Instance methods</a></li>
+<ul class='toc'><li class='toc2'><a href='#Inherited instance methods'>Inherited instance methods</a></li>
+<li class='toc2'><a href='#Undocumented instance methods'>Undocumented instance methods</a></li>
+<ul class='toc'><li class='toc3'><a href='#-alwaysOnTop'>alwaysOnTop</a> </li>
+<li class='toc3'><a href='#-balanceParens'>balanceParens</a> </li>
+<li class='toc3'><a href='#-editable'>editable</a> </li>
+<li class='toc3'><a href='#-front'>front</a> </li>
+<li class='toc3'><a href='#-initLast'>initLast</a> </li>
+<li class='toc3'><a href='#-insertTextRange'>insertTextRange</a> </li>
+<li class='toc3'><a href='#-isClosed'>isClosed</a> </li>
+<li class='toc3'><a href='#-isEdited'>isEdited</a> </li>
+<li class='toc3'><a href='#-linkAtClickPos'>linkAtClickPos</a> </li>
+<li class='toc3'><a href='#-prIsEditable'>prIsEditable</a> </li>
+<li class='toc3'><a href='#-promptToSave'>promptToSave</a> </li>
+<li class='toc3'><a href='#-prUsesAutoInOutdent'>prUsesAutoInOutdent</a> </li>
+<li class='toc3'><a href='#-rangeText'>rangeText</a> </li>
+<li class='toc3'><a href='#-removeUndo'>removeUndo</a> </li>
+<li class='toc3'><a href='#-selectedRangeLocation'>selectedRangeLocation</a> </li>
+<li class='toc3'><a href='#-selectedRangeSize'>selectedRangeSize</a> </li>
+<li class='toc3'><a href='#-selectedText'>selectedText</a> </li>
+<li class='toc3'><a href='#-selectRange'>selectRange</a> </li>
+<li class='toc3'><a href='#-selectUnderlinedText'>selectUnderlinedText</a> </li>
+<li class='toc3'><a href='#-setFont'>setFont</a> </li>
+<li class='toc3'><a href='#-setTextColor'>setTextColor</a> </li>
+<li class='toc3'><a href='#-syntaxColorize'>syntaxColorize</a> </li>
+<li class='toc3'><a href='#-text'>text</a> </li>
+<li class='toc3'><a href='#-underlineSelection'>underlineSelection</a> </li>
+<li class='toc3'><a href='#-unfocusedFront'>unfocusedFront</a> </li>
+</ul></ul></ul></div><h2><a class='anchor' name='description'>Description</a></h2>
+
+<p>CocoaDocument implements <a href="./../Classes/Document.html">Document</a> functionality for the SuperCollider user interface on Mac OSX.
+<p>You could instantiate it e.g. by running <code class='code prettyprint lang-sc'>CocoaDocument.new</code> but in order to write platform-independent code you should not do this - simply call <code class='code prettyprint lang-sc'>Document.new</code> and this instantiates the correct class for your system.
+<p>For examples and method descriptions see <a href="./../Classes/Document.html">Document</a>.<h2><a class='anchor' name='classmethods'>Class Methods</a></h2>
+<h3><a class='anchor' name='Inherited class methods'>Inherited class methods</a></h3>
+<div id='inheritedclassmets'></div><h3><a class='anchor' name='Undocumented class methods'>Undocumented class methods</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*defaultFont' href='./../Overviews/Methods.html#defaultFont'>defaultFont</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*defaultFont' href='./../Overviews/Methods.html#defaultFont'>defaultFont</a> = <span class='argstr'>font</span></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*new' href='./../Overviews/Methods.html#new'>new</a> (<span class='argstr'>title: "Untitled"</span>, <span class='argstr'>string: ""</span>, <span class='argstr'>makeListener: false</span>)</h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*postColor' href='./../Overviews/Methods.html#postColor'>postColor</a></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*postColor' href='./../Overviews/Methods.html#postColor'>postColor</a> = <span class='argstr'>color</span></h3>
+<div class='supmethod'>From superclass: <a href='./../Classes/Document.html'>Document</a></div>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*prDefaultUsesAutoInOutdent' href='./../Overviews/Methods.html#prDefaultUsesAutoInOutdent'>prDefaultUsesAutoInOutdent</a><h3 class='cmethodname'><span class='methprefix'>*</span><a name='*prDefaultUsesAutoInOutdent' href='./../Overviews/Methods.html#prDefaultUsesAutoInOutdent'>prDefaultUsesAutoInOutdent</a> = <span class='argstr'>bool</span></h3>
+<h3 class='cmethodname'><span class='methprefix'>*</span><a name='*startup' href='./../Overviews/Methods.html#startup'>startup</a> </h3>
+<h2><a class='anchor' name='instancemethods'>Instance Methods</a></h2>
+<h3><a class='anchor' name='Inherited instance methods'>Inherited instance methods</a></h3>
+<div id='inheritedinstmets'></div><h3><a class='anchor' name='Undocumented instance methods'>Undocumented instance methods</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-alwaysOnTop' href='./../Overviews/Methods.html#alwaysOnTop'>alwaysOnTop</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-alwaysOnTop' href='./../Overviews/Methods.html#alwaysOnTop'>alwaysOnTop</a> = <span class='argstr'>boolean: true</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-balanceParens' href='./../Overviews/Methods.html#balanceParens'>balanceParens</a> (<span class='argstr'>levels: 1</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-editable' href='./../Overviews/Methods.html#editable'>editable</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-editable' href='./../Overviews/Methods.html#editable'>editable</a> = <span class='argstr'>abool: true</span></h3>
+<div class='supmethod'>From superclass: <a href='./../Classes/Document.html'>Document</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-front' href='./../Overviews/Methods.html#front'>front</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-initLast' href='./../Overviews/Methods.html#initLast'>initLast</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-insertTextRange' href='./../Overviews/Methods.html#insertTextRange'>insertTextRange</a> (<span class='argstr'>string</span>, <span class='argstr'>rangestart</span>, <span class='argstr'>rangesize</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-isClosed' href='./../Overviews/Methods.html#isClosed'>isClosed</a> </h3>
+<div class='extmethod'>From extension in <a href='/Users/vagelis/Library/Application Support/SuperCollider/Extensions/OtherLibs/RJKPlily+Stuff/SwingDocument.sc'>/Users/vagelis/Library/Application Support/SuperCollider/Extensions/OtherLibs/RJKPlily+Stuff/SwingDocument.sc</a></div>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-isEdited' href='./../Overviews/Methods.html#isEdited'>isEdited</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-linkAtClickPos' href='./../Overviews/Methods.html#linkAtClickPos'>linkAtClickPos</a> (<span class='argstr'>clickPos</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prIsEditable' href='./../Overviews/Methods.html#prIsEditable'>prIsEditable</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-prIsEditable' href='./../Overviews/Methods.html#prIsEditable'>prIsEditable</a> = <span class='argstr'>editable: true</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-promptToSave' href='./../Overviews/Methods.html#promptToSave'>promptToSave</a></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-promptToSave' href='./../Overviews/Methods.html#promptToSave'>promptToSave</a> = <span class='argstr'>bool</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-prUsesAutoInOutdent' href='./../Overviews/Methods.html#prUsesAutoInOutdent'>prUsesAutoInOutdent</a><h3 class='imethodname'><span class='methprefix'>-</span><a name='-prUsesAutoInOutdent' href='./../Overviews/Methods.html#prUsesAutoInOutdent'>prUsesAutoInOutdent</a> = <span class='argstr'>bool</span></h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-rangeText' href='./../Overviews/Methods.html#rangeText'>rangeText</a> (<span class='argstr'>rangestart: 0</span>, <span class='argstr'>rangesize: 1</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-removeUndo' href='./../Overviews/Methods.html#removeUndo'>removeUndo</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-selectedRangeLocation' href='./../Overviews/Methods.html#selectedRangeLocation'>selectedRangeLocation</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-selectedRangeSize' href='./../Overviews/Methods.html#selectedRangeSize'>selectedRangeSize</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-selectedText' href='./../Overviews/Methods.html#selectedText'>selectedText</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-selectRange' href='./../Overviews/Methods.html#selectRange'>selectRange</a> (<span class='argstr'>start: 0</span>, <span class='argstr'>length: 0</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-selectUnderlinedText' href='./../Overviews/Methods.html#selectUnderlinedText'>selectUnderlinedText</a> (<span class='argstr'>clickPos</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setFont' href='./../Overviews/Methods.html#setFont'>setFont</a> (<span class='argstr'>font</span>, <span class='argstr'>rangeStart: -1</span>, <span class='argstr'>rangeSize: 100</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-setTextColor' href='./../Overviews/Methods.html#setTextColor'>setTextColor</a> (<span class='argstr'>color</span>, <span class='argstr'>rangeStart: -1</span>, <span class='argstr'>rangeSize: 0</span>)</h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-syntaxColorize' href='./../Overviews/Methods.html#syntaxColorize'>syntaxColorize</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-text' href='./../Overviews/Methods.html#text'>text</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-underlineSelection' href='./../Overviews/Methods.html#underlineSelection'>underlineSelection</a> </h3>
+<h3 class='imethodname'><span class='methprefix'>-</span><a name='-unfocusedFront' href='./../Overviews/Methods.html#unfocusedFront'>unfocusedFront</a> </h3>
+<div class='doclink'>source: <a href='file:///Applications/SuperCollider/SuperCollider.app/Contents/Resources/HelpSource/Classes/CocoaDocument.schelp'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/HelpSource/Classes/CocoaDocument.schelp</a><br>link::Classes/CocoaDocument::<br>sc version: 3.5.3</div></div></body></html>

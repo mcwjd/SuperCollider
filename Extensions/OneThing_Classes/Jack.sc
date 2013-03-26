@@ -8,9 +8,13 @@
 			Server.default.options.device = "JackRouter";
 			//Server.default.reboot;
 
+		
 		}
+
+		*free{	ServerOptions.devices; }
 
 	}
 	
 	
 //Jack.load;
+

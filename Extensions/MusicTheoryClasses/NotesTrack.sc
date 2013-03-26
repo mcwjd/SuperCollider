@@ -10,7 +10,7 @@ NotesTrack {
         
 		init {
 			   if (in.isNil) { in = { Mix.new(SoundIn.ar([0,1])); } };               
-               ^this.makeSynth;
+              // ^this.makeSynth;
         }
         
         makeSynth {

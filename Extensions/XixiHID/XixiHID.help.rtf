@@ -1,0 +1,190 @@
+{\rtf1\mac\ansicpg10000\cocoartf102
+{\fonttbl\f0\fnil\fcharset77 Monaco;\f1\fswiss\fcharset77 Helvetica-Bold;\f2\fswiss\fcharset77 Helvetica;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue191;\red191\green0\blue0;\red0\green115\blue0;
+\red0\green0\blue0;\red191\green0\blue0;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\fs18 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\b\fs36 \cf0 XixiHID		an interface for HIDDeviceService\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\b0\fs18 \cf0 \
+by ixi software (www.ixi-software.net)\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f2\fs24 \cf0 \
+The idea of this class is to provide a simple fast working - hard working - interface\
+to the [\ul HIDDeviceService\ulnone ] (which is a bit more lower level). It can work with any\
+number of interfaces (joysticks, gamepads, STEIM junxion boxes, and other HID\
+harware interfaces). They are plugged into the USB port of the computer (or a USB \
+hub) and each device gets a location ID (locID) which is used to differentiate between\
+the devices. Each device can be started and stopped in realtime.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\fs18 \cf0 \
+x = \cf2 XixiHID\cf0 .new;\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f2\fs24 \cf0 Initialise the ixi class - check which devices are available.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\fs18 \cf0 \
+x.getDevices;\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f2\fs24 \cf0 Check available devices and their number\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\fs18 \cf0 \
+x.getDeviceElements(0);\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f2\fs24 \cf0 Get the elements of a chosen device (the buttons, sliders and sensors)\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\fs18 \cf0 \
+x.startDevice(0);\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f2\fs24 \cf0 Start a chosen device. The argument is the number from the .getDevices.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\fs18 \cf0 \
+x.action_(\{\cf2 arg\cf0  productID, vendorID, locID, cookie, val;\
+			[productID, vendorID, locID, cookie, val].postln;\
+			\cf3 // your control code comes here\
+			// if using more than one device, then you can use the ~locID list\
+			// created in the XixiHID class for locating devices and differentiate\
+			// between them. (see Example 2)\cf0 \
+		\});\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f2\fs24 \cf0 Set the action that you want the device to do.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\fs18 \cf0 \
+x.stopDevice(1);\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f2\fs24 \cf0 Stop a chosen device.
+\f0\fs18 \
+\
+x.killAll;\
+\
+
+\f2\fs24 Kill all devices and clear memory\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f1\b \cf0 Note
+\f2\b0 : a global list (~locID) is created on the .new and .getDevices methods.\
+This list contains the USB location of all HID devices connected to the computer.\
+The location in the list is equivalent to the number of the device. \
+(so device 0 has the locID ~locID[0])\
+\
+Thats it!\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+
+\f0\fs18 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+\cf3 \
+\
+// ==================== Example 1\cf0 \
+\
+(\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+\cf2 SynthDef\cf0 (\cf4 \\bend\cf0 , \{ \cf2 arg\cf0  freq= 222;\
+	\cf2 var\cf0  signal;\
+	signal = \cf2 SinOsc\cf0 .ar(freq, 0, 1);\
+	\cf2 Out\cf0 .ar(0, signal ! 2);\
+\}).load(s);\
+\
+b = \cf2 Synth\cf0 (\cf4 \\bend\cf0 );\
+)\
+\
+x = \cf2 XixiHID\cf0 .new;\
+\
+x.getDevices;\
+\
+x.getDeviceElements(0);\
+\
+x.startDevice(0);\
+\
+x.action_(\{\cf2 arg\cf0  productID, vendorID, locID, cookie, val;\
+			[productID, vendorID, locID, cookie, val].postln;\
+			switch (cookie)\
+				\{9\} \{b.set(\cf4 \\freq\cf0 , val*2)\}\
+				\{19\} \{b.set(\cf4 \\freq\cf0 , val*2)\}; \cf3 // cookie is the button/slider/sensor\cf0 \
+			\
+\});\
+\
+x.stopDevice(0);\
+\
+x.killAll\
+\
+\
+\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+\cf3 // ==================== Example 2\cf0 \
+\
+\cf3 // An example with 2 devices. (you can put more devices)\cf0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+\cf2 SynthDef\cf0 (\cf4 \\bang\cf0 , \{ \cf2 arg\cf0  freq= 222;\
+	\cf2 var\cf0  signal;\
+	signal = \cf2 SinOsc\cf0 .ar(freq, 0, 0.31);\
+	signal = signal * \cf2 EnvGen\cf0 .ar(\cf2 Env\cf0 .perc, doneAction: 2);\
+	\cf2 Out\cf0 .ar(0, signal ! 2);\
+\}).load(s);\
+\
+\
+\
+x = \cf2 XixiHID\cf0 .new;\
+\
+x.getDevices;\
+\
+x.getDeviceElements(0);\
+\
+x.startDevice(0);\
+x.startDevice(1);\
+\
+x.action_(\{\cf2 arg\cf0  productID, vendorID, locID, cookie, val;\
+			[productID, vendorID, locID, cookie, val].postln;\
+		\
+		\cf3 // an example with 2 devices connected\cf0 \
+		switch(locID)\
+			\{~locID[0]\} \{	\cf3 // device 0\cf0 \
+				switch (cookie)\
+					\{7\} \{\cf2 Synth\cf0 (\cf4 \\bang\cf0 , [\cf4 \\freq\cf0 , 666])\}\
+					\{8\} \{ if(val == 0, \
+							\{\cf2 Synth\cf0 (\cf4 \\bang\cf0 , [\cf4 \\freq\cf0 , 555])\}, \
+							\{\cf2 Synth\cf0 (\cf4 \\bang\cf0 , [\cf4 \\freq\cf0 , 555*2])\})\
+						\};\
+\
+			\}\
+			\{~locID[1]\} \{ \cf3 // device 1\cf0 \
+				a  = switch (cookie)\
+					\{7\} \{ \cf2 Synth\cf0 (\cf4 \\bang\cf0 , [\cf4 \\freq\cf0 , 999]) \} 					\{8\} \{ if(val == 0, \{\cf2 Synth\cf0 (\cf4 \\bang\cf0 , [\cf4 \\freq\cf0 , 333])\}\cf2 )\cf0  \};\
+			\}\
+\});\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+\cf5 \
+x.stopDevice(0); \cf6 // stop a device but leave the other running\cf5 \
+\
+\cf0 x.killAll;\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural
+\cf3 // =====================\cf0 \
+}

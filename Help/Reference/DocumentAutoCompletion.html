@@ -1,0 +1,73 @@
+<html><head><title>Document Autocompletion</title>
+<link rel='stylesheet' href='./../scdoc.css' type='text/css' />
+<link rel='stylesheet' href='./../frontend.css' type='text/css' />
+<link rel='stylesheet' href='./../custom.css' type='text/css' />
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+<script src='./../scdoc.js' type='text/javascript'></script>
+<script src='./../docmap.js' type='text/javascript'></script>
+<script src='./../prettify.js' type='text/javascript'></script>
+<script src='./../lang-sc.js' type='text/javascript'></script>
+<script src='./../MathJax/MathJax.js?config=TeX-AMS_HTML,scmathjax' type='text/javascript'></script>
+<script type='text/javascript'>var helpRoot='./..';</script>
+</head>
+<ul id='menubar'></ul>
+<body onload='fixTOC();prettyPrint()'>
+<div class='contents'>
+<div class='header'>
+<div id='label'>SuperCollider REFERENCE</div>
+<div id='categories'><a href='./../Browse.html#Platform>OSX'>Platform>OSX</a>, <a href='./../Browse.html#Frontends'>Frontends</a></div>
+<h1>Document Autocompletion</h1>
+<div id='summary'>SuperCollider autocompletion on OSX</div>
+</div>
+<div class='subheader'>
+</div>
+<div id='toc'>
+<ul class='toc'><li class='toc1'><a href='#Usage'>Usage</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#Summary'>Summary</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#Feature description'>Feature description</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#Further configuration'>Further configuration</a></li>
+<ul class='toc'></ul><li class='toc1'><a href='#Quirks and caveats'>Quirks and caveats</a></li>
+<ul class='toc'></ul></ul></div>
+<p>The autocompletion feature described in this document is available in the OSX version only. It uses the keyDownAction feature of <a href="./../Classes/CocoaDocument.html">CocoaDocument</a> to intercept keystrokes and open the autocompletion interface when specific characters are typed. That feature is not available in all platforms.
+<p>The SCEL interface in Linux has its own autocompletion function, accessed by typing &lt;ESC&gt; &lt;TAB&gt;.
+<p>Autocompletion is not available in the Windows version as of this writing.
+<p>Another way to get information about classes and methods is the class browser, accessed by calling <code class='code prettyprint lang-sc'>.browse</code> on a class, e.g. <code class='code prettyprint lang-sc'>Object.browse</code>. The browser is available in the OSX version, as well as any platform where SwingOSC (<a href="http://www.sciss.de/swingOSC)">http://www.sciss.de/swingOSC)</a> is installed.<h2><a class='anchor' name='Usage'>Usage</a></h2>
+
+<p>To open a text window with the auto-complete feature enabled, execute the following in SuperCollider:<pre class='code prettyprint lang-sc'>Document.autoComplete</pre>
+
+<p>(ac is a shortcut for Auto-complete, to make it easier to type.)
+<p>To open a file by pathname:<pre class='code prettyprint lang-sc'>Document.openFileAutoComplete("myPath.rtf");
+Document.openFileAutoComplete("*.sc");    // wildcards are supported</pre>
+
+<p>To bring up an open-file dialog:<pre class='code prettyprint lang-sc'>Document.openAutoComplete</pre>
+
+<p>Autocompletion will be integrated more tightly into the code editor.<h2><a class='anchor' name='Summary'>Summary</a></h2>
+
+<p>While editing code in an auto-complete code window, the following keystrokes initiate special actions:<table>
+<tr><td>(<td>Attempt to match the preceding identifier to method names containing that string, and display a list of methods with their defining classes. Making a selection will insert a method template into your document. "(" Will also match classnames, with the <code class='code prettyprint lang-sc'>.new</code> method: <code class='code prettyprint lang-sc'>Rect(</code> will show you a method template for Rect-*new.<tr><td>.<td>Attempt to match the preceding identifier to an exact class name, and present a list of class methods (not instance methods). Your selection will insert a method template into the document.<tr><td>CTRL-.<td>attempt to match the preceding identifier to class names containing the identifier, and present a list of those class names. Your selection will open a class browser. You can navigate through the class tree to find the method you want, and press enter in the method list to insert a method template.<tr><td>Shortcut in the class browser<td>Type "^" in the method list to go to the superclass. This allows speedier location of methods inherited from superclasses.<tr><td>Special behavior for CTRL-.<td>When you choose a method in a class browser, its class will be compared to the class you chose in the opening list. If the initial class responds to the method, the initial class will be put into the document; otherwise, the class from the class browser.</table>
+<h2><a class='anchor' name='Feature description'>Feature description</a></h2>
+
+<p>When you type a dot, SuperCollider will to check the previous text to see if it refers to a valid class. If so, a window will be presented with all the class methods (not instance methods) of the class.
+<p>So, for example, if you type:<pre class='code prettyprint lang-sc'>SinOsc.</pre>
+
+<p>the window will display the options:<pre class='code prettyprint lang-sc'>ar(freq, phase, mul, add)
+buildSynthDef()
+buildSynthDef_()
+....</pre>
+
+<p>If you type the first few letters into the text box, the list will reduce itself to the matching entries. If you type 'a', then the list will contain only:<pre class='code prettyprint lang-sc'>ar(freq, phase, mul, add)</pre>
+
+<p>Press enter or return, and the method name with all its arguments will be added to your document, leaving the text:<pre class='code prettyprint lang-sc'>SinOsc.ar(freq, phase, mul, add)</pre>
+
+<p>You can also click on the item you want in the list (or move through the list with the up and down arrow keys), and then press return.
+<p>Pressing escape or closing the window will cancel the auto-complete. Text typed into the text box prior to canceling will be added to the document--so, if you keep typing while the box comes up and you want to ignore it, your text will not be lost.
+<p>Similar behavior for method names: when you type an open parenthesis '(', SuperCollider will display a list of all classes that define this method. Type the first few letters of the class name (don't forget to capitalize) to choose the right one.
+<p>This treatment is necessary because variables in SuperCollider are not typed. If you enter 'func.value(', the text editor has no way to know what kind of object will be contained in func at the time of execution. So, it presents you with all possible options and allows you to choose.<div class='note'><span class='notelabel'>NOTE:</span> <strong>New</strong>: The autocompleter now supports partial string matching for methods (triggered by typing open-paren) and classes (not by typing dot, but by typing ctrl-dot). In the case of classes, you will be given a list of classes matching the string typed. After you choose from the list, a full class browser will be opened. When you select a method and press enter, a method template will be dropped into the current document.</div>
+<p>Because the class browser does not show methods defined by superclasses, you may press ^ to go to the superclass.<h2><a class='anchor' name='Further configuration'>Further configuration</a></h2>
+
+<p>Use the startup file (see <a href="./../Reference/StartupFile.html">Sclang Startup File</a>) to define class names and method names to be excluded from the browsers. I like to exclude the most common flow of control mechanisms (<code class='code prettyprint lang-sc'>while</code>, <code class='code prettyprint lang-sc'>do</code>, <code class='code prettyprint lang-sc'>if</code>, etc.).<pre class='code prettyprint lang-sc'>AutoCompMethodBrowser.exclude([\if, \do, \while, \loop, \collect, \select, \reject, \detect, \add, \put, \at]);
+AutoCompClassBrowser.exclude([... list of classes ...]);</pre>
+<h2><a class='anchor' name='Quirks and caveats'>Quirks and caveats</a></h2>
+
+<p>The auto complete features will be lost from all documents when recompiling the class library.
+<p>The method browser does not handle inheritance. If you're browsing a method like <code class='code prettyprint lang-sc'>add</code>, you won't find <a href="./../Classes/Array.html">Array</a> in the list (but you will find its superclass <a href="./../Classes/ArrayedCollection.html">ArrayedCollection</a>).<div class='doclink'>source: <a href='file:///Applications/SuperCollider/SuperCollider.app/Contents/Resources/HelpSource/Reference/DocumentAutoCompletion.schelp'>/Applications/SuperCollider/SuperCollider.app/Contents/Resources/HelpSource/Reference/DocumentAutoCompletion.schelp</a><br>link::Reference/DocumentAutoCompletion::<br>sc version: 3.5.3</div></div></body></html>

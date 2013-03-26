@@ -1,0 +1,1 @@
+{SinOsc.ar(200, [[0, pi/2, 3pi/2, pi]])}.play
